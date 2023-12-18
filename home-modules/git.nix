@@ -1,8 +1,8 @@
 {
   programs.git =
-  let
-  sshSigningKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBKQtIPibVr6fLAw/6/xzSGnYtWveAINag6kS2JDvR2K";
-  in
+    let
+      sshSigningKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGUVfIB/tLqTsawr6wzMxa9TJ0llgFEzSiRyFtDkV/gb";
+    in
     {
       enable = true;
       userName = "o";
@@ -23,6 +23,6 @@
           signByDefault = true;
           key = sshSigningKey;
         };
-     };
+      };
     };
 }
