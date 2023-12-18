@@ -1,11 +1,11 @@
 {
   description = "github/o-az nixos-config";
   inputs = {
-            nixpkgs.url = "github:nixos/nixpkgs/release-23.05";
-            home-manager = {
-            url = "github:nix-community/home-manager/release-23.05";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
+    nixpkgs.url = "github:nixos/nixpkgs/release-23.05";
+    home-manager = {
+      url = "github:nix-community/home-manager/release-23.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager }: {
@@ -16,15 +16,18 @@
           ./modules/configuration.nix
           ./modules/orbstack.nix
           ./modules/users.nix
-          home-manager.nixosModules.home-manager {
+          ./modules/nix.nix
+          home-manager.nixosModules.home-manager
+          {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.o= {
+              users.o = {
                 imports = [
                   { home.stateVersion = "23.05"; }
                   ./home-modules/helix.nix
                   ./home-modules/git.nix
+                  ./home-modules/direnv.nix
                 ];
               };
             };
