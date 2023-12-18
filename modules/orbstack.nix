@@ -8,15 +8,15 @@ with lib;
 
 {
   # sudoers
-  security.sudo.extraRules= [
-    { users = [ "o" ];
-      commands = [
-        { command = "ALL";
-          options= [ "NOPASSWD" ];
-        }
-      ];
-    }
-  ];
+ # security.sudo.extraRules= [
+ #    { users = [ "o" ];
+ #      commands = [
+ #        { command = "ALL";
+ #          options= [ "NOPASSWD" ];
+ #        }
+ #      ];
+ #    }
+ #  ];
 
   # add OrbStack CLI tools to PATH
   environment.shellInit = ''
