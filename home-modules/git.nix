@@ -13,10 +13,7 @@
         github.user = "o-az";
         gpg.format = "ssh";
         init.defaultBranch = "main";
-
-        # Fix go private dependency fetching by using SSH instead of HTTPS
-        "url \"ssh://git@github.com/\"".insteadOf = "https://github.com/";
-
+        url."git@github.com:".insteadOf = "https://github.com/";
         commit.gpgsign = true;
         user.signingkey = sshSigningKey;
         signing = {

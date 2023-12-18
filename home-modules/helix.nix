@@ -11,9 +11,9 @@
         scrolloff = 5;
         cursorline = true;
         color-modes = true;
-        indent-guides.render = true;
+        indent-guides.render = false;
         file-picker.hidden = false;
-        auto-pairs = false;
+        auto-pairs = true;
         lsp = {
           enable = true;
           display-messages = true;
@@ -46,6 +46,12 @@
           formatter = { command = "nixpkgs-fmt"; };
           auto-format = true;
         }
+        {
+          name = "astro";
+        }
+        {
+          name = "typescript";
+        }
       ];
 
       language-server = {
@@ -55,6 +61,13 @@
             # Careful! If you enable this, then a lot of errors
             # will no longer show up in Helix. Do not enable it.
             # cargo.allFeatures = true; <- do NOT enable me
+          };
+        };
+        typescript-language-server = {
+          config = {
+            format = {
+              "semicolons" = "ignore";
+            };
           };
         };
       };

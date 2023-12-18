@@ -75,14 +75,18 @@ with lib;
     bottom
     tree
     bat
-    # eza
     zx
     fd
     jq
     nixpkgs-fmt
     nil
     gnumake
+    git
   ];
+
+  environment.variables = {
+    EDITOR = "hx";
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
