@@ -74,7 +74,7 @@ with lib;
     bottom
     tree
     bat
-    eza
+    # eza
     zx
     fd
     jq

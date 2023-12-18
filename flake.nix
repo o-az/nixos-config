@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "github/o-az nixos-config";
   inputs = {
             nixpkgs.url = "github:nixos/nixpkgs/release-23.05";
             home-manager = {
@@ -24,6 +24,7 @@
                 imports = [
                   { home.stateVersion = "23.05"; }
                   ./home-modules/helix.nix
+                  ./home-modules/git.nix
                 ];
               };
             };
