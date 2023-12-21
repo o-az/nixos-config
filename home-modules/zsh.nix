@@ -3,6 +3,11 @@
 { pkgs, ... }:
 
 {
+
+  programs.chromium = {
+    enable = true;
+  };
+
   programs.zellij = {
     enableZshIntegration = true;
   };
@@ -11,8 +16,8 @@
     enable = true;
     enableZshIntegration = true;
     settings = {
-      # format = "$shlvl$shell$username$hostname$nix_shell$git_branch$git_commit$git_state$git_status$directory$jobs$cmd_duration$character";
-      format = "$character";
+      format = "$directory$nix_shell$git_branch$git_state$git_status$jobs$cmd_duration$character";
+      #format = "$character";
       character = { success_symbol = "➜"; error_symbol = "✘"; };
     };
 
@@ -53,8 +58,10 @@
       ".." = "cd ..";
       "..." = "cd ../..";
       ga = "git add --all";
+      gs = "git status";
       gcm = "git commit -S -m";
       gp = "git push";
+      glog = "git log --graph --decorate --pretty=oneline --abbrev-commit";
       ls = "eza --oneline --icons --all --group-directories-first --color=auto --sort=modified";
       myip = "curl http://ipecho.net/plain; echo";
       dnscheck = "curl https://am.i.mullvad.net/json | jq";

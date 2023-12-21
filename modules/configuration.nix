@@ -47,6 +47,8 @@ with lib;
     dua
     eza
     starship
+    sd
+    gitui
   ];
 
   environment.variables = {
