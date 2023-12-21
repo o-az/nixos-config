@@ -29,7 +29,6 @@ with lib;
     helix
     gh
     zsh
-    zimfw
     bottom
     tree
     bat
@@ -48,10 +47,6 @@ with lib;
     dua
     eza
     starship
-    # batdiff
-    # batman
-    # batgrep
-    # batwatch
   ];
 
   environment.variables = {
@@ -66,12 +61,6 @@ with lib;
     enable = true;
   };
 
-  # programs = {
-  #  bat = {
-  #    enable = true;
-  #    extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batwatch ];
-  #  };
-  # };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

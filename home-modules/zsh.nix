@@ -11,8 +11,11 @@
     enable = true;
     enableZshIntegration = true;
     settings = {
+      # format = "$shlvl$shell$username$hostname$nix_shell$git_branch$git_commit$git_state$git_status$directory$jobs$cmd_duration$character";
+      format = "$character";
       character = { success_symbol = "➜"; error_symbol = "✘"; };
     };
+
   };
 
   programs.bat = {
@@ -24,7 +27,6 @@
   programs = {
     eza = {
       enable = true;
-      # enableAliases = true;
       git = true;
     };
     fzf = {
@@ -61,20 +63,16 @@
     enableAutosuggestions = true;
     initExtra = ''
       eval "$(starship init zsh)"
-
+            
       setopt HIST_IGNORE_ALL_DUPS
-
     '';
+
     initExtraBeforeCompInit = ''
-      # zimfw config
-      zstyle ':zim:input' double-dot-expand yes
-      zstyle ':zim:ssh' ids /dev/null
     '';
 
     # https://github.com/thiagokokada/nix-configs/blob/master/home-manager/cli/zsh.nix
     #
     sessionVariables = {
-      ZIM_HOME = "~/.zim";
       # Enable scroll support
       LESS = "--RAW-CONTROL-CHARS";
       # Reduce time to wait for multi-key sequences
