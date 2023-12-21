@@ -17,6 +17,7 @@
           ./modules/orbstack.nix
           ./modules/users.nix
           ./modules/nix.nix
+          ./modules/fonts.nix
           home-manager.nixosModules.home-manager
           {
             home-manager = {
@@ -29,7 +30,6 @@
                   ./home-modules/git.nix
                   ./home-modules/direnv.nix
                   ./home-modules/zsh.nix
-                  ./home-modules/fonts.nix
                 ];
               };
             };

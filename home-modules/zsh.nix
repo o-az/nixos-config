@@ -15,6 +15,26 @@
     };
   };
 
+  programs.bat = {
+    enable = true;
+    extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batwatch ];
+
+  };
+
+  programs = {
+    eza = {
+      enable = true;
+      # enableAliases = true;
+      git = true;
+    };
+    fzf = {
+      enable = true;
+      fileWidgetOptions = [ "--preview 'head {}'" ];
+      historyWidgetOptions = [ "--sort" ];
+    };
+    zoxide.enable = true;
+  };
+
   programs.zsh = {
     enable = true;
     autocd = true;
@@ -45,6 +65,12 @@
       setopt HIST_IGNORE_ALL_DUPS
 
     '';
+    initExtraBeforeCompInit = ''
+      # zimfw config
+      zstyle ':zim:input' double-dot-expand yes
+      zstyle ':zim:ssh' ids /dev/null
+    '';
+
     # https://github.com/thiagokokada/nix-configs/blob/master/home-manager/cli/zsh.nix
     #
     sessionVariables = {
@@ -62,11 +88,9 @@
       PS1 = " ";
       ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "'fg=242'";
     };
-  };
 
-  programs.bat = {
-    enable = true;
-    extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batwatch ];
+
 
   };
+
 }
