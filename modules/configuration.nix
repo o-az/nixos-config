@@ -28,7 +28,6 @@ with lib;
     zellij
     helix
     gh
-    zsh
     bottom
     tree
     bat
@@ -49,17 +48,24 @@ with lib;
     starship
     sd
     gitui
+    fishPlugins.done
+    fishPlugins.fzf-fish
+    fishPlugins.forgit
+    fishPlugins.hydro
+    fzf
+    fishPlugins.grc
+    grc
   ];
 
   environment.variables = {
     EDITOR = "hx";
   };
 
-  environment.shells = with pkgs; [ zsh ];
+  environment.shells = with pkgs; [ fish ];
 
-  users.defaultUserShell = pkgs.zsh;
+  users.defaultUserShell = pkgs.fish;
 
-  programs.zsh = {
+  programs.fish = {
     enable = true;
   };
 

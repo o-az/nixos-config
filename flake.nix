@@ -29,7 +29,7 @@
                   ./home-modules/helix.nix
                   ./home-modules/git.nix
                   ./home-modules/direnv.nix
-                  ./home-modules/zsh.nix
+                  ./home-modules/fish.nix
                 ];
               };
             };
