@@ -1,11 +1,11 @@
 {
   programs.git =
     let
-      sshSigningKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGUVfIB/tLqTsawr6wzMxa9TJ0llgFEzSiRyFtDkV/gb";
+      sshSigningKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGnFdSHtSGiwHlDEESfJseOArZ8HNCVlIcreGc2VS7b2";
     in
     {
       enable = true;
-      userName = "o";
+      userName = "o-az";
       userEmail = "omaraziz.dev@proton.me";
       lfs.enable = true;
       extraConfig = {
