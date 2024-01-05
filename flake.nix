@@ -23,7 +23,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.o = {
+              users.omar = {
                 imports = [
                   { home.stateVersion = "23.05"; }
                   ./home-modules/helix.nix
