@@ -1,7 +1,7 @@
 {
   users = {
     mutableUsers = false;
-    users.o = {
+    users.omar = {
       isNormalUser = true;
       home = "/home/omar";
       extraGroups = [ "docker" "wheel" ];
