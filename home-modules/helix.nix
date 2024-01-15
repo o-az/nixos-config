@@ -6,6 +6,7 @@
       theme = "dracula_at_night";
       editor = {
         auto-format = true;
+        auo-save = true;
         completion-trigger-len = 0;
         scroll-lines = 1;
         scrolloff = 5;

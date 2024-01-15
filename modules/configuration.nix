@@ -16,6 +16,11 @@ with lib;
     ];
 
   networking.hostName = "NixOS";
+  virtualisation = {
+    docker = {
+      enable = true;
+    };
+  };
 
   networking.useDHCP = false;
   networking.interfaces.eth0.useDHCP = true;
@@ -38,6 +43,7 @@ with lib;
     nil
     gnumake
     git
+    yq
     unzip
     hyperfine
     ripgrep
@@ -67,6 +73,19 @@ with lib;
 
   programs.fish = {
     enable = true;
+  };
+
+  environment.shellAliases = {
+    ".." = "cd ..";
+    "..." = "cd ../..";
+    ga = "git add --all";
+    gs = "git status";
+    gcm = "git commit -S -m";
+    gp = "git push";
+    glog = "git log --graph --decorate --pretty=oneline --abbrev-commit";
+    ls = "eza --oneline --icons --all --group-directories-first --color=auto --sort=modified";
+    myip = "curl http://ipecho.net/plain; echo";
+    dnscheck = "curl https://am.i.mullvad.net/json | jq";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
