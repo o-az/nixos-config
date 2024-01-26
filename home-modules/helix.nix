@@ -6,7 +6,7 @@
       theme = "dracula_at_night";
       editor = {
         auto-format = true;
-        auo-save = true;
+        auto-save = true;
         completion-trigger-len = 0;
         scroll-lines = 1;
         scrolloff = 5;
@@ -23,12 +23,11 @@
         bufferline = "always";
         statusline = {
           left = [ "mode" "spinner" "file-name" ];
-          right = [ "diagnostics" "position" "total-line-numbers" "file-encoding" ];
+          right =
+            [ "diagnostics" "position" "total-line-numbers" "file-encoding" ];
           center = [ "version-control" ];
         };
-        soft-wrap = {
-          enable = true;
-        };
+        soft-wrap = { enable = true; };
       };
 
       keys.normal.space = {
@@ -49,9 +48,20 @@
         }
         {
           name = "astro";
+          formatter = { command = "prettier"; };
+          auto-format = true;
         }
         {
           name = "typescript";
+          auto-format = true;
+        }
+        {
+          name = "svelte";
+          formatter = {
+            command = "prettier";
+            args = [ "--parser" "svelte" ];
+          };
+          auto-format = true;
         }
       ];
 
@@ -65,11 +75,7 @@
           };
         };
         typescript-language-server = {
-          config = {
-            format = {
-              "semicolons" = "ignore";
-            };
-          };
+          config = { format = { "semicolons" = "ignore"; }; };
         };
       };
     };

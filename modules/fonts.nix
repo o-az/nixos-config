@@ -1,9 +1,7 @@
 { pkgs, ... }:
 
 {
-  fonts = {
-    fontconfig = { enable = true; };
-  };
+  fonts = { fontconfig = { enable = true; }; };
 
   fonts.packages = with pkgs; [
     noto-fonts
@@ -13,8 +11,6 @@
     fira-code
     fira-code-symbols
     jetbrains-mono
-    (pkgs.nerdfonts.override {
-      fonts = [ "IBMPlexMono" ];
-    })
+    (pkgs.nerdfonts.override { fonts = [ "IBMPlexMono" ]; })
   ];
 }
