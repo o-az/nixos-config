@@ -1,7 +1,6 @@
 {
   programs.helix = {
     enable = true;
-
     settings = {
       theme = "dracula_at_night";
       editor = {

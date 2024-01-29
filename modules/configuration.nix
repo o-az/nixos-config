@@ -26,12 +26,13 @@ with lib;
     neovim
     websocat
     zoxide
-    wget
+    fd
     curl
     lazygit
     zellij
     helix
     nixfmt
+    biome
     gh
     bottom
     tree
@@ -40,6 +41,7 @@ with lib;
     gnumake
     git
     ripgrep
+    killall
     lsof
     eza
     starship

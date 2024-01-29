@@ -8,7 +8,6 @@
     userEmail = "omaraziz.dev@proton.me";
     lfs.enable = true;
     extraConfig = {
-      color.ui = true;
       github.user = "o-az";
       gpg.format = "ssh";
       init.defaultBranch = "main";
@@ -18,6 +17,31 @@
       signing = {
         signByDefault = true;
         key = sshSigningKey;
+      };
+      core = {
+        editor = "hx";
+        excludesfile = "~/.gitignore";
+        pager = "diff-so-fancy | less --tabs=2 -RFX";
+      };
+      interactive.diffFilter = "diff-so-fancy --patch";
+      color = {
+        ui = true;
+        diff-highlight = {
+          oldNormal = "red bold";
+          oldHighlight = "red bold 52";
+          newNormal = "green bold";
+          newHighlight = "green bold 22";
+        };
+        diff = {
+          meta = "yellow";
+          frag = "magenta bold";
+          func = "146 bold";
+          commit = "yellow bold";
+          old = "red bold";
+          new = "green bold";
+          whitespace = "red reverse";
+        };
+
       };
     };
     aliases = {

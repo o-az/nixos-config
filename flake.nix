@@ -9,6 +9,7 @@
   };
 
   outputs = { self, nixpkgs, home-manager }: {
+
     nixosConfigurations = {
       vm-orb = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";

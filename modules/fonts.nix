@@ -10,7 +10,6 @@
     ibm-plex
     fira-code
     fira-code-symbols
-    jetbrains-mono
     (pkgs.nerdfonts.override { fonts = [ "IBMPlexMono" ]; })
   ];
 }
