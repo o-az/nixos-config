@@ -44,6 +44,8 @@
             cd $argv;
         end
 
+        thefuck --alias | source
+
         for file in $HOME/nixos-config/home-modules/fish-functions/*.fish
           source $file
         end
@@ -54,14 +56,15 @@
         reload = "exec $SHELL -l";
         vim = "nvim";
         vi = "nvim";
-        hide =
-          "defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder";
-        show =
-          "defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder";
-        hidedesktop =
-          "defaults write com.apple.finder CreateDesktop -bool false && killall Finder";
-        showdesktop =
-          "defaults write com.apple.finder CreateDesktop -bool true && killall Finder";
+        ".." = "cd ..";
+        "..." = "cd ../..";
+        ls = "eza --all --color='always' --icons='always' --oneline --gitignore";
+        myip = "curl http://ipecho.net/plain; echo";
+        dnscheck = "curl https://am.i.mullvad.net/json | jq";
+        hide = "defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder";
+        show = "defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder";
+        hidedesktop = "defaults write com.apple.finder CreateDesktop -bool false && killall Finder";
+        showdesktop = "defaults write com.apple.finder CreateDesktop -bool true && killall Finder";
       };
     };
     chromium = { enable = true; };
@@ -69,6 +72,7 @@
     starship = {
       enable = true;
       enableFishIntegration = true;
+      enableTransience = true;
       settings = { };
     };
     bat = {
@@ -76,14 +80,18 @@
       extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batwatch ];
     };
     eza = {
-      enable = true;
       git = true;
+      enable = true;
     };
     fzf = {
       enable = true;
+      enableFishIntegration = true;
       fileWidgetOptions = [ "--preview 'head {}'" ];
       historyWidgetOptions = [ "--sort" ];
     };
-    zoxide.enable = true;
+    zoxide = {
+      enable = true;
+      enableFishIntegration = true;
+    };
   };
 }

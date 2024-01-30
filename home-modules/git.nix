@@ -1,3 +1,5 @@
+# https://mipmip.github.io/home-manager-option-search/?query=programs.git
+
 {
   programs.git = let
     sshSigningKey =
@@ -57,7 +59,12 @@
       pf = "push --force";
       pl = "pull";
       s = "status";
-
+      ga = "add --all";
+      gs = "status";
+      gcm = "commit -S -m";
+      gp = "push";
+      glog =
+        "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
       amend = "commit --amend --reuse-message=HEAD";
       go = "!go() { git checkout -b $1 2> /dev/null || git checkout $1; }; go";
       hist =

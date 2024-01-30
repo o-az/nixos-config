@@ -14,11 +14,13 @@ with lib;
     ./orbstack.nix
   ];
 
-  networking.hostName = "NixOS";
-  virtualisation = { docker = { enable = true; }; };
+  networking = {
+    hostName = "NixOS";
+    useDHCP = true;
+    interfaces.eth0.useDHCP = true;
+  };
 
-  networking.useDHCP = false;
-  networking.interfaces.eth0.useDHCP = true;
+  virtualisation = { docker = { enable = true; }; };
 
   environment.systemPackages = with pkgs; [
     direnv
@@ -34,6 +36,8 @@ with lib;
     gnumake
     ripgrep
     killall
+    thefuck
+    bun
     lsof
     eza
     starship
@@ -52,40 +56,37 @@ with lib;
     helix
     neovim
     vscodium
-    (vscode-with-extensions.override {
-      vscode = vscodium;
-      vscodeExtensions = with vscode-extensions; [
-        github.copilot
-        mikestead.dotenv
-        tamasfe.even-better-toml
-        bradlc.vscode-tailwindcss
-        editorconfig.editorconfig
-        christian-kohler.path-intellisense
-        ms-vscode-remote.vscode-remote-extensionpack
-      ]
-    })
+    # (vscode-with-extensions.override {
+    #   vscode = vscodium;
+    #   vscodeExtensions = with vscode-extensions;
+    #     [
+    #       # github.copilot
+    #       mikestead.dotenv
+    #       tamasfe.even-better-toml
+    #       bradlc.vscode-tailwindcss
+    #       editorconfig.editorconfig
+    #       ms-vscode-remote.remote-ssh
+    #       christian-kohler.path-intellisense
+    #       ms-vscode-remote.vscode-remote-extensionpack
+    #     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [{
+    #       name = "remote-ssh-edit";
+    #       publisher = "ms-vscode-remote";
+    #       version = "0.47.2";
+    #       sha256 = "1hp6gjh4xp2m1xlm1jsdzxw9d8frkiidhph6nvl24d0h8z34w49g";
+    #     }];
+    # })
   ];
 
   environment.variables = { EDITOR = "hx"; };
 
   environment.shells = with pkgs; [ fish ];
 
-  users.defaultUserShell = pkgs.fish;
+  users = { defaultUserShell = pkgs.fish; };
 
-  programs.fish = { enable = true; };
+  programs = { fish = { enable = true; }; };
 
   environment.shellAliases = {
-    ".." = "cd ..";
-    "..." = "cd ../..";
-    ga = "git add --all";
-    gs = "git status";
-    gcm = "git commit -S -m";
-    gp = "git push";
-    glog = "git log --graph --decorate --pretty=oneline --abbrev-commit";
-    ls =
-      "eza --oneline --icons --all --group-directories-first --color=auto --sort=modified";
-    myip = "curl http://ipecho.net/plain; echo";
-    dnscheck = "curl https://am.i.mullvad.net/json | jq";
+
   };
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -116,7 +117,9 @@ with lib;
   system.stateVersion = "21.05"; # Did you read the comment?
 
   # As this is intended as a stadalone image, undo some of the minimal profile stuff
-  documentation.enable = true;
-  documentation.nixos.enable = true;
+  documentation = {
+    enable = true;
+    nixos.enable = true;
+  };
   environment.noXlibs = false;
 }

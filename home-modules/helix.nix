@@ -1,3 +1,5 @@
+# https://mipmip.github.io/home-manager-option-search/?query=programs.helix
+
 {
   programs.helix = {
     enable = true;
@@ -22,14 +24,14 @@
         bufferline = "always";
         statusline = {
           left = [ "mode" "spinner" "file-name" ];
-          right =
-            [ "diagnostics" "position" "total-line-numbers" "file-encoding" ];
+          right = [ "diagnostics" "position" "total-line-numbers" "file-encoding" ];
           center = [ "version-control" ];
         };
         soft-wrap = { enable = true; };
       };
-
       keys.normal.space = {
+        "q" = ":q";
+        "w" = ":w";
         "h" = ":toggle-option lsp.display-inlay-hints";
         "c" = [ ":write-all" ];
         # f and F are swapped, as picking in cwd is much more common for me.
@@ -42,17 +44,29 @@
       language = [
         {
           name = "nix";
-          formatter = { command = "nixpkgs-fmt"; };
           auto-format = true;
+          formatter = { command = "nixfmt"; };
         }
         {
           name = "astro";
-          formatter = { command = "prettier"; };
           auto-format = true;
+          formatter = { command = "prettier"; };
+        }
+        {
+          name = "javascript";
+          auto-format = true;
+          formatter = {
+            command = "biome";
+            args = [ "format" "--write" ];
+          };
         }
         {
           name = "typescript";
           auto-format = true;
+          formatter = {
+            command = "biome";
+            args = [ "format" "--write" ];
+          };
         }
         {
           name = "svelte";
@@ -73,9 +87,7 @@
             # cargo.allFeatures = true; <- do NOT enable me
           };
         };
-        typescript-language-server = {
-          config = { format = { "semicolons" = "ignore"; }; };
-        };
+        typescript-language-server = { config = { format = { "semicolons" = "ignore"; }; }; };
       };
     };
   };
