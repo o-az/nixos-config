@@ -3,3 +3,6 @@ default:
 
 fmt:
 	nixfmt *.nix **/*.nix --width=100
+
+list-all:
+  nixos-option environment.systemPackages

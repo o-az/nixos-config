@@ -36,6 +36,7 @@ with lib;
     gnumake
     ripgrep
     killall
+    unzip
     bun
     lsof
     eza
@@ -54,26 +55,8 @@ with lib;
     # editors
     helix
     neovim
-    vscodium
-    # (vscode-with-extensions.override {
-    #   vscode = vscodium;
-    #   vscodeExtensions = with vscode-extensions;
-    #     [
-    #       # github.copilot
-    #       mikestead.dotenv
-    #       tamasfe.even-better-toml
-    #       bradlc.vscode-tailwindcss
-    #       editorconfig.editorconfig
-    #       ms-vscode-remote.remote-ssh
-    #       christian-kohler.path-intellisense
-    #       ms-vscode-remote.vscode-remote-extensionpack
-    #     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [{
-    #       name = "remote-ssh-edit";
-    #       publisher = "ms-vscode-remote";
-    #       version = "0.47.2";
-    #       sha256 = "1hp6gjh4xp2m1xlm1jsdzxw9d8frkiidhph6nvl24d0h8z34w49g";
-    #     }];
-    # })
+    # TODO: why no work?
+    # vscodium
   ];
 
   environment.variables = { EDITOR = "hx"; };
