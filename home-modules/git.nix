@@ -20,6 +20,9 @@
         signByDefault = true;
         key = sshSigningKey;
       };
+      push = {
+        autoSetUpstream = true;
+      };
       core = {
         editor = "hx";
         excludesfile = "~/.gitignore";
@@ -56,7 +59,7 @@
       ch = "checkout";
       l = "log";
       p = "push";
-      pf = "push --force";
+      pf = "push --force-with-lease";
       pl = "pull";
       s = "status";
       ga = "add --all";

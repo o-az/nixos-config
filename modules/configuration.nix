@@ -36,7 +36,6 @@ with lib;
     gnumake
     ripgrep
     killall
-    thefuck
     bun
     lsof
     eza

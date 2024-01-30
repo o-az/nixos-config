@@ -44,8 +44,6 @@
             cd $argv;
         end
 
-        thefuck --alias | source
-
         for file in $HOME/nixos-config/home-modules/fish-functions/*.fish
           source $file
         end
@@ -59,6 +57,13 @@
         ".." = "cd ..";
         "..." = "cd ../..";
         ls = "eza --all --color='always' --icons='always' --oneline --gitignore";
+          ga = "git add --all";
+      gs = "git status";
+      gcm = "git commit -S -m";
+      gp = "git push";
+      glog =
+        "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
+
         myip = "curl http://ipecho.net/plain; echo";
         dnscheck = "curl https://am.i.mullvad.net/json | jq";
         hide = "defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder";
