@@ -21,31 +21,49 @@ with lib;
   networking.interfaces.eth0.useDHCP = true;
 
   environment.systemPackages = with pkgs; [
-    diff-so-fancy
     direnv
-    neovim
     websocat
     zoxide
     fd
     curl
-    lazygit
     zellij
-    helix
-    nixfmt
-    biome
-    gh
     bottom
     tree
     bat
     jq
     gnumake
-    git
     ripgrep
     killall
     lsof
     eza
     starship
     fzf
+    # git
+    gh
+    git
+    lazygit
+    diff-so-fancy
+    # linters & formatters
+    nil
+    biome
+    nixfmt
+    deadnix
+    # editors
+    helix
+    neovim
+    vscodium
+    (vscode-with-extensions.override {
+      vscode = vscodium;
+      vscodeExtensions = with vscode-extensions; [
+        github.copilot
+        mikestead.dotenv
+        tamasfe.even-better-toml
+        bradlc.vscode-tailwindcss
+        editorconfig.editorconfig
+        christian-kohler.path-intellisense
+        ms-vscode-remote.vscode-remote-extensionpack
+      ]
+    })
   ];
 
   environment.variables = { EDITOR = "hx"; };
