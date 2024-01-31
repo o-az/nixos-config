@@ -25,23 +25,6 @@
           commit_hash_length = 7;
           tag_symbol = "🏷";
         };
-        directory = {
-          substitution = {
-            home = "~";
-            "/home/omar/dev" = "dev";
-            style = "cyan";
-          };
-        };
-        # format = lib.concatStrings [
-        #   "$line_break"
-        #   "$directory"
-        #   "$git_branch"
-        #   "$git_status"
-        #   "$git_commit"
-        #   "$package"
-        #   "$character"
-        #   "$line_break"
-        # ];
         character = {
           success_symbol = "[➜](bold green)";
           error_symbol = "[✗](bold red)";
@@ -58,7 +41,7 @@
         aws = { disabled = true; };
         bun = { disabled = true; };
         rust = { disabled = true; };
-        cargo = { disabled = true; };
+        # cargo = { disabled = true; };
         python = { disabled = true; };
         gcloud = { disabled = true; };
         golang = { disabled = true; };
