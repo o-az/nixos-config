@@ -49,20 +49,10 @@
 
         myip = "curl http://ipecho.net/plain; echo";
         dnscheck = "curl https://am.i.mullvad.net/json | jq";
-        hide = "defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder";
-        show = "defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder";
-        hidedesktop = "defaults write com.apple.finder CreateDesktop -bool false && killall Finder";
-        showdesktop = "defaults write com.apple.finder CreateDesktop -bool true && killall Finder";
       };
     };
     chromium = { enable = true; };
     zellij = { enableFishIntegration = true; };
-    starship = {
-      enable = true;
-      enableFishIntegration = true;
-      enableTransience = true;
-      settings = { };
-    };
     bat = {
       enable = true;
       extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batwatch ];

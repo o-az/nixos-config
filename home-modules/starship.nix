@@ -13,8 +13,8 @@
         add_newline = true;
         command_timeout = 10000;
         git_branch = {
-          symbol = "🌱";
-          truncation_length = 4;
+          symbol = "🌱 ";
+          truncation_length = 20;
         };
         git_status = {
           ahead = "↑";
@@ -24,6 +24,13 @@
         git_commit = {
           commit_hash_length = 7;
           tag_symbol = "🏷";
+        };
+        directory = {
+          substitution = {
+            home = "~";
+            "/home/omar/dev" = "dev";
+            style = "cyan";
+          };
         };
         # format = lib.concatStrings [
         #   "$line_break"
@@ -43,8 +50,15 @@
           symbol = "📦";
           style = "bold yellow";
         };
+        # shell = { disabled = true; };
+        username = { disabled = true; };
+        hostname = { disabled = true; };
+        container = { disabled = true; };
+        nix_shell = { disabled = true; };
         aws = { disabled = true; };
         bun = { disabled = true; };
+        rust = { disabled = true; };
+        cargo = { disabled = true; };
         python = { disabled = true; };
         gcloud = { disabled = true; };
         golang = { disabled = true; };
