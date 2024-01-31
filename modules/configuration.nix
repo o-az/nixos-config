@@ -34,6 +34,7 @@ with lib;
     jump
     jq
     gnumake
+    nurl
     ripgrep
     killall
     unzip
@@ -42,7 +43,6 @@ with lib;
     eza
     starship
     fzf
-    # git
     gh
     git
     lazygit
