@@ -2,21 +2,13 @@
 # This MAY be overwritten in the future. Make a copy and update the include
 # in configuration.nix if you want to keep your changes.
 
-{ lib, config, pkgs, ... }:
+{ lib, ... }:
 
 with lib;
 
 {
   # sudoers
-  # security.sudo.extraRules= [
-  #    { users = [ "o" ];
-  #      commands = [
-  #        { command = "ALL";
-  #          options= [ "NOPASSWD" ];
-  #        }
-  #      ];
-  #    }
-  #  ];
+  # security.sudo.extraRules= [];
 
   # add OrbStack CLI tools to PATH
   environment.shellInit = ''

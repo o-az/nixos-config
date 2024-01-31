@@ -29,25 +29,7 @@
           };
         }
       ];
-      interactiveShellInit = ''
-        if status is-interactive
-          # Commands to run in interactive sessions can go here
-        end
-        set -x LANG en_US.UTF-8
-        if test -z (pgrep ssh-agent | string collect)
-            eval (ssh-agent -c)
-            set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
-            set -Ux SSH_AGENT_PID $SSH_AGENT_PID
-        end
-        function mkcd -d "Create directory and change to it"
-          mkdir -pv $argv;
-            cd $argv;
-        end
-
-        for file in $HOME/nixos-config/home-modules/fish-functions/*.fish
-          source $file
-        end
-      '';
+      interactiveShellInit = builtins.readFile ./init.fish;
       shellAliases = {
         cat = "bat --theme='1337' --style='numbers,changes'";
         find = "fd";
@@ -56,13 +38,14 @@
         vi = "nvim";
         ".." = "cd ..";
         "..." = "cd ../..";
-        ls = "eza --all --color='always' --icons='always' --oneline --gitignore";
-          ga = "git add --all";
-      gs = "git status";
-      gcm = "git commit -S -m";
-      gp = "git push";
-      glog =
-        "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
+        tree = "eza --all --color='always' --icons='always' --oneline --git-ignore --tree";
+        ls = "eza --all --color='always' --icons='always' --oneline --git-ignore";
+        ga = "git add --all";
+        gs = "git status";
+        gcm = "git commit -S -m";
+        gp = "git push";
+        glog =
+          "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
 
         myip = "curl http://ipecho.net/plain; echo";
         dnscheck = "curl https://am.i.mullvad.net/json | jq";

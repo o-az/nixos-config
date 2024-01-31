@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ modulesPath, config, pkgs, lib, ... }:
+{ modulesPath, pkgs, lib, ... }:
 
 with lib;
 
@@ -30,8 +30,8 @@ with lib;
     curl
     zellij
     bottom
-    tree
     bat
+    jump
     jq
     gnumake
     ripgrep

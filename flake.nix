@@ -27,10 +27,11 @@
               users.omar = {
                 imports = [
                   { home.stateVersion = "23.05"; }
-                  ./home-modules/helix.nix
+                  ./home-modules/fish
                   ./home-modules/git.nix
+                  ./home-modules/helix.nix
                   ./home-modules/direnv.nix
-                  ./home-modules/fish.nix
+                  ./home-modules/starship.nix
                 ];
               };
             };
