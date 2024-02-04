@@ -20,7 +20,11 @@
         signByDefault = true;
         key = sshSigningKey;
       };
-      push = { autoSetUpstream = true; };
+      push = {
+        autoSetUpstream = true;
+        autoSetupRemote = true;
+        default = "current";
+      };
       core = {
         editor = "hx";
         excludesfile = "~/.gitignore";

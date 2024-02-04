@@ -4,13 +4,13 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "dracula_at_night";
+      theme = "amberwood";
       editor = {
         auto-format = true;
         auto-save = true;
-        completion-trigger-len = 0;
+        # completion-trigger-len = 0;
         scroll-lines = 1;
-        scrolloff = 5;
+        scrolloff = 0;
         cursorline = true;
         color-modes = true;
         indent-guides.render = false;
@@ -56,16 +56,16 @@
           name = "javascript";
           auto-format = true;
           formatter = {
-            command = "biome";
-            args = [ "format" "--write" ];
+            command = "prettier";
+            args = [ "--write" ];
           };
         }
         {
           name = "typescript";
           auto-format = true;
           formatter = {
-            command = "biome";
-            args = [ "format" "--write" ];
+            command = "prettier";
+            args = [ "--write" ];
           };
         }
         {

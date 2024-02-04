@@ -22,13 +22,24 @@ with lib;
 
   virtualisation = { docker = { enable = true; }; };
 
+  # environment.sessionVariables = {};
+
   environment.systemPackages = with pkgs; [
     direnv
     websocat
     zoxide
     fd
+    # https://github.com/wagoodman/dive
+    dive
+    # https://github.com/ducaale/xh
+    xh
+    # https://github.com/xxh/xxh
+    xxh
+    # https://github.com/charmbracelet/mods
+    mods
     curl
     zellij
+    doctl
     bottom
     bat
     jump
@@ -49,7 +60,6 @@ with lib;
     diff-so-fancy
     # linters & formatters
     nil
-    biome
     nixfmt
     deadnix
     # editors
@@ -59,7 +69,10 @@ with lib;
     # vscodium
   ];
 
-  environment.variables = { EDITOR = "hx"; };
+  environment.variables = {
+    EDITOR = "hx";
+    XDG_CONFIG_HOME = "$HOME/.config";
+  };
 
   environment.shells = with pkgs; [ fish ];
 

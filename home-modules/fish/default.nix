@@ -1,31 +1,20 @@
 # https://mipmip.github.io/home-manager-option-search/?query=programs.fish
 
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   programs = {
     fish = {
       enable = true;
       plugins = [
-        # Enable a plugin (here grc for colorized command output) from nixpkgs
-        # https://github.com/pure-fish/pure
+        # https://github.com/jorgebucaran/fisher
         {
-          name = "pure";
-          src = pkgs.fetchFromGitHub {
-            owner = "pure-fish";
-            repo = "pure";
-            rev = "f1b2c7049de3f5cb45e29c57a6efef005e3d03ff";
-            sha256 = "sha256-MnlqKRmMNVp6g9tet8sr5Vd8LmJAbZqLIGoDE5rlu8E=";
-          };
-        }
-        # https://github.com/jorgebucaran/autopair.fish
-        {
-          name = "autopair.fish";
+          name = "fisher";
           src = pkgs.fetchFromGitHub {
             owner = "jorgebucaran";
-            repo = "autopair.fish";
-            rev = "4d1752ff5b39819ab58d7337c69220342e9de0e2";
-            sha256 = "sha256-s1o188TlwpUQEN3X5MxUlD/2CFCpEkWu83U9O+wg3VU=";
+            repo = "fisher";
+            rev = "2efd33ccd0777ece3f58895a093f32932bd377b6";
+            hash = "sha256-e8gIaVbuUzTwKtuMPNXBT5STeddYqQegduWBtURLT3M=";
           };
         }
       ];
@@ -46,9 +35,10 @@
         gp = "git push";
         glog =
           "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
-
         myip = "curl http://ipecho.net/plain; echo";
         dnscheck = "curl https://am.i.mullvad.net/json | jq";
+        # https://github.com/antfu/taze
+        upall = "bunx taze -r";
       };
     };
     chromium = { enable = true; };
