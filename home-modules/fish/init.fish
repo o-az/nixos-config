@@ -10,6 +10,8 @@ if test -z (pgrep ssh-agent | string collect)
     set -Ux SSH_AGENT_PID $SSH_AGENT_PID
 end
 
+set -Ux XDG_CONFIG_HOME ~/.config
+
 zoxide init fish | source
 
 for file in $HOME/nixos-config/home-modules/fish/functions/*.fish
