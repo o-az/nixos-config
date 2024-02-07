@@ -37,7 +37,6 @@ nixpkgs.lib.nixosSystem rec {
           pkgs-unstable = import inputs.nixpkgs-unstable {
             inherit system;
             config.allowUnfree = true;
-
           };
           inherit inputs;
         };
