@@ -1,6 +1,6 @@
 # https://mipmip.github.io/home-manager-option-search/?query=programs.fish
 
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs = {
@@ -43,10 +43,6 @@
     };
     chromium = { enable = true; };
     zellij = { enableFishIntegration = true; };
-    bat = {
-      enable = true;
-      extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batwatch ];
-    };
     eza = {
       git = true;
       enable = true;

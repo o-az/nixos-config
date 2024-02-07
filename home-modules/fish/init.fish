@@ -19,6 +19,8 @@ for file in $HOME/nixos-config/home-modules/fish/functions/*.fish
 end
 
 # TODO: find a better way to do this
-gh extension install dlvhdr/gh-dash
+# gh extension install dlvhdr/gh-dash
 
 cp $HOME/nixos-config/home-modules/fish/fish_plugins $HOME/.config/fish/fish_plugins
+
+direnv hook fish | source

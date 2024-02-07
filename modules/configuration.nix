@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ modulesPath, pkgs, lib, ... }:
+{ modulesPath, pkgs, pkgs-unstable, lib, ... }:
 
 with lib;
 
@@ -24,54 +24,67 @@ with lib;
 
   # environment.sessionVariables = {};
 
-  environment.systemPackages = with pkgs; [
-    direnv
-    websocat
-    zoxide
-    fd
-    # https://github.com/wagoodman/dive
-    dive
-    # https://github.com/ducaale/xh
-    xh
-    # https://github.com/xxh/xxh
-    xxh
-    # https://github.com/charmbracelet/mods
-    mods
-    curl
-    zellij
-    doctl
-    bottom
-    bat
-    jump
-    jq
-    gnumake
-    nurl
-    ripgrep
-    killall
-    unzip
-    bun
-    lsof
-    eza
-    starship
-    fzf
-    gh
-    git
-    lazygit
-    diff-so-fancy
-    # linters & formatters
-    nil
-    nixfmt
-    deadnix
-    # editors
-    helix
-    neovim
-    # TODO: why no work?
-    # vscodium
-  ];
+  system.autoUpgrade = {
+    enable = true;
+    channel = "https://nixos.org/channels/nixos-unstable";
+  };
 
-  environment.variables = {
-    EDITOR = "hx";
-    XDG_CONFIG_HOME = "$HOME/.config";
+  environment.systemPackages = with pkgs;
+    [
+      direnv
+      websocat
+      zoxide
+      fd
+      # https://github.com/wagoodman/dive
+      dive
+      # https://github.com/ducaale/xh
+      xh
+      # https://github.com/xxh/xxh
+      xxh
+      # https://github.com/charmbracelet/mods
+      mods
+      # https://github.com/charmbracelet/vhs
+      vhs
+      curl
+      zellij
+      doctl
+      bottom
+      coreutils-full
+      bat
+      jump
+      jq
+      gnumake
+      nurl
+      ripgrep
+      killall
+      unzip
+      lsof
+      eza
+      starship
+      fzf
+      gh
+      git
+      git-lfs
+      lazygit
+      diff-so-fancy
+      # linters & formatters
+      nil
+      nixfmt
+      deadnix
+      # editors
+      helix
+      # TODO: why no work?
+      # vscodium
+    ] ++ (with pkgs-unstable; [ bun neovim ]);
+
+  environment = {
+    variables = {
+      EDITOR = "hx";
+      XDG_CONFIG_HOME = "$HOME/.config";
+    };
+    noXlibs = false;
+    shellAliases = { };
+    sessionVariables = { };
   };
 
   environment.shells = with pkgs; [ fish ];
@@ -80,41 +93,13 @@ with lib;
 
   programs = { fish = { enable = true; }; };
 
-  environment.shellAliases = {
-
-  };
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "21.05"; # Did you read the comment?
+  # DO NOT MODIFY THIS OR ELSE ####
+  system.stateVersion = "21.05"; # # Did you read the comment?
+  # DO NOT MODIFY THIS OR ELSE ####
 
   # As this is intended as a stadalone image, undo some of the minimal profile stuff
   documentation = {
     enable = true;
     nixos.enable = true;
   };
-  environment.noXlibs = false;
 }

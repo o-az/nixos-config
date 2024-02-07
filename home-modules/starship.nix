@@ -1,6 +1,5 @@
 # https://mipmip.github.io/home-manager-option-search/?query=programs.starship
-
-{ lib, ... }:
+{ ... }:
 
 {
   programs = {
