@@ -3,6 +3,6 @@
 { ... }: {
   programs.neovim = {
     enable = true;
-    extraPackages = { };
+    # extraPackages = { };
   };
 }

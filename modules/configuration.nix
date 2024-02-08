@@ -24,10 +24,10 @@ with lib;
 
   # environment.sessionVariables = {};
 
-  system.autoUpgrade = {
-    enable = true;
-    channel = "https://nixos.org/channels/nixos-unstable";
-  };
+  # system.autoUpgrade = {
+  #   enable = true;
+  #   channel = "https://nixos.org/channels/nixos-unstable";
+  # };
 
   environment.systemPackages = with pkgs;
     [
@@ -83,8 +83,8 @@ with lib;
       XDG_CONFIG_HOME = "$HOME/.config";
     };
     noXlibs = false;
-    shellAliases = { };
-    sessionVariables = { };
+    # shellAliases = { };
+    # sessionVariables = { };
   };
 
   environment.shells = with pkgs; [ fish ];

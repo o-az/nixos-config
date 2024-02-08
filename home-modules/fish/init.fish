@@ -23,4 +23,4 @@ end
 
 cp $HOME/nixos-config/home-modules/fish/fish_plugins $HOME/.config/fish/fish_plugins
 
-direnv hook fish | source
+# direnv hook fish | source

@@ -11,7 +11,6 @@ nixpkgs.lib.nixosSystem rec {
     ./modules/users.nix
     ./modules/fonts.nix
     ./modules/nix.nix
-    home-manager.nixosModules.home-manager
 
     # home-manager
     home-manager.nixosModules.home-manager
@@ -23,6 +22,7 @@ nixpkgs.lib.nixosSystem rec {
           imports = [
             { home.stateVersion = "23.05"; }
             ./home-modules/fish
+            ./home-modules/neovim
             ./home-modules/bat.nix
             ./home-modules/git.nix
             ./home-modules/helix.nix
