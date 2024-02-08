@@ -2,11 +2,12 @@
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/master";
+    nixpkgs.url = "github:nixos/nixpkgs/release-23.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/master";
+      url = "github:nix-community/home-manager/release-23.11";
+
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -20,9 +21,8 @@
       system = "aarch64-linux";
     in {
       nixosConfigurations = {
-        vm-orb = mkNixos "vm-orb" {
-          inherit user inputs nixpkgs home-manager system;
-        };
+        vm-orb =
+          mkNixos "vm-orb" { inherit user inputs nixpkgs home-manager system; };
       };
     };
 }
