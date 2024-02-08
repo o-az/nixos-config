@@ -7,8 +7,18 @@
 with lib;
 
 {
+
   # sudoers
-  # security.sudo.extraRules= [];
+  security.sudo.extraRules= [
+    { users = [ "omar" ];
+      commands = [
+        { command = "ALL";
+          options= [ "NOPASSWD" ];
+        }
+      ];
+    }
+  ];
+
 
   # add OrbStack CLI tools to PATH
   environment.shellInit = ''
