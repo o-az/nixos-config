@@ -3,7 +3,15 @@
 { pkgs, ... }: {
   programs.bat = {
     enable = true;
-    extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batwatch ];
+    extraPackages = with pkgs.bat-extras; [
+      batdiff
+      batman
+      batgrep
+      batwatch
+      batpipe
+      prettybat
+    ];
+    config = { theme = "1337"; };
   };
 
 }

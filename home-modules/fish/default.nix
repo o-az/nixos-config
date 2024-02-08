@@ -20,15 +20,17 @@
       ];
       interactiveShellInit = builtins.readFile ./init.fish;
       shellAliases = {
-        cat = "bat --theme='1337' --style='numbers,changes'";
+        cat = "bat --theme='1337' --style='changes'";
         find = "fd";
         reload = "exec $SHELL -l";
         vim = "nvim";
         vi = "nvim";
         ".." = "cd ..";
         "..." = "cd ../..";
-        tree = "eza --all --color='always' --icons='always' --oneline --git-ignore --tree";
-        ls = "eza --all --color='always' --icons='always' --oneline --git-ignore";
+        tree =
+          "eza --all --color='always' --icons='always' --oneline --git-ignore --tree";
+        ls =
+          "eza --all --color='always' --icons='always' --oneline --git-ignore";
         ga = "git add --all";
         gs = "git status";
         gcm = "git commit -S -m";
