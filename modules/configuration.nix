@@ -34,13 +34,9 @@ with lib;
       direnv
       websocat
       fd
-      # https://github.com/wagoodman/dive
       dive
-      # https://github.com/ducaale/xh
       xh
-      # https://github.com/charmbracelet/mods
       mods
-      # https://github.com/charmbracelet/vhs
       vhs
       curl
       zellij
@@ -72,9 +68,8 @@ with lib;
       helix
       # TODO: why no work?
       # vscodium
-    ] ++ (with pkgs-unstable; [ bun neovim ]);
+    ] ++ (with pkgs-unstable; [ bun neovim jaq atuin ]);
 
-    
   environment.variables = {
     EDITOR = "hx";
     XDG_CONFIG_HOME = "$HOME/.config";

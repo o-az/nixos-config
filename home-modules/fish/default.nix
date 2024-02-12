@@ -21,6 +21,7 @@
       interactiveShellInit = builtins.readFile ./init.fish;
       shellAliases = {
         cat = "bat --theme='1337' --style='changes'";
+        jq = "jaq";
         find = "fd";
         reload = "exec $SHELL -l";
         vim = "nvim";
