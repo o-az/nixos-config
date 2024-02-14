@@ -68,7 +68,12 @@ with lib;
       helix
       # TODO: why no work?
       # vscodium
-    ] ++ (with pkgs-unstable; [ bun neovim jaq atuin ]);
+    ] ++ (with pkgs-unstable; [
+      bun
+      jaq
+      atuin
+      neovim
+       ]);
 
   environment.variables = {
     EDITOR = "hx";

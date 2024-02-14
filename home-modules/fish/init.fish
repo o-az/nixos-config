@@ -21,6 +21,9 @@ end
 # TODO: find a better way to do this
 # gh extension install dlvhdr/gh-dash
 
+direnv hook fish | source
+set -g direnv_fish_mode eval_on_arrow # trigger direnv at prompt, and on every arrow-based directory change (default)
+
 cp $HOME/nixos-config/home-modules/fish/fish_plugins $HOME/.config/fish/fish_plugins
 
 # direnv hook fish | source
