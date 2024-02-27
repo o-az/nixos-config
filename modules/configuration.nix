@@ -32,7 +32,6 @@ with lib;
   environment.systemPackages = with pkgs;
     [
       direnv
-      websocat
       fd
       dive
       xh
@@ -49,31 +48,35 @@ with lib;
       gnumake
       nurl
       ripgrep
+      htop
       killall
       unzip
       lsof
       eza
       starship
       fzf
-      gh
       git
       git-lfs
       lazygit
       diff-so-fancy
-      # linters & formatters
       nil
       nixfmt
       deadnix
-      # editors
-      helix
       # TODO: why no work?
       # vscodium
     ] ++ (with pkgs-unstable; [
+      #
       bun
+      gh
       jaq
       atuin
+      helix
       neovim
-       ]);
+      nodejs_21
+      ruff
+      railway
+      lychee
+    ]);
 
   environment.variables = {
     EDITOR = "hx";
@@ -120,6 +123,10 @@ with lib;
   # As this is intended as a stadalone image, undo some of the minimal profile stuff
   documentation = {
     enable = true;
+    man.enable = true;
+    dev.enable = false;
+    doc.enable = false;
+    info.enable = false;
     nixos.enable = true;
   };
   environment.noXlibs = false;

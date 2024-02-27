@@ -28,8 +28,10 @@
         vi = "nvim";
         ".." = "cd ..";
         "..." = "cd ../..";
-        tree = "eza --all --color='always' --icons='always' --oneline --git-ignore --tree";
-        ls = "eza --all --color='always' --icons='always' --oneline --git-ignore";
+        tree =
+          "eza --all --color='always' --icons='always' --oneline --git-ignore --tree";
+        ls =
+          "eza --all --color='always' --icons='always' --oneline --git-ignore";
         ga = "git add --all";
         gs = "git status";
         gcm = "git commit -S -m";
@@ -40,6 +42,9 @@
         dnscheck = "curl https://am.i.mullvad.net/json | jq";
         # https://github.com/antfu/taze
         upall = "bunx taze -r";
+        bi = "bun install";
+        bd = "bun run dev";
+        bb = "bun run build";
       };
     };
     chromium = { enable = true; };

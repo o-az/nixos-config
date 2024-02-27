@@ -4,7 +4,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/release-23.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-
+    nvim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    helix.url = "github:helix-editor/helix";
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
 
@@ -12,9 +13,8 @@
     };
   };
 
-  # helix.url = "github:helix-editor/helix";
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, nvim-nightly-overlay, ... }:
     let
       mkNixos = import ./nixos.nix;
       user = "omar";
