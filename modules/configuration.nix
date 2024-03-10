@@ -66,7 +66,7 @@ with lib;
       # vscodium
     ] ++ (with pkgs-unstable; [
       #
-      keybase
+      uv
       bun
       gh
       jaq
@@ -75,12 +75,13 @@ with lib;
       neovim
       nodejs_21
       ruff
+      pipx
       railway
       lychee
     ]);
 
   environment.variables = {
-    EDITOR = "hx";
+    EDITOR = "code";
     XDG_CONFIG_HOME = "$HOME/.config";
   };
 

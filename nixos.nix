@@ -8,6 +8,7 @@ nixpkgs.lib.nixosSystem rec {
   modules = [
     ./modules/configuration.nix
     ./modules/orbstack.nix
+    ./modules/keybase.nix
     ./modules/users.nix
     ./modules/fonts.nix
     ./modules/nix.nix
