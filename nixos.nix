@@ -1,5 +1,5 @@
 name:
-{ inputs, nixpkgs, home-manager, system, user }:
+{ inputs, nixpkgs, home-manager, system, user, nix-index-database }:
 
 nixpkgs.lib.nixosSystem rec {
   inherit system;
@@ -29,6 +29,9 @@ nixpkgs.lib.nixosSystem rec {
             ./home-modules/helix.nix
             ./home-modules/direnv.nix
             ./home-modules/starship.nix
+            # https://github.com/nix-community/nix-index-database
+            nix-index-database.hmModules.nix-index
+            { programs.nix-index-database.comma.enable = true; }
           ];
         };
         # Arguments exposed to each home-module
