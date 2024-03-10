@@ -13,7 +13,6 @@
     };
   };
 
-
   outputs = inputs@{ self, nixpkgs, home-manager, nvim-nightly-overlay, ... }:
     let
       mkNixos = import ./nixos.nix;

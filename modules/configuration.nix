@@ -66,6 +66,7 @@ with lib;
       # vscodium
     ] ++ (with pkgs-unstable; [
       #
+      keybase
       bun
       gh
       jaq
