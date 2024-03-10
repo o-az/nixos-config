@@ -81,6 +81,10 @@ with lib;
         railway
         lychee
         statix
+        nix-tree
+        nix-diff
+        nix-init
+        nix-update
       ]);
 
     variables = {
