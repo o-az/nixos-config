@@ -69,9 +69,7 @@ with lib;
       ] ++ (with pkgs-unstable; [
         #
         uv
-        bun
         gh
-        jaq
         atuin
         helix
         neovim
