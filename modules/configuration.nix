@@ -29,71 +29,72 @@ with lib;
   #   channel = "https://nixos.org/channels/nixos-unstable";
   # };
 
-  environment.systemPackages = with pkgs;
-    [
-      direnv
-      fd
-      dive
-      xh
-      mods
-      vhs
-      curl
-      zellij
-      doctl
-      bottom
-      coreutils-full
-      bat
-      jump
-      jq
-      gnumake
-      nurl
-      ripgrep
-      htop
-      killall
-      unzip
-      lsof
-      eza
-      starship
-      fzf
-      git
-      git-lfs
-      lazygit
-      diff-so-fancy
-      nil
-      nixfmt
-      deadnix
-      # TODO: why no work?
-      # vscodium
-    ] ++ (with pkgs-unstable; [
-      #
-      uv
-      bun
-      gh
-      jaq
-      atuin
-      helix
-      neovim
-      nodejs_21
-      ruff
-      pipx
-      railway
-      lychee
-    ]);
+  # environment.systemPackages = with pkgs;
+  environment = {
+    systemPackages = with pkgs;
+      [
+        direnv
+        fd
+        dive
+        xh
+        mods
+        vhs
+        curl
+        zellij
+        doctl
+        bottom
+        coreutils-full
+        bat
+        jump
+        jq
+        gnumake
+        nurl
+        ripgrep
+        htop
+        killall
+        unzip
+        lsof
+        eza
+        starship
+        fzf
+        git
+        git-lfs
+        lazygit
+        diff-so-fancy
+        nil
+        nixfmt
+        deadnix
+        # TODO: why no work?
+        # vscodium
+      ] ++ (with pkgs-unstable; [
+        #
+        uv
+        bun
+        gh
+        jaq
+        atuin
+        helix
+        neovim
+        nodejs_21
+        ruff
+        pipx
+        railway
+        lychee
+        statix
+      ]);
 
-  environment.variables = {
-    EDITOR = "code";
-    XDG_CONFIG_HOME = "$HOME/.config";
+    variables = {
+      EDITOR = "code";
+      XDG_CONFIG_HOME = "$HOME/.config";
+    };
+
+    shells = with pkgs; [ fish ];
+    shellAliases = { };
   };
-
-  environment.shells = with pkgs; [ fish ];
 
   users = { defaultUserShell = pkgs.fish; };
 
   programs = { fish = { enable = true; }; };
-
-  environment.shellAliases = {
-
-  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
