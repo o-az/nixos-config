@@ -26,6 +26,7 @@ with lib;
       nil
       niv
       git
+      jaq
       jump
       curl
       nurl
@@ -49,6 +50,7 @@ with lib;
       nix-diff
       starship
       nix-init
+      asciinema
       nodejs_21
       nix-update
       diff-so-fancy
