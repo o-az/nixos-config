@@ -26,4 +26,15 @@ set -g direnv_fish_mode eval_on_arrow # trigger direnv at prompt, and on every a
 
 cp $HOME/nixos-config/home-modules/fish/fish_plugins $HOME/.config/fish/fish_plugins
 
-# direnv hook fish | source
+set -U FZF_LEGACY_KEYBINDS 0
+
+fzf_configure_bindings --directory=\cf --processes=\cp --git_log=\cl --git_status=\cs --history=\ch
+
+set -Ux FZF_FILE_WIDGET_OPTS "--preview 'head {}'"
+set -Ux FZF_HISTORY_WIDGET_OPTS "--sort --tac --tiebreak=index --no-sort --preview=''"
+set -Ux FZF_DEFAULT_COMMAND "fd --type f --hidden --follow --exclude .git --color=always"
+set -Ux FZF_DEFAULT_OPTS "--height 80% --inline-info --layout=reverse --margin=2,2 --multi"
+
+set fzf_git_log_format "%H %s"
+set fzf_history_time_format %y-%m-%d
+set fzf_diff_highlighter diff-so-fancy

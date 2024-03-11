@@ -19,47 +19,41 @@ with lib;
   virtualisation = { docker = { enable = true; }; };
 
   environment = {
-    systemPackages = with pkgs;
-      [
-        fd
-        jq
-        bat
-        eza
-        fzf
-        git
-        nil
-        mods
-        jump
-        curl
-        nurl
-        unzip
-        zellij
-        nixfmt
-        direnv
-        bottom
-        gnumake
-        ripgrep
-        killall
-        git-lfs
-        lazygit
-        deadnix
-        starship
-        diff-so-fancy
-        coreutils-full
-      ] ++ (with pkgs-unstable; [
-        gh
-        niv
-        pipx
-        atuin
-        helix
-        neovim
-        statix
-        nix-tree
-        nix-diff
-        nix-init
-        nodejs_21
-        nix-update
-      ]);
+    systemPackages = with pkgs-unstable; [
+      fd
+      jq
+      gh
+      nil
+      niv
+      git
+      jump
+      curl
+      nurl
+      pipx
+      mods
+      atuin
+      helix
+      unzip
+      nixfmt
+      neovim
+      direnv
+      statix
+      bottom
+      ripgrep
+      gnumake
+      killall
+      git-lfs
+      lazygit
+      deadnix
+      nix-tree
+      nix-diff
+      starship
+      nix-init
+      nodejs_21
+      nix-update
+      diff-so-fancy
+      coreutils-full
+    ];
 
     variables = {
       EDITOR = "code";

@@ -30,7 +30,6 @@
           symbol = "📦";
           style = "bold yellow";
         };
-        # shell = { disabled = true; };
         username = { disabled = true; };
         hostname = { disabled = true; };
         container = { disabled = true; };
@@ -38,7 +37,6 @@
         aws = { disabled = true; };
         bun = { disabled = true; };
         rust = { disabled = true; };
-        # cargo = { disabled = true; };
         python = { disabled = true; };
         gcloud = { disabled = true; };
         golang = { disabled = true; };

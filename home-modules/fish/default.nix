@@ -20,7 +20,8 @@
       ];
       interactiveShellInit = builtins.readFile ./init.fish;
       shellAliases = {
-        cat = "bat --theme='1337' --style='changes'";
+        cat =
+          "bat --color='always' theme='1337' --style='changes,header,grid' --line-range :500 {}";
         jq = "jaq";
         find = "fd";
         reload = "exec $SHELL -l";
@@ -30,6 +31,7 @@
         "..." = "cd ../..";
         tree = "eza --all --color='always' --icons='always' --oneline --git-ignore --tree";
         ls = "eza --all --color='always' --icons='always' --oneline --git-ignore";
+        cd = "z";
         ga = "git add --all";
         gs = "git status";
         gcm = "git commit -S -m";
@@ -45,17 +47,30 @@
         bb = "bun run build";
       };
     };
-    chromium = { enable = true; };
-    zellij = { enableFishIntegration = true; };
     eza = {
       git = true;
       enable = true;
     };
+    chromium = { enable = true; };
     fzf = {
       enable = true;
+      enableFishIntegration = false;
+    };
+    broot = {
+      enable = true;
       enableFishIntegration = true;
-      fileWidgetOptions = [ "--preview 'head {}'" ];
-      historyWidgetOptions = [ "--sort" ];
+    };
+    starship = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+    zellij = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+    dircolors = {
+      enable = true;
+      enableFishIntegration = true;
     };
     zoxide = {
       enable = true;

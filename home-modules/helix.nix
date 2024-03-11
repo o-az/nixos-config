@@ -8,7 +8,6 @@
       editor = {
         auto-format = true;
         auto-save = true;
-        # completion-trigger-len = 0;
         scroll-lines = 1;
         scrolloff = 0;
         cursorline = true;
