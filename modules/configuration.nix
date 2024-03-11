@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { modulesPath, pkgs, pkgs-unstable, lib, ... }:
 
 with lib;
@@ -22,66 +18,46 @@ with lib;
 
   virtualisation = { docker = { enable = true; }; };
 
-  # environment.sessionVariables = {};
-
-  # system.autoUpgrade = {
-  #   enable = true;
-  #   channel = "https://nixos.org/channels/nixos-unstable";
-  # };
-
-  # environment.systemPackages = with pkgs;
   environment = {
     systemPackages = with pkgs;
       [
-        direnv
         fd
-        dive
-        xh
-        mods
-        vhs
-        curl
-        zellij
-        doctl
-        bottom
-        coreutils-full
-        bat
-        jump
         jq
-        gnumake
-        nurl
-        ripgrep
-        htop
-        killall
-        unzip
-        lsof
+        bat
         eza
-        starship
         fzf
         git
+        nil
+        mods
+        jump
+        curl
+        nurl
+        unzip
+        zellij
+        nixfmt
+        direnv
+        bottom
+        gnumake
+        ripgrep
+        killall
         git-lfs
         lazygit
-        diff-so-fancy
-        nil
-        nixfmt
         deadnix
-        # TODO: why no work?
-        # vscodium
+        starship
+        diff-so-fancy
+        coreutils-full
       ] ++ (with pkgs-unstable; [
-        #
-        uv
         gh
+        niv
+        pipx
         atuin
         helix
         neovim
-        nodejs_21
-        ruff
-        pipx
-        railway
-        lychee
         statix
         nix-tree
         nix-diff
         nix-init
+        nodejs_21
         nix-update
       ]);
 
@@ -97,25 +73,6 @@ with lib;
   users = { defaultUserShell = pkgs.fish; };
 
   programs = { fish = { enable = true; }; };
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
