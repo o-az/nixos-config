@@ -66,7 +66,8 @@
     };
     zellij = {
       enable = true;
-      enableFishIntegration = true;
+      # enabling this will enter zellij when starting fish
+      enableFishIntegration = false;
     };
     dircolors = {
       enable = true;

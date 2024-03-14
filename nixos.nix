@@ -9,10 +9,10 @@ nixpkgs.lib.nixosSystem rec {
     ./modules/configuration.nix
     ./modules/orbstack.nix
     ./modules/keybase.nix
+    ./modules/nixpkgs.nix
     ./modules/users.nix
     ./modules/fonts.nix
     ./modules/nix.nix
-
     # home-manager
     home-manager.nixosModules.home-manager
     {
@@ -36,8 +36,8 @@ nixpkgs.lib.nixosSystem rec {
         };
         # Arguments exposed to each home-module
         extraSpecialArgs = {
-          currentSystemName = name;
           currentSystem = system;
+          currentSystemName = name;
           pkgs-unstable = import inputs.nixpkgs-unstable {
             inherit system;
             config.allowUnfree = true;

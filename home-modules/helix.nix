@@ -1,8 +1,9 @@
-# https://mipmip.github.io/home-manager-option-search/?query=programs.helix
+# https://home-manager-options.extranix.com/?query=helix
 
-{
+{ inputs, pkgs-unstable, ... }: {
   programs.helix = {
     enable = true;
+    package = inputs.helix.packages.${pkgs-unstable.system}.default;
     settings = {
       theme = "amberwood";
       editor = {
@@ -39,7 +40,7 @@
       };
     };
 
-    languages = {
+    languages = with pkgs-unstable; {
       language = [
         {
           name = "nix";
@@ -49,44 +50,46 @@
         {
           name = "astro";
           auto-format = true;
-          formatter = { command = "prettier"; };
+          formatter = { command = "biome"; };
+        }
+        {
+          name = "jsx";
+          auto-format = true;
+          formatter = { command = "biome"; };
+        }
+        {
+          name = "tsx";
+          auto-format = true;
+          formatter = { command = "biome"; };
         }
         {
           name = "javascript";
           auto-format = true;
-          formatter = {
-            command = "prettier";
-            args = [ "--write" ];
-          };
+          formatter = { command = "biome"; };
         }
         {
           name = "typescript";
           auto-format = true;
-          formatter = {
-            command = "prettier";
-            args = [ "--write" ];
-          };
+          formatter = { command = "biome"; };
         }
         {
           name = "svelte";
-          formatter = {
-            command = "prettier";
-            args = [ "--parser" "svelte" ];
-          };
+          formatter = { command = "biome"; };
           auto-format = true;
         }
       ];
 
       language-server = {
-        rust-analyzer = {
-          config = {
-            checkOnSave.command = "clippy";
-            # Careful! If you enable this, then a lot of errors
-            # will no longer show up in Helix. Do not enable it.
-            # cargo.allFeatures = true; <- do NOT enable me
-          };
+        biome = {
+          command = "biome";
+          args = [ "lsp-proxy" ];
         };
-        typescript-language-server = { config = { format = { "semicolons" = "ignore"; }; }; };
+        rust-analyzer = { config = { checkOnSave.command = "clippy"; }; };
+        typescript-language-server = with nodePackages; {
+          config = { documentFormatting = false; };
+          command = "''${typescript-language-server}/bin/typescript-language-server";
+          args = [ "--stdio" "--tsserver-path=''${typescript}/lib/node_modules/typescript/lib" ];
+        };
       };
     };
   };

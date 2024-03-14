@@ -33,7 +33,6 @@ with lib;
       pipx
       mods
       atuin
-      helix
       unzip
       nixfmt
       neovim

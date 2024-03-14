@@ -1,6 +1,6 @@
-{ pkgs, ... }: {
+{ pkgs-unstable, ... }: {
   nix = {
-    package = pkgs.nixUnstable;
+    package = pkgs-unstable.nix;
     settings = {
       sandbox = "relaxed";
       trusted-users = [ "root" "omar" ];
