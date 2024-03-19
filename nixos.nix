@@ -7,7 +7,6 @@ nixpkgs.lib.nixosSystem rec {
   modules = [
     ./modules/configuration.nix
     ./modules/orbstack.nix
-    ./modules/keybase.nix
     ./modules/nixpkgs.nix
     ./modules/users.nix
     ./modules/fonts.nix
@@ -27,6 +26,7 @@ nixpkgs.lib.nixosSystem rec {
             ./home-modules/git.nix
             ./home-modules/helix.nix
             ./home-modules/direnv.nix
+            ./home-modules/keybase.nix
             ./home-modules/starship.nix
             # https://github.com/nix-community/nix-index-database
             inputs.nix-index-database.hmModules.nix-index
@@ -39,6 +39,7 @@ nixpkgs.lib.nixosSystem rec {
           currentSystemName = name;
           pkgs-unstable = import inputs.nixpkgs-unstable {
             inherit system;
+            allowBroken = true;
             config.allowUnfree = true;
           };
           inherit inputs;
@@ -53,6 +54,7 @@ nixpkgs.lib.nixosSystem rec {
         currentSystem = system;
         pkgs-unstable = import inputs.nixpkgs-unstable {
           inherit system;
+          allowBroken = true;
           config.allowUnfree = true;
         };
       };
