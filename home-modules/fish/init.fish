@@ -12,7 +12,7 @@ end
 
 set -Ux XDG_CONFIG_HOME ~/.config
 
-# zoxide init fish | source
+zoxide init fish | source
 
 for file in $HOME/nixos-config/home-modules/fish/functions/*.fish
     source $file
@@ -33,7 +33,7 @@ fzf_configure_bindings --directory=\cf --processes=\cp --git_log=\cl --git_statu
 set -Ux FZF_FILE_WIDGET_OPTS "--preview 'head {}'"
 set -Ux FZF_HISTORY_WIDGET_OPTS "--sort --tac --tiebreak=index --no-sort --preview=''"
 set -Ux FZF_DEFAULT_COMMAND "fd --type f --hidden --follow --exclude .git --color=always"
-set -Ux FZF_DEFAULT_OPTS "--height 80% --inline-info --layout=reverse --margin=2,2 --multi"
+set -Ux FZF_DEFAULT_OPTS "--height 100% --inline-info --layout=reverse --margin=2,2 --multi"
 
 set fzf_git_log_format "%H %s"
 set fzf_history_time_format %y-%m-%d
