@@ -1,4 +1,4 @@
-{ modulesPath, pkgs, pkgs-unstable, lib, ... }:
+{ modulesPath, pkgs-unstable, lib, ... }:
 
 with lib;
 
@@ -61,11 +61,11 @@ with lib;
       XDG_CONFIG_HOME = "$HOME/.config";
     };
 
-    shells = with pkgs; [ fish ];
+    shells = with pkgs-unstable; [ fish ];
     shellAliases = { };
   };
 
-  users = { defaultUserShell = pkgs.fish; };
+  users = { defaultUserShell = pkgs-unstable.fish; };
 
   programs = { fish = { enable = true; }; };
 

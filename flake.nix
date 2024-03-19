@@ -18,7 +18,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager,nixpkgs-unstable, flake-utils, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, flake-utils, ... }:
     let
       mkNixos = import ./nixos.nix;
       user = "omar";
