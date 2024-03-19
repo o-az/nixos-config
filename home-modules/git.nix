@@ -79,15 +79,16 @@
     };
 
     ignores = [
-      "*.un~"
-      ".*.sw[a-z]"
-      ".DS_Store"
-      ".Spotlight-V100"
-      ".Trashes"
+      "_"
       "._*"
       ".env"
       ".envrc"
+      "*.un~"
+      ".Trashes"
+      ".DS_Store"
+      ".*.sw[a-z]"
       "Session.vim"
+      ".Spotlight-V100"
     ];
   };
 }

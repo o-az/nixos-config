@@ -26,7 +26,6 @@ with lib;
       nil
       niv
       git
-      jaq
       jump
       curl
       nurl
@@ -52,6 +51,7 @@ with lib;
       asciinema
       nodejs_21
       nix-update
+      ripgrep-all
       diff-so-fancy
       coreutils-full
     ];
