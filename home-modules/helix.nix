@@ -1,4 +1,4 @@
-# https://home-manager-options.extranix.com/?query=helix
+# https://home-manager-options.extranix.com/?query=helix.
 
 { inputs, pkgs-unstable, ... }: {
   programs.helix = {

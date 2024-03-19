@@ -1,5 +1,5 @@
 default:
-	git add . && deadnix && sudo nixos-rebuild switch --flake ".#vm-orb"
+	git add . && deadnix && sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --flake ".#vm-orb" --show-trace
 
 lint:
 	statix check .

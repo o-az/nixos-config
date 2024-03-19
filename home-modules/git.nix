@@ -1,5 +1,4 @@
-# https://mipmip.github.io/home-manager-option-search/?query=programs.git
-
+# https://home-manager-options.extranix.com/?query=programs.git.
 {
   programs.git = let
     sshSigningKey =

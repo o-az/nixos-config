@@ -1,6 +1,6 @@
 # https://mipmip.github.io/home-manager-option-search/?query=programs.nvim
 
-{ pkgs, pkgs-unstable, ... }: {
+{ pkgs-unstable, ... }: {
   programs.neovim = {
     enable = true;
     viAlias = true;

@@ -12,7 +12,7 @@ end
 
 set -Ux XDG_CONFIG_HOME ~/.config
 
-zoxide init fish | source
+# zoxide init fish | source
 
 for file in $HOME/nixos-config/home-modules/fish/functions/*.fish
     source $file

@@ -1,6 +1,5 @@
-# https://mipmip.github.io/home-manager-option-search/?query=programs.fish
-
-{ pkgs, ... }:
+# https://home-manager-options.extranix.com/?query=programs.fish.
+{ pkgs-unstable, ... }:
 
 {
   programs = {
@@ -10,7 +9,7 @@
         # https://github.com/jorgebucaran/fisher
         {
           name = "fisher";
-          src = pkgs.fetchFromGitHub {
+          src = pkgs-unstable.fetchFromGitHub {
             owner = "jorgebucaran";
             repo = "fisher";
             rev = "2efd33ccd0777ece3f58895a093f32932bd377b6";
@@ -20,8 +19,7 @@
       ];
       interactiveShellInit = builtins.readFile ./init.fish;
       shellAliases = {
-        cat =
-          "bat --color='always' theme='1337' --style='changes,header,grid' --line-range :500 {}";
+        cat = "bat --color='always' --theme='1337' --style='changes,header,grid'";
         jq = "jaq";
         find = "fd";
         reload = "exec $SHELL -l";

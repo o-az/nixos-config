@@ -1,10 +1,8 @@
-# https://mipmip.github.io/home-manager-option-search/?query=programs.bat
-
-{ pkgs, ... }: {
+# https://home-manager-options.extranix.com/?query=programs.bat.
+{ pkgs-unstable, ... }: {
   programs.bat = {
     enable = true;
-    extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep batwatch batpipe prettybat ];
+    extraPackages = with pkgs-unstable.bat-extras; [ batdiff batman batgrep batwatch batpipe prettybat ];
     config = { theme = "1337"; };
   };
-
 }

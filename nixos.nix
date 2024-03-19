@@ -3,7 +3,6 @@ name:
 
 nixpkgs.lib.nixosSystem rec {
   inherit system;
-
   # NixOS System level modules
   modules = [
     ./modules/configuration.nix
@@ -55,7 +54,6 @@ nixpkgs.lib.nixosSystem rec {
         pkgs-unstable = import inputs.nixpkgs-unstable {
           inherit system;
           config.allowUnfree = true;
-
         };
       };
     }

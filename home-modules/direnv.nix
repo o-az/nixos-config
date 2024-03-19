@@ -1,4 +1,4 @@
-# https://mipmip.github.io/home-manager-option-search/?query=programs.direnv
+# https://home-manager-options.extranix.com/?query=programs.direnv.
 {
   programs.direnv = {
     enable = true;

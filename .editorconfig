@@ -11,3 +11,9 @@ insert_final_newline = false
 
 [*.{md}]
 trim_trailing_whitespace = false
+
+# Ignore diffs/patches
+[*.{diff,patch}]
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
