@@ -8,12 +8,6 @@ set -x LANG en_US.UTF-8
 set -x NIXPKGS_ALLOW_UNFREE 1
 set -x NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM 1
 
-# if test -z (pgrep ssh-agent | string collect)
-#     eval (ssh-agent -c)
-#     set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
-#     set -Ux SSH_AGENT_PID $SSH_AGENT_PID
-# end
-
 set -Ux XDG_CONFIG_HOME ~/.config
 
 zoxide init fish | source
