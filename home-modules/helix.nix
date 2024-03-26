@@ -41,49 +41,13 @@
     };
 
     languages = with pkgs-unstable; {
-      language = [
-        {
-          name = "nix";
-          auto-format = true;
-          formatter = { command = "nixfmt"; };
-        }
-        {
-          name = "astro";
-          auto-format = false;
-          formatter = { command = "biome"; };
-        }
-        {
-          name = "jsx";
-          auto-format = false;
-          formatter = { command = "biome"; };
-        }
-        {
-          name = "tsx";
-          auto-format = false;
-          formatter = { command = "biome"; };
-        }
-        {
-          name = "javascript";
-          auto-format = false;
-          formatter = { command = "biome"; };
-        }
-        {
-          name = "typescript";
-          auto-format = false;
-          formatter = { command = "biome"; };
-        }
-        {
-          name = "svelte";
-          auto-format = false;
-          formatter = { command = "biome"; };
-        }
-      ];
+      language = [{
+        name = "nix";
+        auto-format = true;
+        formatter = { command = "nixfmt"; };
+      }];
 
       language-server = {
-        biome = {
-          command = "biome";
-          args = [ "lsp-proxy" ];
-        };
         rust-analyzer = { config = { checkOnSave.command = "clippy"; }; };
         typescript-language-server = with nodePackages; {
           config = { documentFormatting = false; };

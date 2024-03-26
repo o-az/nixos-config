@@ -49,12 +49,10 @@ with lib;
       nix-init
       asciinema
       nodejs_21
-      typescript
       nix-update
       ripgrep-all
       diff-so-fancy
       coreutils-full
-      nodePackages.typescript-language-server
     ];
 
     variables = {

@@ -19,25 +19,31 @@ in {
     fish = {
       enable = true;
       functions = fishFunctions;
-      plugins = [
+      plugins = with pkgs-unstable.fishPlugins; [
         {
-          name = "gitnow";
-          src = pkgs-unstable.fetchFromGitHub {
-            owner = "joseluisq";
-            repo = "gitnow";
-            rev = "91bda1d0ffad2d68b21a1349f9b55a8cb5b54f35";
-            hash = "sha256-PuorwmaZAeG6aNWX4sUTBIE+NMdn1iWeea3rJ2RhqRQ=";
-          };
+          name = "z";
+          src = z;
+        }
+        {
+          name = "forgit";
+          src = forgit;
+        }
+        {
+          name = "sponge";
+          src = sponge.src;
         }
         {
           name = "fzf.fish";
-          src = pkgs-unstable.fetchFromGitHub {
-            owner = "patrickf1";
-            repo = "fzf.fish";
-            rev = "dfdf69369bd3a3c83654261f90363da2aa1db8c9";
-            hash = "sha256-x/q7tlMlyxZ1ow2saqjuYn05Z1lPOVc13DZ9exFDWoU=";
-          };
+          src = fzf-fish.src;
         }
+        {
+          name = "autopair.fish";
+          src = autopair.src;
+        }
+        # {
+        #   name = "fish-async-prompt";
+        #   src = async-prompt.src;
+        # }
         {
           name = "spark.fish";
           src = pkgs-unstable.fetchFromGitHub {
@@ -48,30 +54,12 @@ in {
           };
         }
         {
-          name = "fish-async-prompt";
+          name = "gitnow";
           src = pkgs-unstable.fetchFromGitHub {
-            owner = "acomagu";
-            repo = "fish-async-prompt";
-            rev = "316aa03c875b58e7c7f7d3bc9a78175aa47dbaa8";
-            hash = "sha256-J7y3BjqwuEH4zDQe4cWylLn+Vn2Q5pv0XwOSPwhw/Z0=";
-          };
-        }
-        {
-          name = "autopair.fish";
-          src = pkgs-unstable.fetchFromGitHub {
-            owner = "jorgebucaran";
-            repo = "autopair.fish";
-            rev = "4d1752ff5b39819ab58d7337c69220342e9de0e2";
-            hash = "sha256-qt3t1iKRRNuiLWiVoiAYOu+9E7jsyECyIqZJ/oRIT1A=";
-          };
-        }
-        {
-          name = "sponge";
-          src = pkgs-unstable.fetchFromGitHub {
-            owner = "meaningful-ooo";
-            repo = "sponge";
-            rev = "384299545104d5256648cee9d8b117aaa9a6d7be";
-            hash = "sha256-MdcZUDRtNJdiyo2l9o5ma7nAX84xEJbGFhAVhK+Zm1w=";
+            owner = "joseluisq";
+            repo = "gitnow";
+            rev = "91bda1d0ffad2d68b21a1349f9b55a8cb5b54f35";
+            hash = "sha256-PuorwmaZAeG6aNWX4sUTBIE+NMdn1iWeea3rJ2RhqRQ=";
           };
         }
       ];
@@ -108,21 +96,16 @@ in {
         binc = "bun install --no-cache --force";
       };
     };
+    nix-index.enableFishIntegration = true;
     eza = {
       git = true;
       enable = true;
     };
-    # chromium.enable = true;
-    nix-index.enableFishIntegration = true;
     fzf = {
       enable = true;
       enableFishIntegration = false;
     };
     broot = {
-      enable = true;
-      enableFishIntegration = true;
-    };
-    starship = {
       enable = true;
       enableFishIntegration = true;
     };

@@ -56,6 +56,7 @@
       au = "add --update";
       b = "branch";
       c = "commit -m";
+      cf = "forgit checkout_file";
       cn = "commit --no-verify -m";
       ch = "checkout";
       l = "log";
