@@ -49,33 +49,33 @@
         }
         {
           name = "astro";
-          auto-format = true;
+          auto-format = false;
           formatter = { command = "biome"; };
         }
         {
           name = "jsx";
-          auto-format = true;
+          auto-format = false;
           formatter = { command = "biome"; };
         }
         {
           name = "tsx";
-          auto-format = true;
+          auto-format = false;
           formatter = { command = "biome"; };
         }
         {
           name = "javascript";
-          auto-format = true;
+          auto-format = false;
           formatter = { command = "biome"; };
         }
         {
           name = "typescript";
-          auto-format = true;
+          auto-format = false;
           formatter = { command = "biome"; };
         }
         {
           name = "svelte";
+          auto-format = false;
           formatter = { command = "biome"; };
-          auto-format = true;
         }
       ];
 

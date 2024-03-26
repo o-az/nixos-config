@@ -105,13 +105,14 @@ in {
         bi = "bun install";
         bd = "bun run dev";
         bb = "bun run build";
+        binc = "bun install --no-cache --force";
       };
     };
     eza = {
       git = true;
       enable = true;
     };
-    chromium.enable = true;
+    # chromium.enable = true;
     nix-index.enableFishIntegration = true;
     fzf = {
       enable = true;

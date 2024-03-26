@@ -159,11 +159,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1710790772,
-        "narHash": "sha256-/lS5/8HvMjv85P9vVzRT2BfuA0h+5ty/G2kJPqKU3vo=",
+        "lastModified": 1711382373,
+        "narHash": "sha256-/Pu8APFFMtFXuqyVJpODuV6teisNZyDEsXsNmctpN3M=",
         "owner": "helix-editor",
         "repo": "helix",
-        "rev": "58022586a00a23fe20d12a563dbf6e97b3e64df0",
+        "rev": "1d1087822a3b91dfc6617e0d67bf4293ad4f38e2",
         "type": "github"
       },
       "original": {
@@ -201,11 +201,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1706981411,
-        "narHash": "sha256-cLbLPTL1CDmETVh4p0nQtvoF+FSEjsnJTFpTxhXywhQ=",
+        "lastModified": 1710888565,
+        "narHash": "sha256-s9Hi4RHhc6yut4EcYD50sZWRDKsugBJHSbON8KFwoTw=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "652fda4ca6dafeb090943422c34ae9145787af37",
+        "rev": "f33900124c23c4eca5831b9b5eb32ea5894375ce",
         "type": "github"
       },
       "original": {
@@ -225,11 +225,11 @@
       },
       "locked": {
         "dir": "contrib",
-        "lastModified": 1710802530,
-        "narHash": "sha256-lwTJam2SxB+NP1gqy9QtCvqCDauPUzZ+nvOB0jwqg4Q=",
+        "lastModified": 1711323947,
+        "narHash": "sha256-Vc478rxwJkMuOcgBXm+brraWk9lbFqrGEdXVuST2l/A=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "79af4e7e734ed460eddbd57b7bf70d3e1624d772",
+        "rev": "02d00cf3eed6681c6dde40585551c8243d7c003f",
         "type": "github"
       },
       "original": {
@@ -246,11 +246,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1710644923,
-        "narHash": "sha256-0fjbN5GYYDKPyPay0l8gYoH+tFfNqPPwP5sxxBreeA4=",
+        "lastModified": 1711249705,
+        "narHash": "sha256-h/NQECj6mIzF4XR6AQoSpkCnwqAM+ol4+qOdYi2ykmQ=",
         "owner": "nix-community",
         "repo": "nix-index-database",
-        "rev": "e25efda85e39fcdc845e371971ac4384989c4295",
+        "rev": "34519f3bb678a5abbddf7b200ac5347263ee781b",
         "type": "github"
       },
       "original": {
@@ -295,11 +295,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1710631334,
-        "narHash": "sha256-rL5LSYd85kplL5othxK5lmAtjyMOBg390sGBTb3LRMM=",
+        "lastModified": 1711163522,
+        "narHash": "sha256-YN/Ciidm+A0fmJPWlHBGvVkcarYWSC+s3NTPk/P+q3c=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "c75037bbf9093a2acb617804ee46320d6d1fea5a",
+        "rev": "44d0940ea560dee511026a53f0e2e2cde489b4d4",
         "type": "github"
       },
       "original": {
@@ -311,11 +311,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1710819918,
-        "narHash": "sha256-VzKzdBScClbRzdcT3WCtaj19pVqb04DVC6AKZa1zmYA=",
+        "lastModified": 1711390674,
+        "narHash": "sha256-UOxzG2+krpuoZhZaLszQw+ZjfXAZ25hRqhBiMcdg43k=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "8673f44965a344ef102dfc6406cf2241c0a4d2e4",
+        "rev": "8df8ddf5da0f1d5a7b796fa6c3123e8263199e90",
         "type": "github"
       },
       "original": {
@@ -327,11 +327,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1710765496,
-        "narHash": "sha256-p7ryWEeQfMwTB6E0wIUd5V2cFTgq+DRRBz2hYGnJZyA=",
+        "lastModified": 1711231723,
+        "narHash": "sha256-dARJQ8AJOv6U+sdRePkbcVyVbXJTi1tReCrkkOeusiA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "e367f7a1fb93137af22a3908f00b9a35e2d286a7",
+        "rev": "e1d501922fd7351da4200e1275dfcf5faaad1220",
         "type": "github"
       },
       "original": {
@@ -350,11 +350,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1710806634,
-        "narHash": "sha256-sx1JfP47+5E9j4dLVdY422SiD99oeepUtbT8ZQW8GTc=",
+        "lastModified": 1711325009,
+        "narHash": "sha256-c5OJdyuXYzTP+k+PN73X+0pvgXR1yYMYok+72x4SLVg=",
         "owner": "nix-community",
         "repo": "neovim-nightly-overlay",
-        "rev": "f7b28f01c5f7e5e35fbc4e9a64faf95b8211744b",
+        "rev": "119bbc295f56b531cb87502f5d2fff13dcc35a35",
         "type": "github"
       },
       "original": {

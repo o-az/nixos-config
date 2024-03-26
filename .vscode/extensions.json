@@ -3,6 +3,6 @@
     "bbenoist.nix",
     "timonwong.shellcheck",
     "bmalehorn.vscode-fish",
-    "arrterian.nix-env-selector",
+    "arrterian.nix-env-selector"
   ]
 }
