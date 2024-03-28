@@ -18,6 +18,7 @@ in {
   programs = {
     fish = {
       enable = true;
+      package = pkgs-unstable.fish;
       functions = fishFunctions;
       plugins = with pkgs-unstable.fishPlugins; [
         {
@@ -40,10 +41,6 @@ in {
           name = "autopair.fish";
           src = autopair.src;
         }
-        # {
-        #   name = "fish-async-prompt";
-        #   src = async-prompt.src;
-        # }
         {
           name = "spark.fish";
           src = pkgs-unstable.fetchFromGitHub {

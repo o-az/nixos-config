@@ -48,7 +48,6 @@ with lib;
       starship
       nix-init
       asciinema
-      nodejs_21
       nix-update
       ripgrep-all
       diff-so-fancy
