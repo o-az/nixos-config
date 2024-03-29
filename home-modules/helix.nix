@@ -4,49 +4,49 @@
   programs.helix = {
     enable = true;
     package = inputs.helix.packages.${pkgs-unstable.system}.default;
+    # extraPackages = [ pkgs-unstable.helix ];
     settings = {
       theme = "amberwood";
       editor = {
-        auto-format = true;
+        scrolloff = 0;
         auto-save = true;
         scroll-lines = 1;
-        scrolloff = 0;
-        cursorline = true;
-        color-modes = true;
-        indent-guides.render = false;
-        file-picker.hidden = false;
         auto-pairs = true;
+        cursorline = true;
+        auto-format = true;
+        color-modes = true;
+        bufferline = "always";
+        file-picker.hidden = false;
+        indent-guides.render = false;
         lsp = {
           enable = true;
           display-messages = true;
           display-inlay-hints = true;
         };
-        bufferline = "always";
+        soft-wrap = { enable = true; };
         statusline = {
+          center = [ "version-control" ];
           left = [ "mode" "spinner" "file-name" ];
           right = [ "diagnostics" "position" "total-line-numbers" "file-encoding" ];
-          center = [ "version-control" ];
         };
-        soft-wrap = { enable = true; };
       };
       keys.normal.space = {
-        "q" = ":q";
-        "w" = ":w";
-        "h" = ":toggle-option lsp.display-inlay-hints";
-        "c" = [ ":write-all" ];
-        # f and F are swapped, as picking in cwd is much more common for me.
-        "f" = "file_picker_in_current_directory";
-        "F" = "file_picker";
+        w.w = ":w";
+        w.q = ":wq";
+        q.q = ":q";
+        c = [ ":write-all" ];
+        space.space = "file_picker";
+        f = "file_picker_in_current_directory";
+        h = ":toggle-option lsp.display-inlay-hints";
+        esc = [ "collapse_selection" "keep_primary_selection" ];
       };
     };
-
     languages = with pkgs-unstable; {
       language = [{
         name = "nix";
         auto-format = true;
         formatter = { command = "nixfmt"; };
       }];
-
       language-server = {
         rust-analyzer = { config = { checkOnSave.command = "clippy"; }; };
         typescript-language-server = with nodePackages; {

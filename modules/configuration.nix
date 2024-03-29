@@ -21,6 +21,7 @@ with lib;
   environment = {
     systemPackages = with pkgs-unstable; [
       fd
+      fx
       jq
       gh
       nil
@@ -29,6 +30,7 @@ with lib;
       jump
       curl
       nurl
+      walk
       atuin
       unzip
       nixfmt
@@ -55,7 +57,7 @@ with lib;
     ];
 
     variables = {
-      EDITOR = "code";
+      EDITOR = "hx";
       XDG_CONFIG_HOME = "$HOME/.config";
     };
 

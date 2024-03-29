@@ -10,7 +10,10 @@ set -x NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM 1
 
 set -Ux XDG_CONFIG_HOME ~/.config
 
+# zoxide - https://github.com/ajeetdsouza/zoxide#flags
 zoxide init fish | source
+set -U ZOXIDE_ECHO 1
+set _U ZO_EXCLUDE_DIRS **/_/**
 
 # direnv
 direnv hook fish | source

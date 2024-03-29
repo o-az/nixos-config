@@ -2,8 +2,8 @@
 {
   programs.starship = {
     enable = true;
-    enableFishIntegration = true;
     enableTransience = true;
+    enableFishIntegration = true;
     settings = {
       scan_timeout = 10;
       add_newline = true;
@@ -30,6 +30,7 @@
         style = "bold yellow";
       };
       username = { disabled = true; };
+      nodejs = { disabled = true; };
       hostname = { disabled = true; };
       container = { disabled = true; };
       nix_shell = { disabled = true; };

@@ -20,11 +20,8 @@ in {
       enable = true;
       package = pkgs-unstable.fish;
       functions = fishFunctions;
+      interactiveShellInit = builtins.readFile ./init.fish;
       plugins = with pkgs-unstable.fishPlugins; [
-        {
-          name = "z";
-          src = z;
-        }
         {
           name = "forgit";
           src = forgit;
@@ -60,8 +57,8 @@ in {
           };
         }
       ];
-      interactiveShellInit = builtins.readFile ./init.fish;
       shellAliases = {
+        walk = "walk --icons";
         cat = "bat --theme='1337' --paging='never' --style='changes,header,grid'";
         rg = "batgrep --color=always --paging='never' --iglob='!*.lock,!*lock.json,!_'";
         grep = "batgrep --color=always --paging='never' --iglob='!*.lock,!*lock.json,!_'";
@@ -77,13 +74,6 @@ in {
         tree = "eza --all --color='always' --icons='always' --oneline --git-ignore --tree";
         ls = "eza --all --color='always' --icons='always' --oneline --git-ignore";
         cd = "z";
-        ga = "git add --all";
-        gs = "git status";
-        gcm = "git commit -S -m";
-        gp = "git push";
-        glog =
-          "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
-        myip = "curl http://ipecho.net/plain; echo";
         dnscheck = "curl https://am.i.mullvad.net/json | jq";
         # https://github.com/antfu/taze
         upall = "bunx taze -r";
@@ -91,7 +81,22 @@ in {
         bd = "bun run dev";
         bb = "bun run build";
         binc = "bun install --no-cache --force";
+        myip = "curl http://ipecho.net/plain; echo";
+        ga = "git add --all";
+        gs = "git status";
+        gcm = "git commit -S -m";
+        gp = "git push";
+        glog =
+          "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
       };
+      shellInit = ''
+        touch $XDG_CONFIG_HOME/.curlrc
+        echo > $XDG_CONFIG_HOME/.curlrc "\
+        --silent
+        --location
+        --show-error
+        --trace-time"
+      '';
     };
     nix-index.enableFishIntegration = true;
     eza = {
