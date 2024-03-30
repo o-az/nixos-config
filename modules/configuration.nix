@@ -22,6 +22,7 @@ with lib;
     systemPackages = with pkgs-unstable; [
       fd
       fx
+      xz
       jq
       gh
       nil
@@ -29,8 +30,10 @@ with lib;
       git
       jump
       curl
+      just
       nurl
       walk
+      dhall
       atuin
       unzip
       nixfmt
