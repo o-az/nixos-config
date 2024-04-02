@@ -1,5 +1,5 @@
 name:
-{ inputs, nixpkgs, home-manager, system, user }:
+{ inputs, nixpkgs, nixpkgs-unstable, home-manager, overlays, nixvim, system, user }:
 
 nixpkgs.lib.nixosSystem rec {
   inherit system;
@@ -20,6 +20,7 @@ nixpkgs.lib.nixosSystem rec {
         users.omar = {
           imports = [
             { home.stateVersion = "23.05"; }
+            inputs.nixvim.homeManagerModules.nixvim
             ./home-modules/fish
             ./home-modules/neovim
             ./home-modules/bat.nix
@@ -38,6 +39,11 @@ nixpkgs.lib.nixosSystem rec {
           currentSystem = system;
           currentSystemName = name;
           pkgs-unstable = import inputs.nixpkgs-unstable {
+            inherit system;
+            allowBroken = true;
+            config.allowUnfree = true;
+          };
+          pkgs = import inputs.nixpkgs-unstable {
             inherit system;
             allowBroken = true;
             config.allowUnfree = true;

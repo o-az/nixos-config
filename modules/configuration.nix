@@ -22,7 +22,6 @@ with lib;
     systemPackages = with pkgs-unstable; [
       fd
       fx
-      xz
       jq
       gh
       nil
@@ -37,7 +36,6 @@ with lib;
       atuin
       unzip
       nixfmt
-      neovim
       direnv
       statix
       bottom

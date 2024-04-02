@@ -6,7 +6,6 @@ set -x LANG en_US.UTF-8
 
 # https://ryantm.github.io/nixpkgs/using/configuration/#sec-allow-broken
 set -x NIXPKGS_ALLOW_UNFREE 1
-set -x NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM 1
 
 set -Ux XDG_CONFIG_HOME ~/.config
 

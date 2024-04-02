@@ -3,12 +3,18 @@
     package = pkgs-unstable.nix;
     settings = {
       sandbox = "relaxed";
+      warn-dirty = false;
       trusted-users = [ "root" "omar" ];
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [ "nix-command" "flakes" "repl-flake" ];
       substituters = [
-        "https://union.cachix.org/"
-        "https://nix-community.cachix.org/"
-        "https://helix.cachix.org/"
+        "https://cache.nixos.org"
+        "https://union.cachix.org"
+        "https://helix.cachix.org"
+        "https://numtide.cachix.org"
+        "https://hyprland.cachix.org"
+        "https://nix-community.cachix.org"
+        "https://nixpkgs-unfree.cachix.org"
+        "https://cuda-maintainers.cachix.org"
       ];
       trusted-substituters = [ "https://nix-community.cachix.org" "https://union.cachix.org" ];
       trusted-public-keys = [

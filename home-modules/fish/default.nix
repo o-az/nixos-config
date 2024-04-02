@@ -5,7 +5,6 @@
 let
   fishFunctionsDirectory = ./functions;
   functionFiles = builtins.readDir fishFunctionsDirectory;
-
   fishFunctions = builtins.listToAttrs (builtins.map (name:
     let
       functionName = builtins.replaceStrings [ ".fish" ] [ "" ] name;
@@ -18,28 +17,24 @@ in {
   programs = {
     fish = {
       enable = true;
-      package = pkgs-unstable.fish;
       functions = fishFunctions;
+      package = pkgs-unstable.fish;
       interactiveShellInit = builtins.readFile ./init.fish;
       plugins = with pkgs-unstable.fishPlugins; [
-        {
-          name = "forgit";
-          src = forgit;
-        }
         {
           name = "sponge";
           src = sponge.src;
         }
         {
-          name = "fzf.fish";
+          name = "fzf";
           src = fzf-fish.src;
         }
         {
-          name = "autopair.fish";
+          name = "autopair";
           src = autopair.src;
         }
         {
-          name = "spark.fish";
+          name = "spark";
           src = pkgs-unstable.fetchFromGitHub {
             owner = "jorgebucaran";
             repo = "spark.fish";
@@ -74,7 +69,6 @@ in {
         "..." = "cd ../..";
         tree = "eza --all --color='always' --icons='always' --oneline --git-ignore --tree";
         ls = "eza --all --color='always' --icons='always' --oneline --git-ignore";
-        cd = "z";
         dnscheck = "curl https://am.i.mullvad.net/json | jq";
         # https://github.com/antfu/taze
         upall = "bunx taze -r";
@@ -102,7 +96,10 @@ in {
     nix-index.enableFishIntegration = true;
     eza = {
       git = true;
+      icons = true;
       enable = true;
+      package = pkgs-unstable.eza;
+      enableFishIntegration = true;
     };
     fzf = {
       enable = true;
@@ -124,6 +121,7 @@ in {
     zoxide = {
       enable = true;
       enableFishIntegration = true;
+      package = pkgs-unstable.zoxide;
     };
   };
 }

@@ -13,7 +13,7 @@ default: fmt build
 build:
 	sudo nixos-rebuild switch --flake $VM --print-build-logs --show-trace
 
-upgrade: lint fmt
+upgrade:
 	sudo nixos-rebuild switch --flake $VM --upgrade --print-build-logs --show-trace
 
 update-lockfile:
