@@ -11,7 +11,7 @@ export NIXPKGS_ALLOW_UNFREE := "1"
 default: fmt build
 
 build:
-	sudo nixos-rebuild switch --flake $VM --print-build-logs --show-trace
+	sudo nixos-rebuild switch --flake $VM --impure --print-build-logs --show-trace
 
 upgrade:
 	sudo nixos-rebuild switch --flake $VM --upgrade --print-build-logs --show-trace

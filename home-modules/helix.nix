@@ -1,10 +1,10 @@
 # https://home-manager-options.extranix.com/?query=helix.
 
-{ inputs, pkgs-unstable, ... }: {
+{ inputs, pkgs, ... }: {
   programs.helix = {
     enable = true;
-    package = inputs.helix.packages.${pkgs-unstable.system}.default;
-    # extraPackages = [ pkgs-unstable.helix ];
+    package = inputs.helix.packages.${pkgs.system}.default;
+    # extraPackages = [ pkgs.helix ];
     settings = {
       theme = "amberwood";
       editor = {
@@ -41,7 +41,7 @@
         esc = [ "collapse_selection" "keep_primary_selection" ];
       };
     };
-    languages = with pkgs-unstable; {
+    languages = with pkgs; {
       language = [{
         name = "nix";
         auto-format = true;

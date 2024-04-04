@@ -1,4 +1,4 @@
-{ modulesPath, pkgs-unstable, lib, ... }:
+{ modulesPath, pkgs, lib, ... }:
 
 with lib;
 
@@ -19,10 +19,11 @@ with lib;
   virtualisation = { docker = { enable = true; }; };
 
   environment = {
-    systemPackages = with pkgs-unstable; [
+    systemPackages = with pkgs; [
       fd
       fx
       jq
+      yq
       gh
       nil
       niv
@@ -32,6 +33,7 @@ with lib;
       just
       nurl
       walk
+      ngrok
       dhall
       atuin
       unzip
@@ -47,6 +49,7 @@ with lib;
       lazygit
       deadnix
       nix-tree
+      tailspin
       nix-diff
       starship
       nix-init
@@ -62,11 +65,11 @@ with lib;
       XDG_CONFIG_HOME = "$HOME/.config";
     };
 
-    shells = with pkgs-unstable; [ fish ];
+    shells = with pkgs; [ fish ];
     shellAliases = { };
   };
 
-  users = { defaultUserShell = pkgs-unstable.fish; };
+  users = { defaultUserShell = pkgs.fish; };
 
   programs = { fish = { enable = true; }; };
 

@@ -1,4 +1,4 @@
-{ pkgs-unstable, config, lib, ... }:
+{ pkgs, config, lib, ... }:
 
 with lib;
 
@@ -8,6 +8,6 @@ in {
   config = mkIf cfg.enable {
     services.keybase.enable = true;
     services.kbfs.enable = true;
-    home.packages = [ pkgs-unstable.keybase ];
+    home.packages = [ pkgs.keybase ];
   };
 }

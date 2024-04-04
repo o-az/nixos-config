@@ -1,6 +1,6 @@
 # https://home-manager-options.extranix.com/?query=programs.fish.
 # https://search.nixos.org/packages?channel=unstable&from=0&size=500&sort=relevance&type=packages&query=fishPlugins.
-{ pkgs-unstable, ... }:
+{ pkgs, ... }:
 
 let
   fishFunctionsDirectory = ./functions;
@@ -18,9 +18,9 @@ in {
     fish = {
       enable = true;
       functions = fishFunctions;
-      package = pkgs-unstable.fish;
+      package = pkgs.fish;
       interactiveShellInit = builtins.readFile ./init.fish;
-      plugins = with pkgs-unstable.fishPlugins; [
+      plugins = with pkgs.fishPlugins; [
         {
           name = "sponge";
           src = sponge.src;
@@ -35,7 +35,7 @@ in {
         }
         {
           name = "spark";
-          src = pkgs-unstable.fetchFromGitHub {
+          src = pkgs.fetchFromGitHub {
             owner = "jorgebucaran";
             repo = "spark.fish";
             rev = "90a60573ec8a8ecb741a861e0bfca2362f297e5f";
@@ -44,7 +44,7 @@ in {
         }
         {
           name = "gitnow";
-          src = pkgs-unstable.fetchFromGitHub {
+          src = pkgs.fetchFromGitHub {
             owner = "joseluisq";
             repo = "gitnow";
             rev = "91bda1d0ffad2d68b21a1349f9b55a8cb5b54f35";
@@ -98,7 +98,7 @@ in {
       git = true;
       icons = true;
       enable = true;
-      package = pkgs-unstable.eza;
+      package = pkgs.eza;
       enableFishIntegration = true;
     };
     fzf = {
@@ -121,7 +121,7 @@ in {
     zoxide = {
       enable = true;
       enableFishIntegration = true;
-      package = pkgs-unstable.zoxide;
+      package = pkgs.zoxide;
     };
   };
 }

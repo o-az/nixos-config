@@ -1,5 +1,7 @@
 name:
-{ inputs, nixpkgs, nixpkgs-unstable, home-manager, overlays, nixvim, system, user }:
+{ inputs, nixpkgs,
+
+home-manager, overlays, nixvim, system, user }:
 
 nixpkgs.lib.nixosSystem rec {
   inherit system;
@@ -38,12 +40,7 @@ nixpkgs.lib.nixosSystem rec {
         extraSpecialArgs = {
           currentSystem = system;
           currentSystemName = name;
-          pkgs-unstable = import inputs.nixpkgs-unstable {
-            inherit system;
-            allowBroken = true;
-            config.allowUnfree = true;
-          };
-          pkgs = import inputs.nixpkgs-unstable {
+          pkgs = import inputs.nixpkgs {
             inherit system;
             allowBroken = true;
             config.allowUnfree = true;
@@ -58,11 +55,11 @@ nixpkgs.lib.nixosSystem rec {
       config._module.args = {
         currentSystemName = name;
         currentSystem = system;
-        pkgs-unstable = import inputs.nixpkgs-unstable {
-          inherit system;
-          allowBroken = true;
-          config.allowUnfree = true;
-        };
+        # pkgs = import inputs.nixpkgs {
+        #   inherit system;
+        #   allowBroken = true;
+        #   config.allowUnfree = true;
+        # };
       };
     }
   ];

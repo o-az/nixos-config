@@ -2,29 +2,27 @@
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/release-23.11";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     flake-utils.url = "github:numtide/flake-utils";
     flake-parts.url = "github:hercules-ci/flake-parts";
 
     helix.url = "github:helix-editor/helix";
-    helix.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    helix.inputs.nixpkgs.follows = "nixpkgs";
 
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
     nixvim.url = "github:nix-community/nixvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
     home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-index-database.url = "github:nix-community/nix-index-database";
-    nix-index-database.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs =
-    inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, flake-parts, flake-utils, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, nixvim, flake-parts, flake-utils, ... }:
     let
       user = "omar";
       system = "aarch64-linux";
@@ -33,7 +31,9 @@
     in {
       nixosConfigurations = {
         vm-orb = mkNixos "vm-orb" {
-          inherit user inputs nixpkgs nixpkgs-unstable home-manager nixvim overlays system;
+          inherit user inputs nixpkgs
+
+            home-manager nixvim overlays system;
         };
       };
     };

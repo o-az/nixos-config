@@ -1,6 +1,6 @@
 # https://home-manager-options.extranix.com/?query=programs.direnv.
 # https://home-manager-options.extranix.com/?query=programs.nix-direnv.
-{ pkgs-unstable, ... }:
+{ pkgs, ... }:
 
 {
   programs.direnv = {
@@ -8,7 +8,7 @@
     enableBashIntegration = true;
     nix-direnv = {
       enable = true;
-      package = pkgs-unstable.nix-direnv;
+      package = pkgs.nix-direnv;
     };
   };
 }

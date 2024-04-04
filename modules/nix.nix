@@ -1,20 +1,15 @@
-{ pkgs-unstable, ... }: {
+{ pkgs, ... }: {
   nix = {
-    package = pkgs-unstable.nix;
+    package = pkgs.nix;
     settings = {
       sandbox = "relaxed";
       warn-dirty = false;
       trusted-users = [ "root" "omar" ];
       experimental-features = [ "nix-command" "flakes" "repl-flake" ];
       substituters = [
-        "https://cache.nixos.org"
-        "https://union.cachix.org"
-        "https://helix.cachix.org"
-        "https://numtide.cachix.org"
-        "https://hyprland.cachix.org"
-        "https://nix-community.cachix.org"
-        "https://nixpkgs-unfree.cachix.org"
-        "https://cuda-maintainers.cachix.org"
+        "https://union.cachix.org/"
+        "https://nix-community.cachix.org/"
+        "https://helix.cachix.org/"
       ];
       trusted-substituters = [ "https://nix-community.cachix.org" "https://union.cachix.org" ];
       trusted-public-keys = [
