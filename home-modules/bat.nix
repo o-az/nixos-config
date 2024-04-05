@@ -1,8 +1,17 @@
 # https://home-manager-options.extranix.com/?query=programs.bat.
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.bat = {
     enable = true;
-    config = { theme = "1337"; };
-    extraPackages = with pkgs.bat-extras; [ batgrep batman batpipe batwatch batdiff ];
+    config = {
+      theme = "1337";
+    };
+    extraPackages = with pkgs.bat-extras; [
+      batgrep
+      batman
+      batpipe
+      batwatch
+      batdiff
+    ];
   };
 }

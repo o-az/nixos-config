@@ -1,6 +1,7 @@
 # https://home-manager-options.extranix.com/?query=helix.
 
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, ... }:
+{
   programs.helix = {
     enable = true;
     package = inputs.helix.packages.${pkgs.system}.default;
@@ -23,11 +24,22 @@
           display-messages = true;
           display-inlay-hints = true;
         };
-        soft-wrap = { enable = true; };
+        soft-wrap = {
+          enable = true;
+        };
         statusline = {
           center = [ "version-control" ];
-          left = [ "mode" "spinner" "file-name" ];
-          right = [ "diagnostics" "position" "total-line-numbers" "file-encoding" ];
+          left = [
+            "mode"
+            "spinner"
+            "file-name"
+          ];
+          right = [
+            "diagnostics"
+            "position"
+            "total-line-numbers"
+            "file-encoding"
+          ];
         };
       };
       keys.normal.space = {
@@ -38,21 +50,37 @@
         space.space = "file_picker";
         f = "file_picker_in_current_directory";
         h = ":toggle-option lsp.display-inlay-hints";
-        esc = [ "collapse_selection" "keep_primary_selection" ];
+        esc = [
+          "collapse_selection"
+          "keep_primary_selection"
+        ];
       };
     };
     languages = with pkgs; {
-      language = [{
-        name = "nix";
-        auto-format = true;
-        formatter = { command = "nixfmt"; };
-      }];
+      language = [
+        {
+          name = "nix";
+          auto-format = true;
+          formatter = {
+            command = "nixfmt";
+          };
+        }
+      ];
       language-server = {
-        rust-analyzer = { config = { checkOnSave.command = "clippy"; }; };
+        rust-analyzer = {
+          config = {
+            checkOnSave.command = "clippy";
+          };
+        };
         typescript-language-server = with nodePackages; {
-          config = { documentFormatting = false; };
+          config = {
+            documentFormatting = false;
+          };
           command = "''${typescript-language-server}/bin/typescript-language-server";
-          args = [ "--stdio" "--tsserver-path=''${typescript}/lib/node_modules/typescript/lib" ];
+          args = [
+            "--stdio"
+            "--tsserver-path=''${typescript}/lib/node_modules/typescript/lib"
+          ];
         };
       };
     };

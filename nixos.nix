@@ -1,7 +1,14 @@
 name:
-{ inputs, nixpkgs,
+{
+  inputs,
+  nixpkgs,
 
-home-manager, overlays, nixvim, system, user }:
+  home-manager,
+  overlays,
+  nixvim,
+  system,
+  user,
+}:
 
 nixpkgs.lib.nixosSystem rec {
   inherit system;

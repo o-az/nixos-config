@@ -1,4 +1,9 @@
-{ modulesPath, pkgs, lib, ... }:
+{
+  modulesPath,
+  pkgs,
+  lib,
+  ...
+}:
 
 with lib;
 
@@ -16,7 +21,11 @@ with lib;
     interfaces.eth0.useDHCP = true;
   };
 
-  virtualisation = { docker = { enable = true; }; };
+  virtualisation = {
+    docker = {
+      enable = true;
+    };
+  };
 
   environment = {
     systemPackages = with pkgs; [
@@ -34,10 +43,8 @@ with lib;
       nurl
       walk
       ngrok
-      dhall
       atuin
       unzip
-      nixfmt
       direnv
       statix
       bottom
@@ -53,11 +60,13 @@ with lib;
       nix-diff
       starship
       nix-init
+      fastfetch
       asciinema
       nix-update
       ripgrep-all
       diff-so-fancy
       coreutils-full
+      nixfmt-rfc-style
     ];
 
     variables = {
@@ -69,9 +78,15 @@ with lib;
     shellAliases = { };
   };
 
-  users = { defaultUserShell = pkgs.fish; };
+  users = {
+    defaultUserShell = pkgs.fish;
+  };
 
-  programs = { fish = { enable = true; }; };
+  programs = {
+    fish = {
+      enable = true;
+    };
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -29,17 +29,39 @@
         symbol = "📦";
         style = "bold yellow";
       };
-      username = { disabled = true; };
-      nodejs = { disabled = true; };
-      hostname = { disabled = true; };
-      container = { disabled = true; };
-      nix_shell = { disabled = true; };
-      aws = { disabled = true; };
-      bun = { disabled = true; };
-      rust = { disabled = true; };
-      python = { disabled = true; };
-      gcloud = { disabled = true; };
-      golang = { disabled = true; };
+      username = {
+        disabled = true;
+      };
+      nodejs = {
+        disabled = true;
+      };
+      hostname = {
+        disabled = true;
+      };
+      container = {
+        disabled = true;
+      };
+      nix_shell = {
+        disabled = true;
+      };
+      aws = {
+        disabled = true;
+      };
+      bun = {
+        disabled = true;
+      };
+      rust = {
+        disabled = true;
+      };
+      python = {
+        disabled = true;
+      };
+      gcloud = {
+        disabled = true;
+      };
+      golang = {
+        disabled = true;
+      };
     };
   };
 }

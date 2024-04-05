@@ -22,18 +22,34 @@
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, nixvim, flake-parts, flake-utils, ... }:
+  outputs =
+    inputs@{
+      self,
+      nixvim,
+      nixpkgs,
+      flake-parts,
+      flake-utils,
+      home-manager,
+      ...
+    }:
     let
       user = "omar";
       system = "aarch64-linux";
       mkNixos = import ./nixos.nix;
       overlays = [ inputs.neovim-nightly-overlay.overlay ];
-    in {
+    in
+    {
       nixosConfigurations = {
         vm-orb = mkNixos "vm-orb" {
-          inherit user inputs nixpkgs
-
-            home-manager nixvim overlays system;
+          inherit
+            user
+            inputs
+            nixvim
+            system
+            nixpkgs
+            overlays
+            home-manager
+            ;
         };
       };
     };

@@ -1,6 +1,13 @@
 # https://nix-community.github.io/nixvim/NeovimOptions/index.html
 
-{ inputs, home-manager, pkgs, system, ... }: {
+{
+  inputs,
+  home-manager,
+  pkgs,
+  system,
+  ...
+}:
+{
   programs.nixvim = {
     enable = true;
     enableMan = true;
@@ -30,7 +37,10 @@
     vimAlias = true;
     withNodeJs = true;
     wrapRc = false;
-    extraPlugins = with pkgs.vimPlugins; [ base16-nvim plenary-nvim ];
+    extraPlugins = with pkgs.vimPlugins; [
+      base16-nvim
+      plenary-nvim
+    ];
     plugins = {
       treesitter = {
         enable = true;
@@ -38,7 +48,15 @@
         ensureInstalled = "all";
         moduleConfig.autotag = {
           enable = true;
-          filetypes = [ "html" "xml" "astro" "javascriptreact" "typescriptreact" "svelte" "vue" ];
+          filetypes = [
+            "html"
+            "xml"
+            "astro"
+            "javascriptreact"
+            "typescriptreact"
+            "svelte"
+            "vue"
+          ];
         };
         nixvimInjections = true;
       };

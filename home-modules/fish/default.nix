@@ -5,15 +5,23 @@
 let
   fishFunctionsDirectory = ./functions;
   functionFiles = builtins.readDir fishFunctionsDirectory;
-  fishFunctions = builtins.listToAttrs (builtins.map (name:
-    let
-      functionName = builtins.replaceStrings [ ".fish" ] [ "" ] name;
-      functionBody = builtins.readFile "${fishFunctionsDirectory}/${name}";
-    in {
-      name = functionName;
-      value = { body = functionBody; };
-    }) (builtins.attrNames functionFiles));
-in {
+  fishFunctions = builtins.listToAttrs (
+    builtins.map (
+      name:
+      let
+        functionName = builtins.replaceStrings [ ".fish" ] [ "" ] name;
+        functionBody = builtins.readFile "${fishFunctionsDirectory}/${name}";
+      in
+      {
+        name = functionName;
+        value = {
+          body = functionBody;
+        };
+      }
+    ) (builtins.attrNames functionFiles)
+  );
+in
+{
   programs = {
     fish = {
       enable = true;
@@ -81,8 +89,7 @@ in {
         gs = "git status";
         gcm = "git commit -S -m";
         gp = "git push";
-        glog =
-          "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
+        glog = "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
       };
       shellInit = ''
         touch $XDG_CONFIG_HOME/.curlrc
