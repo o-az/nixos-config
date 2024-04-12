@@ -1,19 +1,19 @@
 name:
 {
+  user,
   inputs,
-  nixpkgs,
-
-  home-manager,
-  overlays,
   nixvim,
   system,
-  user,
+  nixpkgs,
+  overlays,
+  home-manager,
 }:
 
 nixpkgs.lib.nixosSystem rec {
   inherit system;
   # NixOS System level modules
   modules = [
+    { nixpkgs.overlays = overlays; }
     ./modules/configuration.nix
     ./modules/orbstack.nix
     ./modules/nixpkgs.nix
@@ -31,11 +31,12 @@ nixpkgs.lib.nixosSystem rec {
             { home.stateVersion = "23.05"; }
             inputs.nixvim.homeManagerModules.nixvim
             ./home-modules/fish
+            ./home-modules/helix
             ./home-modules/neovim
             ./home-modules/bat.nix
             ./home-modules/git.nix
-            ./home-modules/helix.nix
             ./home-modules/direnv.nix
+            ./home-modules/ghostty.nix
             ./home-modules/keybase.nix
             ./home-modules/starship.nix
             # https://github.com/nix-community/nix-index-database
@@ -53,6 +54,7 @@ nixpkgs.lib.nixosSystem rec {
             config.allowUnfree = true;
           };
           inherit inputs;
+          inherit overlays;
         };
       };
     }

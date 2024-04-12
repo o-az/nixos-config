@@ -14,9 +14,7 @@ let
       in
       {
         name = functionName;
-        value = {
-          body = functionBody;
-        };
+        value.body = functionBody;
       }
     ) (builtins.attrNames functionFiles)
   );
@@ -25,8 +23,8 @@ in
   programs = {
     fish = {
       enable = true;
-      functions = fishFunctions;
       package = pkgs.fish;
+      functions = fishFunctions;
       interactiveShellInit = builtins.readFile ./init.fish;
       plugins = with pkgs.fishPlugins; [
         {
@@ -48,15 +46,6 @@ in
             repo = "spark.fish";
             rev = "90a60573ec8a8ecb741a861e0bfca2362f297e5f";
             hash = "sha256-cRSZeqtXSaEKuHeTSk3Kpmwf98mKJ986x1KSxa/HggU=";
-          };
-        }
-        {
-          name = "gitnow";
-          src = pkgs.fetchFromGitHub {
-            owner = "joseluisq";
-            repo = "gitnow";
-            rev = "91bda1d0ffad2d68b21a1349f9b55a8cb5b54f35";
-            hash = "sha256-PuorwmaZAeG6aNWX4sUTBIE+NMdn1iWeea3rJ2RhqRQ=";
           };
         }
       ];
@@ -84,6 +73,13 @@ in
         bd = "bun run dev";
         bb = "bun run build";
         binc = "bun install --no-cache --force";
+        pnad = "pnpm add --save-dev";
+        pnb = "pnpm build";
+        pnd = "pnpm dev";
+        pnf = "pnpm format";
+        pni = "pnpm install";
+        pnl = "pnpm lint";
+        pnt = "pnpm typecheck";
         myip = "curl http://ipecho.net/plain; echo";
         ga = "git add --all";
         gs = "git status";

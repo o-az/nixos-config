@@ -1,5 +1,8 @@
 {
   "search.exclude": {
     "**/flake.lock": true
+  },
+  "files.exclude": {
+    "result": true
   }
 }

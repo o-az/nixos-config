@@ -1,5 +1,6 @@
 {
   modulesPath,
+  inputs,
   pkgs,
   lib,
   ...
@@ -28,46 +29,84 @@ with lib;
   };
 
   environment = {
-    systemPackages = with pkgs; [
-      fd
-      fx
-      jq
-      yq
-      gh
-      nil
-      niv
-      git
-      jump
-      curl
-      just
-      nurl
-      walk
-      ngrok
-      atuin
-      unzip
-      direnv
-      statix
-      bottom
-      grpcurl
-      ripgrep
-      gnumake
-      killall
-      git-lfs
-      lazygit
-      deadnix
-      nix-tree
-      tailspin
-      nix-diff
-      starship
-      nix-init
-      fastfetch
-      asciinema
-      nix-update
-      ripgrep-all
-      diff-so-fancy
-      coreutils-full
-      nixfmt-rfc-style
-    ];
+    systemPackages =
+      with pkgs;
+      with pkgs.nodePackages_latest;
+      [
+        fd
+        fx
+        jo
+        jq
+        yq
+        gh
+        niv
+        git
+        nap
+        jump
+        curl
+        just
+        nurl
+        walk
+        ngrok
+        atuin
+        unzip
+        direnv
+        bottom
+        freeze
+        grpcurl
+        ripgrep
+        gnumake
+        killall
+        git-lfs
+        lazygit
+        nix-tree
+        tailspin
+        nix-diff
+        starship
+        nix-init
+        fastfetch
+        asciinema
+        nix-update
+        ripgrep-all
+        diff-so-fancy
+        coreutils-full
+        #
+        # language servers
+        #
+        nil
+        zls
+        sass
+        biome
+        taplo
+        serve
+        delve
+        gopls
+        revive
+        cspell
+        fnlfmt
+        statix
+        deadnix
+        gotools
+        ltex-ls
+        proselint
+        typescript
+        write-good
+        solargraph
+        nixpkgs-fmt
+        terraform-ls
+        openscad-lsp
+        golangci-lint
+        nixfmt-rfc-style
+        bash-language-server
+        yaml-language-server
+        golangci-lint-langserver
+        vscode-json-languageserver
+        typescript-language-server
+        sumneko-lua-language-server
+        vscode-langservers-extracted
+        vscode-css-languageserver-bin
+        vscode-html-languageserver-bin
+      ];
 
     variables = {
       EDITOR = "hx";
