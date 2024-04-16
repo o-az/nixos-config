@@ -29,15 +29,15 @@ in
       plugins = with pkgs.fishPlugins; [
         {
           name = "sponge";
-          inherit (sponge) src;
+          src = sponge.src;
         }
         {
           name = "fzf";
-          inherit (fzf) src;
+          src = fzf-fish.src;
         }
         {
           name = "autopair";
-          inherit (autopair) src;
+          src = autopair.src;
         }
         {
           name = "spark";
@@ -64,6 +64,7 @@ in
         vi = "nvim";
         ".." = "cd ..";
         "..." = "cd ../..";
+        yless = "jless --yaml";
         tree = "eza --all --color='always' --icons='always' --oneline --git-ignore --tree";
         ls = "eza --all --color='always' --icons='always' --oneline --git-ignore";
         dnscheck = "curl https://am.i.mullvad.net/json | jq";

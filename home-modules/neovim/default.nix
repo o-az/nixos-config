@@ -9,13 +9,13 @@
 {
   programs.nixvim = {
     enable = true;
-    enableMan = true;
     package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
     # https://nix-community.github.io/nixvim/colorschemes/base16/colorscheme.html?highlight=colorschemes.base16.colo#colorschemesbase16colorscheme
     type = "lua";
     wrapRc = false;
     viAlias = true;
     vimAlias = true;
+    enableMan = true;
     withNodeJs = true;
     opts = { };
     match = { };
@@ -36,19 +36,26 @@
       nvim-cmp
       vim-rhubarb
       base16-nvim
+      plenary-nvim
       null-ls-nvim
       colorbuddy-nvim
+      nvim-web-devicons
       nvim-colorizer-lua
     ];
     plugins = {
       nix.enable = true;
       wtf.enable = true;
+      emmet.enable = true;
+      navic.enable = true;
+      direnv.enable = true;
       zellij.enable = true;
       luasnip.enable = true;
+      comment.enable = true;
       trouble.enable = true;
+      navbuddy.enable = true;
       gitsigns.enable = true;
+      diffview.enable = true;
       cmp-path.enable = true;
-      telescope.enable = true;
       which-key.enable = true;
       neoscroll.enable = true;
       cmp-buffer.enable = true;
@@ -62,6 +69,47 @@
       friendly-snippets.enable = true;
       treesitter-context.enable = true;
       ts-context-commentstring.enable = true;
+      telescope = {
+        enable = true;
+        extensions = {
+          undo.enable = true;
+          ui-select.enable = true;
+          fzf-native.enable = true;
+        };
+      };
+      auto-session = {
+        enable = true;
+        autoSave.enabled = true;
+        autoRestore.enabled = true;
+      };
+      neo-tree = {
+        enable = true;
+        extraOptions = { };
+        window = {
+          width = 20;
+          position = "right";
+          autoExpandWidth = true;
+        };
+        defaultComponentConfigs = {
+          container = {
+            width = "100%";
+            rightPadding = 0;
+          };
+          name = {
+            trailingSlash = false;
+            useGitStatusColors = true;
+          };
+        };
+        autoCleanAfterSessionRestore = true;
+      };
+      gitgutter = {
+        enable = true;
+        enableByDefault = true;
+        grep = {
+          command = "rg";
+          package = pkgs.ripgrep;
+        };
+      };
       coq-nvim = {
         enable = true;
         installArtifacts = true;

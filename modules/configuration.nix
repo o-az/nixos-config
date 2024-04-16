@@ -41,19 +41,27 @@ with lib;
         niv
         git
         nap
+        age
         jump
         curl
+        unar
+        kmon
         just
         nurl
         walk
+        yazi
         ngrok
         atuin
         unzip
+        jless
         direnv
+        kalker
         bottom
         freeze
+        poppler
         grpcurl
         ripgrep
+        termscp
         gnumake
         killall
         git-lfs
@@ -64,9 +72,11 @@ with lib;
         starship
         nix-init
         fastfetch
+        bandwhich
         asciinema
         nix-update
         ripgrep-all
+        openapi-tui
         diff-so-fancy
         coreutils-full
         #

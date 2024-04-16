@@ -1,5 +1,6 @@
 name:
 {
+  user,
   inputs,
   nixvim,
   system,
