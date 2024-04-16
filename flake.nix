@@ -24,11 +24,8 @@
 
   outputs =
     inputs@{
-      self,
       nixvim,
       nixpkgs,
-      flake-parts,
-      flake-utils,
       home-manager,
       ...
     }:

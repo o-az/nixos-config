@@ -29,15 +29,15 @@ in
       plugins = with pkgs.fishPlugins; [
         {
           name = "sponge";
-          src = sponge.src;
+          inherit (sponge) src;
         }
         {
           name = "fzf";
-          src = fzf-fish.src;
+          inherit (fzf) src;
         }
         {
           name = "autopair";
-          src = autopair.src;
+          inherit (autopair) src;
         }
         {
           name = "spark";
@@ -73,9 +73,12 @@ in
         bd = "bun run dev";
         bb = "bun run build";
         binc = "bun install --no-cache --force";
+        pna = "pnpm add";
         pnad = "pnpm add --save-dev";
         pnb = "pnpm build";
+        pnc = "pnpm clean";
         pnd = "pnpm dev";
+        pns = "pnpm start";
         pnf = "pnpm format";
         pni = "pnpm install";
         pnl = "pnpm lint";
