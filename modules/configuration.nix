@@ -55,11 +55,13 @@ with lib;
         unzip
         jless
         direnv
+        devenv
         kalker
         bottom
         freeze
         poppler
         grpcurl
+        gh-dash
         ripgrep
         termscp
         gnumake

@@ -14,7 +14,7 @@ build:
 	sudo nixos-rebuild switch --flake $VM --impure --print-build-logs --show-trace
 
 upgrade:
-	sudo nixos-rebuild switch --flake $VM --upgrade --print-build-logs --show-trace
+	sudo nixos-rebuild switch --flake $VM --upgrade --impure --print-build-logs --show-trace
 
 update-lockfile:
   sudo nix flake update
