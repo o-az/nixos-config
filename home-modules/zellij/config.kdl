@@ -1,0 +1,15 @@
+pane_frames false
+theme "catppuccin-frappe"
+
+session_serialization false
+
+keybinds {
+	unbind "Ctrl o"
+
+    shared_except "session" "locked" {
+        bind "Ctrl k" { SwitchToMode "Session"; }
+    }
+	session {
+		bind "Ctrl k" { SwitchToMode "Normal"; }
+	}
+}

@@ -21,6 +21,7 @@
         auto-pairs = true;
         cursorline = true;
         auto-format = true;
+        completion-trigger-len = 0;
         color-modes = true;
         true-color = true;
         bufferline = "always";
@@ -52,7 +53,7 @@
             "mode"
             "file-name"
           ];
-          center = [ ];
+          center = [ "version-control" ];
           right = [
             "diagnostics"
             "selections"
@@ -125,25 +126,11 @@
           indent.tab-width = 2;
           indent.unit = " ";
           auto-format = false;
-          # formatter.command = "prettier";
-          # formatter.args = [
-          #   "--parser"
-          #   "html"
-          #   "--tab-width"
-          #   "2"
-          # ];
         }
         {
           name = "css";
           indent.tab-width = 4;
           indent.unit = " ";
-          # formatter.command = "prettier";
-          # formatter.args = [
-          #   "--parser"
-          #   "css"
-          #   "--tab-width"
-          #   "2"
-          # ];
           language-servers = [
             "css-languageserver"
             "copilot"
@@ -154,13 +141,6 @@
           indent.tab-width = 4;
           indent.unit = " ";
           auto-format = true;
-          # formatter.command = "prettier";
-          # formatter.args = [
-          #   "--parser"
-          #   "typescript"
-          #   "--tab-width"
-          #   "2"
-          # ];
           language-servers = [
             "typescript-language-server"
             "copilot"

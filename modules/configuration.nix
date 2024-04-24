@@ -50,6 +50,7 @@ with lib;
         nurl
         walk
         yazi
+        btop
         ngrok
         atuin
         unzip
@@ -57,7 +58,6 @@ with lib;
         direnv
         devenv
         kalker
-        bottom
         freeze
         poppler
         grpcurl

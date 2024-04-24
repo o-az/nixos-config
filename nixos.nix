@@ -20,7 +20,9 @@ nixpkgs.lib.nixosSystem rec {
     ./modules/users.nix
     ./modules/fonts.nix
     ./modules/nix.nix
+    #
     # home-manager
+    #
     home-manager.nixosModules.home-manager
     {
       home-manager = {
@@ -31,17 +33,17 @@ nixpkgs.lib.nixosSystem rec {
             { home.stateVersion = "23.05"; }
             inputs.nixvim.homeManagerModules.nixvim
             ./home-modules/fish
+            ./home-modules/yazi
             ./home-modules/helix
+            ./home-modules/zellij
             ./home-modules/neovim
             ./home-modules/bat.nix
             ./home-modules/git.nix
             ./home-modules/direnv.nix
+            ./home-modules/lazygit.nix
             ./home-modules/ghostty.nix
             ./home-modules/keybase.nix
             ./home-modules/starship.nix
-            # https://github.com/nix-community/nix-index-database
-            inputs.nix-index-database.hmModules.nix-index
-            { programs.nix-index-database.comma.enable = true; }
           ];
         };
         # Arguments exposed to each home-module
@@ -64,11 +66,6 @@ nixpkgs.lib.nixosSystem rec {
       config._module.args = {
         currentSystemName = name;
         currentSystem = system;
-        # pkgs = import inputs.nixpkgs {
-        #   inherit system;
-        #   allowBroken = true;
-        #   config.allowUnfree = true;
-        # };
       };
     }
   ];
