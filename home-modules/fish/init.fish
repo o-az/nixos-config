@@ -4,6 +4,12 @@ end
 
 set -x LANG en_US.UTF-8
 
+if test -z (pgrep ssh-agent | string collect)
+    eval (ssh-agent -c)
+    set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
+    set -Ux SSH_AGENT_PID $SSH_AGENT_PID
+end
+
 # https://ryantm.github.io/nixpkgs/using/configuration/#sec-allow-broken
 set -x NIXPKGS_ALLOW_UNFREE 1
 

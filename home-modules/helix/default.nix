@@ -11,7 +11,6 @@
   programs.helix = {
     enable = true;
     package = inputs.helix.packages.${pkgs.system}.default;
-
     settings = {
       theme = "amberwood";
       editor = {
@@ -83,8 +82,28 @@
     languages = with pkgs; {
       language = [
         {
+          name = "fish";
+          scope = "source.fish";
+          injection-regex = "fish";
+          file-types = [ "fish" ];
+          shebangs = [ "fish" ];
+          comment-token = "#";
+          indent = {
+            tab-width = 4;
+            unit = "    ";
+          };
+          auto-format = true;
+          formatter = {
+            command = "fish_indent";
+          };
+        }
+        {
           name = "nix";
           auto-format = true;
+          language-servers = [
+            "nixd"
+            "copilot"
+          ];
           formatter = {
             command = "nixfmt";
           };
@@ -121,21 +140,22 @@
             "copilot"
           ];
         }
-        {
-          name = "html";
-          indent.tab-width = 2;
-          indent.unit = " ";
-          auto-format = false;
-        }
-        {
-          name = "css";
-          indent.tab-width = 4;
-          indent.unit = " ";
-          language-servers = [
-            "css-languageserver"
-            "copilot"
-          ];
-        }
+        # {
+        #   name = "html";
+        #   indent.tab-width = 2;
+        #   indent.unit = " ";
+        #   auto-format = false;
+        # }
+        # {
+        #   name = "css";
+        #   indent.tab-width = 4;
+        #   indent.unit = " ";
+        #   language-servers = [
+        #     "css-languageserver"
+        #     "copilot"
+        #   ];
+        # }
+
         {
           name = "typescript";
           indent.tab-width = 4;
@@ -148,13 +168,56 @@
         }
       ];
       language-server = {
+        nixd = {
+          command = "nixd";
+        };
         rust-analyzer = {
           config = {
             checkOnSave.command = "clippy";
           };
         };
+        svelteserver = {
+          command = "svelteserver";
+          args = [ "--stdio" ];
+        };
+        vscode-css-language-server = {
+          command = "vscode-css-language-server";
+          args = [ "--stdio" ];
+          config = {
+            provideFormatter = true;
+            css = {
+              validate = {
+                enable = true;
+              };
+            };
+          };
+        };
+        vscode-html-language-server = {
+          command = "vscode-html-language-server";
+          args = [ "--stdio" ];
+          config = {
+            provideFormatter = true;
+          };
+        };
+        vscode-json-languageserver = {
+          command = "vscode-json-language-server";
+          args = [ "--stdio" ];
+          config = {
+            provideFormatter = true;
+            json = {
+              validate = {
+                enable = true;
+              };
+            };
+          };
+        };
+        tailwind-ls = {
+          command = "tailwindcss-language-server";
+          args = [ "--stdio" ];
+        };
         typescript-language-server = with nodePackages; {
           config = {
+            hostInfo = "helix";
             documentFormatting = false;
           };
           command = "''${typescript-language-server}/bin/typescript-language-server";

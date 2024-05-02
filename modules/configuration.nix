@@ -46,11 +46,13 @@ with lib;
         curl
         unar
         kmon
+        nixd
         just
         nurl
         walk
         yazi
         btop
+        delta
         ngrok
         atuin
         unzip

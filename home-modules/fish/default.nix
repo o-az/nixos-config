@@ -51,6 +51,7 @@ in
       ];
       shellAliases = {
         j = "just";
+        code = "code-insiders";
         walk = "walk --icons";
         cat = "bat --theme='1337' --paging='never' --style='changes,header,grid'";
         rg = "batgrep --color=always --paging='never' --iglob='!*.lock,!*lock.json,!_'";

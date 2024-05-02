@@ -13,6 +13,9 @@ default: fmt build
 build:
 	sudo nixos-rebuild switch --flake $VM --impure --print-build-logs --show-trace
 
+build-no-log:
+	sudo nixos-rebuild switch --flake $VM --impure
+
 upgrade:
 	sudo nixos-rebuild switch --flake $VM --upgrade --impure --print-build-logs --show-trace
 
