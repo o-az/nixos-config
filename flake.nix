@@ -34,10 +34,27 @@
     let
       user = "omar";
       system = "aarch64-linux";
+      supportedSystems = [ "aarch64-linux" ];
+      forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
       mkNixos = import ./nixos.nix;
       overlays = [ inputs.neovim-nightly-overlay.overlay ];
     in
     {
+      # Custom packages and modifications, exported as overlays
+      overlays = import ./overlays { inherit inputs nixpkgs; };
+
+      # Devshell for bootstrapping
+      # Acessible through 'nix develop' or 'nix-shell' (legacy)
+      devShells = forAllSystems (
+        system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+        in
+        import ./shell.nix { inherit pkgs; }
+      );
+
+      # NixOS configuration entrypoint
+      # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations = {
         vm-orb = mkNixos "vm-orb" {
           inherit

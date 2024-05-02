@@ -3,12 +3,13 @@ set dotenv-load
 set positional-arguments
 
 alias b := build
+alias pms := permissions
 
 export VM := ".#vm-orb"
 export NIXPKGS_BROKEN := "1"
 export NIXPKGS_ALLOW_UNFREE := "1"
 
-default: fmt build
+default: permissions fmt build
 
 build:
 	sudo nixos-rebuild switch --flake $VM --impure --print-build-logs --show-trace
@@ -27,3 +28,8 @@ lint:
 
 fmt:
 	nixfmt *.nix **/*.nix **/**/*.nix --width=100
+
+fml: fmt lint
+
+permissions:
+  sudo chown -R $USER .
