@@ -1,5 +1,4 @@
 # https://home-manager-options.extranix.com/?query=helix.
-
 {
   pkgs,
   inputs,
@@ -140,34 +139,78 @@
             "copilot"
           ];
         }
-        # {
-        #   name = "html";
-        #   indent.tab-width = 2;
-        #   indent.unit = " ";
-        #   auto-format = false;
-        # }
-        # {
-        #   name = "css";
-        #   indent.tab-width = 4;
-        #   indent.unit = " ";
-        #   language-servers = [
-        #     "css-languageserver"
-        #     "copilot"
-        #   ];
-        # }
-
         {
-          name = "typescript";
+          name = "html";
+          indent.tab-width = 2;
+          indent.unit = " ";
+          auto-format = false;
+        }
+        {
+          name = "css";
           indent.tab-width = 4;
           indent.unit = " ";
-          auto-format = true;
           language-servers = [
-            "typescript-language-server"
+            "css-languageserver"
             "copilot"
           ];
         }
+        {
+          name = "javascript";
+          indent.tab-width = 2;
+          indent.unit = " ";
+          auto-format = true;
+          language-servers = [
+            "biome"
+            "copilot"
+            "typescript-language-server"
+          ];
+        }
+        {
+          name = "typescript";
+          indent.tab-width = 2;
+          indent.unit = " ";
+          auto-format = true;
+          language-servers = [
+            "biome"
+            "copilot"
+            "typescript-language-server"
+          ];
+        }
+        {
+          name = "jsx";
+          indent.tab-width = 2;
+          indent.unit = " ";
+          auto-format = true;
+          language-servers = [
+            "biome"
+            "copilot"
+            "typescript-language-server"
+          ];
+        }
+        {
+          name = "tsx";
+          indent.tab-width = 2;
+          indent.unit = " ";
+          auto-format = true;
+          language-servers = [
+            "biome"
+            "copilot"
+            "typescript-language-server"
+          ];
+        }
+        {
+          name = "json";
+          indent.tab-width = 2;
+          indent.unit = " ";
+          auto-format = true;
+          language-servers = [ "biome" ];
+        }
       ];
       language-server = {
+        biome = {
+          command = "biome";
+          args = [ "lsp-proxy" ];
+        };
         nixd = {
           command = "nixd";
         };

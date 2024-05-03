@@ -70,6 +70,7 @@ with lib;
         killall
         git-lfs
         lazygit
+        ast-grep
         nix-tree
         tailspin
         nix-diff
