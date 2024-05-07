@@ -41,7 +41,10 @@ with lib;
         niv
         git
         nap
+        oha
+        wtf
         age
+        jrnl
         jump
         curl
         unar
@@ -57,6 +60,7 @@ with lib;
         atuin
         unzip
         jless
+        trippy
         direnv
         devenv
         kalker
