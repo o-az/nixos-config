@@ -23,6 +23,5 @@ jobs:
       - uses: "DeterminateSystems/nix-installer-action@main"
       - uses: "DeterminateSystems/flakehub-push@main"
         with:
-          name: "o-az/nixos-config"
           rolling: true
           visibility: "public"
