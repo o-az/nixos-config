@@ -36,6 +36,7 @@ with lib;
         fx
         jo
         jq
+        fh
         yq
         gh
         niv

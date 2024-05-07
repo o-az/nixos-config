@@ -1,19 +1,28 @@
-name: "Publish every Git push to main to FlakeHub"
+name: "Publish to FlakeHub"
+
 on:
   push:
     branches:
       - "main"
+
+defaults:
+  run:
+    shell: "bash"
+
+env:
+  ACTIONS_RUNNER_DEBUG: 1
+
 jobs:
   flakehub-publish:
-    runs-on: "ubuntu-latest"
+    runs-on: ["ubuntu-latest"]
     permissions:
       id-token: "write"
       contents: "read"
     steps:
-      - uses: "actions/checkout@v3"
+      - uses: "actions/checkout@v4"
       - uses: "DeterminateSystems/nix-installer-action@main"
       - uses: "DeterminateSystems/flakehub-push@main"
         with:
-          name: "o-az/nixos-config"
+          name: "index/nixos-config"
           rolling: true
           visibility: "public"
