@@ -74,6 +74,7 @@ with lib;
         killall
         git-lfs
         lazygit
+        zathura
         ast-grep
         nix-tree
         tailspin
