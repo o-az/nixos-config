@@ -26,8 +26,7 @@
         error_symbol = "[✗](bold red)";
       };
       package = {
-        symbol = "📦";
-        style = "bold yellow";
+        disabled = true;
       };
       username = {
         disabled = true;
