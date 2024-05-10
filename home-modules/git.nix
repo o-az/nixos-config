@@ -27,6 +27,7 @@
         };
         core = {
           editor = "hx";
+          symlinks = true;
           excludesfile = "~/.gitignore";
           pager = "diff-so-fancy | less --tabs=2 -RFX";
         };
