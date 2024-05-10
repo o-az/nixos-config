@@ -92,55 +92,6 @@
         enable = true;
         disableAutoInitialization = false;
       };
-      treesitter-textobjects = {
-        enable = false;
-        select = {
-          enable = true;
-          lookahead = true;
-          keymaps = {
-            "aa" = "@parameter.outer";
-            "ia" = "@parameter.inner";
-            "af" = "@function.outer";
-            "if" = "@function.inner";
-            "ac" = "@class.outer";
-            "ic" = "@class.inner";
-            "ii" = "@conditional.inner";
-            "ai" = "@conditional.outer";
-            "il" = "@loop.inner";
-            "al" = "@loop.outer";
-            "at" = "@comment.outer";
-          };
-        };
-        move = {
-          enable = true;
-          gotoNextStart = {
-            "]m" = "@function.outer";
-            "]]" = "@class.outer";
-          };
-          gotoNextEnd = {
-            "]M" = "@function.outer";
-            "][" = "@class.outer";
-          };
-          gotoPreviousStart = {
-            "[m" = "@function.outer";
-            "[[" = "@class.outer";
-          };
-          gotoPreviousEnd = {
-            "[M" = "@function.outer";
-            "[]" = "@class.outer";
-          };
-        };
-        swap = {
-          enable = true;
-          swapNext = {
-            "<leader>a" = "@parameters.inner";
-          };
-          swapPrevious = {
-            "<leader>A" = "@parameter.outer";
-          };
-        };
-      };
-      noice = import ./plugins/noice.nix;
       notify = {
         enable = true;
         backgroundColour = "#000000";
@@ -154,26 +105,7 @@
         autoSave.enabled = true;
         autoRestore.enabled = true;
       };
-      neo-tree = {
-        enable = true;
-        extraOptions = { };
-        window = {
-          width = 25;
-          position = "right";
-          autoExpandWidth = true;
-        };
-        defaultComponentConfigs = {
-          container = {
-            width = "100%";
-            rightPadding = 0;
-          };
-          name = {
-            trailingSlash = false;
-            useGitStatusColors = true;
-          };
-        };
-        autoCleanAfterSessionRestore = true;
-      };
+      neo-tree = import ./plugins/neo-tree.nix;
       gitgutter = {
         enable = true;
         enableByDefault = true;
@@ -182,9 +114,8 @@
           package = pkgs.ripgrep;
         };
       };
-      coq-nvim = {
+      coq-thirdparty = {
         enable = true;
-        installArtifacts = true;
       };
       fzf-lua = {
         enable = true;
@@ -213,14 +144,14 @@
           delay = 300;
         };
       };
-      treesitter = {
-        enable = true;
-        indent = true;
-        # folding = true;
-        nixGrammars = true;
-        ensureInstalled = "all";
-        nixvimInjections = true;
-      };
+      lsp = import ./plugins/lsp.nix;
+      noice = import ./plugins/noice.nix;
+      coq-nvim = import ./plugins/coq.nix;
+      fidget = import ./plugins/fidget.nix;
+      lualine = import ./plugins/lualine.nix;
+      telescope = import ./plugins/telescope.nix;
+      treesitter = import ./plugins/treesitter.nix;
+      treesitter-textobjects = import ./plugins/treesitter-textobjects.nix;
       wilder = {
         enable = true;
         enableCmdlineEnter = true;
@@ -237,10 +168,6 @@
           };
         };
       };
-      lsp = import ./plugins/lsp.nix;
-      lualine = import ./plugins/lualine.nix;
-      fidget = import ./plugins/fidget.nix;
-      telescope = import ./plugins/telescope.nix;
     };
     keymaps = import ./keymaps.nix;
   };
