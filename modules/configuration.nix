@@ -34,21 +34,19 @@ with lib;
       [
         fd
         fx
-        jo
         jq
         fh
         yq
         gh
         niv
         git
-        nap
         oha
         wtf
+        gcc
         age
         jrnl
         jump
         curl
-        unar
         kmon
         nixd
         just
@@ -63,9 +61,7 @@ with lib;
         jless
         trippy
         direnv
-        devenv
         kalker
-        freeze
         poppler
         grpcurl
         gh-dash
@@ -90,42 +86,38 @@ with lib;
         openapi-tui
         diff-so-fancy
         coreutils-full
-        #
-        # language servers
-        #
         nil
-        zls
-        sass
         biome
         taplo
         serve
-        delve
         gopls
-        revive
         cspell
         fnlfmt
         statix
         deadnix
         gotools
-        ltex-ls
         proselint
-        typescript
-        write-good
-        solargraph
         nixpkgs-fmt
-        terraform-ls
         openscad-lsp
-        golangci-lint
         nixfmt-rfc-style
         bash-language-server
         yaml-language-server
-        golangci-lint-langserver
+        # delve
+        # revive
+        # freeze
+        # write-good
+        # solargraph
+        # terraform-ls
+        # golangci-lint
+        # golangci-lint-langserver
+        nodePackages_latest.sass
         vscode-json-languageserver
         typescript-language-server
         sumneko-lua-language-server
         vscode-langservers-extracted
         vscode-css-languageserver-bin
         vscode-html-languageserver-bin
+        nodePackages_latest.typescript
       ];
 
     variables = {

@@ -1,3 +1,5 @@
+# https://nix-community.github.io/nixvim/plugins/fidget/index.html
+# https://github.com/j-hui/fidget.nvim
 {
   enable = true;
   logger = {

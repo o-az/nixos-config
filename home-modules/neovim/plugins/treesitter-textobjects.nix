@@ -1,5 +1,6 @@
+# https://nix-community.github.io/nixvim/plugins/treesitter-textobjects/index.html
 {
-  enable = false;
+  enable = true;
   select = {
     enable = true;
     lookahead = true;

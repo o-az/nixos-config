@@ -1,3 +1,5 @@
+# https://nix-community.github.io/nixvim/plugins/telescope/index.html
+# https://github.com/nvim-telescope/telescope.nvim
 {
   enable = true;
   extensions = {

@@ -16,16 +16,27 @@
         scrolloff = 0;
         auto-save = true;
         scroll-lines = 1;
+        rulers = [ 120 ];
         auto-pairs = true;
         cursorline = true;
-        auto-format = true;
-        completion-trigger-len = 0;
-        color-modes = true;
         true-color = true;
-        bufferline = "always";
-        file-picker.hidden = false;
-        indent-guides.render = false;
-        file-picker.max-depth = 4;
+        auto-format = true;
+        color-modes = true;
+        bufferline = "multiple";
+        completion-trigger-len = 0;
+        file-picker = {
+          max-depth = 4;
+          hidden = false;
+        };
+        indent-guides = {
+          render = false;
+          character = "╎";
+        };
+        cursor-shape = {
+          insert = "bar";
+          normal = "block";
+          select = "underline";
+        };
         gutters = [
           "diff"
           "line-numbers"
@@ -41,7 +52,7 @@
           enable = true;
         };
         statusline = {
-
+          separator = "│";
           mode = {
             normal = "NORMAL";
             select = "SELECT";
@@ -49,6 +60,7 @@
           };
           left = [
             "mode"
+            "spinner"
             "file-name"
           ];
           center = [ "version-control" ];
@@ -56,10 +68,6 @@
             "diagnostics"
             "selections"
             "position"
-            "file-encoding"
-            "file-line-ending"
-            "file-type"
-            "version-control"
             "spacer"
           ];
         };

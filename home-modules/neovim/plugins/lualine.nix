@@ -1,3 +1,5 @@
+# https://nix-community.github.io/nixvim/plugins/lualine/index.html
+# https://github.com/nvim-lualine/lualine.nvim
 {
   enable = true;
   alwaysDivideMiddle = true;

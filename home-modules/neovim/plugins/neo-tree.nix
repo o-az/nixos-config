@@ -1,3 +1,5 @@
+# https://nix-community.github.io/nixvim/plugins/neo-tree/index.html
+# https://github.com/nvim-neo-tree/neo-tree.nvim
 {
   enable = true;
   extraOptions = { };
