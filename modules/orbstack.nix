@@ -2,7 +2,12 @@
 # This MAY be overwritten in the future. Make a copy and update the include
 # in configuration.nix if you want to keep your changes.
 
-{ lib, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 with lib;
 
@@ -69,7 +74,25 @@ with lib;
   '';
 
   # extra certificates
-  security.pki.certificates = [ (builtins.readFile "/opt/orbstack-guest/run/extra-certs.crt") ];
+  security.pki.certificates = [
+    #  (builtins.readFile "/opt/orbstack-guest/run/extra-certs.crt")
+    ''
+      -----BEGIN CERTIFICATE-----
+      MIICDTCCAbKgAwIBAgIQeXEwUyJzN/MdRJ79MY2AWjAKBggqhkjOPQQDAjBmMR0w
+      GwYDVQQKExRPcmJTdGFjayBEZXZlbG9wbWVudDEeMBwGA1UECwwVQ29udGFpbmVy
+      cyAmIFNlcnZpY2VzMSUwIwYDVQQDExxPcmJTdGFjayBEZXZlbG9wbWVudCBSb290
+      IENBMB4XDTI0MDEwNTE0NDM1MVoXDTM0MDEwNTE0NDM1MVowZjEdMBsGA1UEChMU
+      T3JiU3RhY2sgRGV2ZWxvcG1lbnQxHjAcBgNVBAsMFUNvbnRhaW5lcnMgJiBTZXJ2
+      aWNlczElMCMGA1UEAxMcT3JiU3RhY2sgRGV2ZWxvcG1lbnQgUm9vdCBDQTBZMBMG
+      ByqGSM49AgEGCCqGSM49AwEHA0IABMxlU8hGEWQyJDkneQV5nBz/r+wzL9UYPlAf
+      aupq8k/hiW4/nhCM43vNOWmyE9+sw5WYac0hvqc0jdDOs14Xv42jQjBAMA4GA1Ud
+      DwEB/wQEAwIBBjAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBRIsbuHjpBAlM3G
+      wfV/wAKGrjGYATAKBggqhkjOPQQDAgNJADBGAiEA2FD1EdejrBM3HOWXDh5/Lfnd
+      z4lVIAB21rrZg+/g2ZACIQCEAnVD2LNnJr2sZLcvfbaaOH3DQRwWbchuyPVrAZ+W
+      AQ==
+      -----END CERTIFICATE-----
+    ''
+  ];
 
   # indicate builder support for emulated architectures
   nix.extraOptions = "extra-platforms = x86_64-linux i686-linux";

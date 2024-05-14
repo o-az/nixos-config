@@ -2,7 +2,7 @@
 # https://github.com/nvim-treesitter/nvim-treesitter-context/
 {
   enable = true;
-  extraOptions = {
+  settings = {
     enable = true;
     line_numbers = true;
     max_lines = 0;
