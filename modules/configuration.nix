@@ -54,6 +54,7 @@ with lib;
         walk
         yazi
         btop
+        xplr
         delta
         ngrok
         atuin
@@ -78,6 +79,8 @@ with lib;
         nix-diff
         starship
         nix-init
+        tailscale
+        superfile
         fastfetch
         bandwhich
         asciinema

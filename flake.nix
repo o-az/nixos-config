@@ -36,7 +36,7 @@
       supportedSystems = [ "aarch64-linux" ];
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
       mkNixos = import ./nixos.nix;
-      overlays = [ inputs.neovim-nightly-overlay.overlay ];
+      overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
     in
     {
       # Custom packages and modifications, exported as overlays

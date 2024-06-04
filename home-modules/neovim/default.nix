@@ -1,12 +1,6 @@
 # https://nix-community.github.io/nixvim/NeovimOptions/index.html
 
-{
-  pkgs,
-  config,
-  system,
-  inputs,
-  ...
-}:
+{ pkgs, inputs, ... }:
 {
   programs.nixvim = {
     enable = true;

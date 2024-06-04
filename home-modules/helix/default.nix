@@ -73,6 +73,7 @@
         };
       };
       keys.normal.space = {
+        z = "command_palette";
         w.w = ":w";
         w.q = ":wq";
         q.q = ":q";
