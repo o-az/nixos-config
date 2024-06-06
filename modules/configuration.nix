@@ -85,6 +85,7 @@ with lib;
         bandwhich
         asciinema
         nix-update
+        wireguard-tools
         ripgrep-all
         openapi-tui
         diff-so-fancy
