@@ -2,7 +2,7 @@
 # https://github.com/ms-jpq/coq_nvim
 {
   enable = true;
-  # installArtifacts = true;
+  installArtifacts = true;
   settings = {
     # auto_start = true;
     # xdg path

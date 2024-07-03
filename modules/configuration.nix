@@ -79,6 +79,7 @@ with lib;
         nix-diff
         starship
         nix-init
+        localsend
         tailscale
         superfile
         fastfetch
@@ -98,13 +99,14 @@ with lib;
         cspell
         fnlfmt
         statix
+        devenv
         deadnix
         gotools
         proselint
+        cloudflared
         nixpkgs-fmt
         openscad-lsp
         nixfmt-rfc-style
-        bash-language-server
         yaml-language-server
         # delve
         # revive
@@ -122,6 +124,7 @@ with lib;
         vscode-css-languageserver-bin
         vscode-html-languageserver-bin
         nodePackages_latest.typescript
+        nodePackages.bash-language-server
       ];
 
     variables = {

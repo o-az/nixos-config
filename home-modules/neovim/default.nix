@@ -25,12 +25,13 @@
     match = { };
     files = { };
     globals = { };
-    extraFiles = { };
     localOpts = { };
+    extraFiles = { };
     globalOpts = { };
     extraConfigVim = "";
     extraConfigLuaPre = "";
     extraConfigLuaPost = "";
+    luaLoader.enable = true;
     extraPackages = with pkgs; [ ];
     extraLuaPackages = with pkgs; [ ];
     extraPython3Packages = p: with p; [ ];
@@ -46,6 +47,10 @@
       colorbuddy-nvim
       nvim-web-devicons
       nvim-colorizer-lua
+      # https://github.com/tzachar/highlight-undo.nvim
+      highlight-undo-nvim
+      # https://github.com/brenoprata10/nvim-highlight-colors
+      nvim-highlight-colors
     ];
     plugins = {
       cmp.enable = true;
@@ -67,7 +72,6 @@
       navbuddy.enable = true;
       gitsigns.enable = true;
       diffview.enable = true;
-      coq-nvim.enable = true;
       lightline.enable = true;
       which-key.enable = true;
       ts-autotag.enable = true;
@@ -114,14 +118,14 @@
       lsp = import ./plugins/lsp.nix;
       lint = import ./plugins/lint.nix;
       noice = import ./plugins/noice.nix;
-      # coq-nvim = import ./plugins/coq.nix;
+      coq-nvim = import ./plugins/coq.nix;
       barbar = import ./plugins/barbar.nix;
       fidget = import ./plugins/fidget.nix;
       notify = import ./plugins/notify.nix;
       lspsaga = import ./plugins/lspsaga.nix;
       fzf-lua = import ./plugins/fzf-lua.nix;
       lualine = import ./plugins/lualine.nix;
-      none-ls = import ./plugins/none-ls.nix;
+      # none-ls = import ./plugins/none-ls.nix;
       neo-tree = import ./plugins/neo-tree.nix;
       neoscroll = import ./plugins/neoscroll.nix;
       telescope = import ./plugins/telescope.nix;

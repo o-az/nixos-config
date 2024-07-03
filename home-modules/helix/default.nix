@@ -267,7 +267,7 @@
           command = "tailwindcss-language-server";
           args = [ "--stdio" ];
         };
-        typescript-language-server = with nodePackages; {
+        typescript-language-server = with nodePackages_latest; {
           config = {
             hostInfo = "helix";
             documentFormatting = false;

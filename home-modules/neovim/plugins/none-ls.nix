@@ -7,7 +7,7 @@
       statix.enable = true;
       gitsigns.enable = true;
       gitrebase.enable = true;
-      ts_node_action.enable = true;
+      # ts_node_action.enable = true;
     };
     diagnostics = {
       statix.enable = true;

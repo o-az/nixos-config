@@ -91,6 +91,7 @@ in
         gcm = "git commit -S -m";
         gp = "git push";
         glog = "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
+        convert = "magick";
       };
       shellInit = ''
         touch $XDG_CONFIG_HOME/.curlrc

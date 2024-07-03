@@ -15,7 +15,7 @@ nixpkgs.lib.nixosSystem rec {
   modules = [
     { nixpkgs.overlays = overlays; }
     ./modules/configuration.nix
-    ./modules/tailscale.nix
+    # ./modules/tailscale.nix
     ./modules/orbstack.nix
     ./modules/nixpkgs.nix
     ./modules/users.nix
@@ -34,7 +34,6 @@ nixpkgs.lib.nixosSystem rec {
             { home.stateVersion = "23.05"; }
             inputs.nixvim.homeManagerModules.nixvim
             ./home-modules/fish
-            ./home-modules/yazi
             ./home-modules/helix
             ./home-modules/zellij
             ./home-modules/neovim
