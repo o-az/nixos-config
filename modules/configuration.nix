@@ -43,6 +43,7 @@ with lib;
         oha
         wtf
         gcc
+        dig
         age
         jrnl
         jump
@@ -121,8 +122,6 @@ with lib;
         typescript-language-server
         sumneko-lua-language-server
         vscode-langservers-extracted
-        vscode-css-languageserver-bin
-        vscode-html-languageserver-bin
         nodePackages_latest.typescript
         nodePackages.bash-language-server
       ];
