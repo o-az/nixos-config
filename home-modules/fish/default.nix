@@ -92,6 +92,7 @@ in
         gp = "git push";
         glog = "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
         convert = "magick";
+        lzd = "lazydocker";
       };
       shellInit = ''
         touch $XDG_CONFIG_HOME/.curlrc

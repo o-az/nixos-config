@@ -23,6 +23,9 @@ build-no-log:
 upgrade:
 	sudo nixos-rebuild switch --flake $VM --upgrade --print-build-logs --show-trace
 
+upgrade-no-log:
+	sudo nixos-rebuild switch --flake $VM --upgrade
+
 upgrade-impure:
 	sudo nixos-rebuild switch --flake $VM --upgrade --impure --print-build-logs --show-trace
 

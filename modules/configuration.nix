@@ -53,7 +53,7 @@ with lib;
         just
         nurl
         walk
-        yazi
+        # yazi
         btop
         xplr
         delta
@@ -70,6 +70,7 @@ with lib;
         ripgrep
         termscp
         gnumake
+        hadolint
         killall
         git-lfs
         lazygit
@@ -81,17 +82,18 @@ with lib;
         starship
         nix-init
         localsend
-        tailscale
+        lazydocker
+        # tailscale
         superfile
         fastfetch
         bandwhich
-        asciinema
+        # asciinema
         nix-update
-        wireguard-tools
         ripgrep-all
         openapi-tui
         diff-so-fancy
         coreutils-full
+        # wireguard-tools
         nil
         biome
         taplo
@@ -108,7 +110,7 @@ with lib;
         nixpkgs-fmt
         openscad-lsp
         nixfmt-rfc-style
-        yaml-language-server
+        # yaml-language-server
         # delve
         # revive
         # freeze
@@ -119,7 +121,7 @@ with lib;
         # golangci-lint-langserver
         nodePackages_latest.sass
         vscode-json-languageserver
-        typescript-language-server
+        # typescript-language-server
         sumneko-lua-language-server
         vscode-langservers-extracted
         nodePackages_latest.typescript

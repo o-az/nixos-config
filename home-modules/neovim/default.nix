@@ -33,7 +33,7 @@
     extraConfigLuaPost = "";
     luaLoader.enable = true;
     extraPackages = with pkgs; [ ];
-    extraLuaPackages = with pkgs; [ ];
+    # extraLuaPackages = with pkgs; [ ];
     extraPython3Packages = p: with p; [ ];
     extraConfigLua = builtins.readFile ./extra-config.lua;
     extraPlugins = with pkgs.vimPlugins; [
