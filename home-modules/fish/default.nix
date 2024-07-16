@@ -90,6 +90,7 @@ in
         gs = "git status";
         gcm = "git commit -S -m";
         gp = "git push";
+        got = "git";
         glog = "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
         convert = "magick";
         lzd = "lazydocker";
