@@ -4,8 +4,8 @@
 
 {
   lib,
-  config,
   pkgs,
+  config,
   ...
 }:
 
@@ -26,14 +26,32 @@ with lib;
     }
   ];
 
-  # add OrbStack CLI tools to PATH
+  #
+  # orbstack defaults
+  #
+
+  # Enable documentation
+  documentation = {
+    enable = true;
+    man.enable = true;
+    dev.enable = false;
+    doc.enable = false;
+    info.enable = false;
+    nixos.enable = true;
+  };
+
+  # Add OrbStack CLI tools to PATH
   environment.shellInit = ''
     . /opt/orbstack-guest/etc/profile-early
+
     # add your customizations here
+
     . /opt/orbstack-guest/etc/profile-late
   '';
 
-  time.timeZone = "America/Los_Angeles";
+  # Disable systemd-resolved
+  services.resolved.enable = false;
+  environment.etc."resolv.conf".source = "/opt/orbstack-guest/etc/resolv.conf";
 
   # faster DHCP - OrbStack uses SLAAC exclusively
   networking.dhcpcd.extraConfig = ''
@@ -47,24 +65,24 @@ with lib;
   systemd = {
     services = {
       "systemd-oomd".serviceConfig.WatchdogSec = 0;
-      "systemd-resolved".serviceConfig.WatchdogSec = 0;
-      "systemd-userdbd".serviceConfig.WatchdogSec = 0;
+      "systemd-homed".serviceConfig.WatchdogSec = 0;
       "systemd-udevd".serviceConfig.WatchdogSec = 0;
+      "systemd-logind".serviceConfig.WatchdogSec = 0;
+      "systemd-importd".serviceConfig.WatchdogSec = 0;
+      "systemd-nspawn@".serviceConfig.WatchdogSec = 0;
+      "systemd-localed".serviceConfig.WatchdogSec = 0;
+      "systemd-userdbd".serviceConfig.WatchdogSec = 0;
+      "systemd-resolved".serviceConfig.WatchdogSec = 0;
+      "systemd-machined".serviceConfig.WatchdogSec = 0;
+      "systemd-journald".serviceConfig.WatchdogSec = 0;
       "systemd-timesyncd".serviceConfig.WatchdogSec = 0;
       "systemd-timedated".serviceConfig.WatchdogSec = 0;
       "systemd-portabled".serviceConfig.WatchdogSec = 0;
-      "systemd-nspawn@".serviceConfig.WatchdogSec = 0;
-      "systemd-networkd".serviceConfig.WatchdogSec = 0;
-      "systemd-machined".serviceConfig.WatchdogSec = 0;
-      "systemd-localed".serviceConfig.WatchdogSec = 0;
-      "systemd-logind".serviceConfig.WatchdogSec = 0;
+      "systemd-hostnamed".serviceConfig.WatchdogSec = 0;
       "systemd-journald@".serviceConfig.WatchdogSec = 0;
-      "systemd-journald".serviceConfig.WatchdogSec = 0;
       "systemd-journal-remote".serviceConfig.WatchdogSec = 0;
       "systemd-journal-upload".serviceConfig.WatchdogSec = 0;
-      "systemd-importd".serviceConfig.WatchdogSec = 0;
-      "systemd-hostnamed".serviceConfig.WatchdogSec = 0;
-      "systemd-homed".serviceConfig.WatchdogSec = 0;
+      "systemd-networkd".serviceConfig.WatchdogSec = lib.mkIf config.systemd.network.enable 0;
     };
   };
 
@@ -73,27 +91,9 @@ with lib;
     Include /opt/orbstack-guest/etc/ssh_config
   '';
 
-  # extra certificates
-  security.pki.certificates = [
-    #  (builtins.readFile "/opt/orbstack-guest/run/extra-certs.crt")
-    ''
-      -----BEGIN CERTIFICATE-----
-      MIICDTCCAbKgAwIBAgIQeXEwUyJzN/MdRJ79MY2AWjAKBggqhkjOPQQDAjBmMR0w
-      GwYDVQQKExRPcmJTdGFjayBEZXZlbG9wbWVudDEeMBwGA1UECwwVQ29udGFpbmVy
-      cyAmIFNlcnZpY2VzMSUwIwYDVQQDExxPcmJTdGFjayBEZXZlbG9wbWVudCBSb290
-      IENBMB4XDTI0MDEwNTE0NDM1MVoXDTM0MDEwNTE0NDM1MVowZjEdMBsGA1UEChMU
-      T3JiU3RhY2sgRGV2ZWxvcG1lbnQxHjAcBgNVBAsMFUNvbnRhaW5lcnMgJiBTZXJ2
-      aWNlczElMCMGA1UEAxMcT3JiU3RhY2sgRGV2ZWxvcG1lbnQgUm9vdCBDQTBZMBMG
-      ByqGSM49AgEGCCqGSM49AwEHA0IABMxlU8hGEWQyJDkneQV5nBz/r+wzL9UYPlAf
-      aupq8k/hiW4/nhCM43vNOWmyE9+sw5WYac0hvqc0jdDOs14Xv42jQjBAMA4GA1Ud
-      DwEB/wQEAwIBBjAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBRIsbuHjpBAlM3G
-      wfV/wAKGrjGYATAKBggqhkjOPQQDAgNJADBGAiEA2FD1EdejrBM3HOWXDh5/Lfnd
-      z4lVIAB21rrZg+/g2ZACIQCEAnVD2LNnJr2sZLcvfbaaOH3DQRwWbchuyPVrAZ+W
-      AQ==
-      -----END CERTIFICATE-----
-    ''
-  ];
-
   # indicate builder support for emulated architectures
-  nix.extraOptions = "extra-platforms = x86_64-linux i686-linux";
+  nix.settings.extra-platforms = [
+    "x86_64-linux"
+    "i686-linux"
+  ];
 }

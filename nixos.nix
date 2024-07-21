@@ -3,6 +3,7 @@ name:
   user,
   inputs,
   nixvim,
+  # ghostty,
   system,
   nixpkgs,
   overlays,

@@ -1,12 +1,19 @@
 {
+  security.sudo.wheelNeedsPassword = false;
   users = {
     mutableUsers = false;
     users.omar = {
-      isNormalUser = true;
+      group = "users";
+      homeMode = "700";
+      createHome = true;
       home = "/home/omar";
+      # simulate isNormalUser, but with an arbitrary UID
+      isSystemUser = true;
+      useDefaultShell = true;
+
       extraGroups = [
-        "docker"
         "wheel"
+        "docker"
       ];
       hashedPassword = "$y$j9T$dHqYv21jcB7S3jBrqffWx1$xUqbav37bG7iWc2A1bFUvPrwTB8.wCUXCZdm1QNb5n2";
       openssh.authorizedKeys.keys = [

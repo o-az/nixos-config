@@ -19,12 +19,16 @@
 
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+
+    # need to fix ssh setup first
+    # ghostty.url = "git+ssh://git@github.com/ghostty-org/ghostty.git";
   };
 
   outputs =
     inputs@{
       nixvim,
       nixpkgs,
+      # ghostty,
       home-manager,
       ...
     }:
@@ -60,6 +64,7 @@
             nixvim
             system
             nixpkgs
+            # ghostty
             overlays
             home-manager
             ;
