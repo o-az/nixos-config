@@ -50,19 +50,21 @@ with lib;
       with pkgs.nodePackages_latest;
       [
         # ghostty.packages.x86_64-linux.default
+        duf
+        tldr
+        glances
         fd
         fx
         jq
-        fh
         yq
         gh
         niv
         git
         oha
-        # wtf
         gcc
         dig
         age
+        dura
         jrnl
         jump
         curl
@@ -71,8 +73,8 @@ with lib;
         just
         nurl
         walk
-        # yazi
         btop
+        wget
         xplr
         delta
         ngrok
@@ -102,17 +104,14 @@ with lib;
         nix-init
         localsend
         lazydocker
-        # tailscale
         superfile
         fastfetch
         bandwhich
-        # asciinema
         nix-update
         ripgrep-all
         openapi-tui
         diff-so-fancy
         coreutils-full
-        # wireguard-tools
         nil
         biome
         taplo
@@ -124,23 +123,14 @@ with lib;
         devenv
         deadnix
         gotools
+        bore-cli
         proselint
         cloudflared
         nixpkgs-fmt
         openscad-lsp
         nixfmt-rfc-style
-        # yaml-language-server
-        # delve
-        # revive
-        # freeze
-        # write-good
-        # solargraph
-        # terraform-ls
-        # golangci-lint
-        # golangci-lint-langserver
         nodePackages_latest.sass
         vscode-json-languageserver
-        # typescript-language-server
         sumneko-lua-language-server
         vscode-langservers-extracted
         nodePackages_latest.typescript

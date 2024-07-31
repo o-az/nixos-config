@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   security.sudo.wheelNeedsPassword = false;
   users = {
@@ -10,10 +11,10 @@
       # simulate isNormalUser, but with an arbitrary UID
       isSystemUser = true;
       useDefaultShell = true;
-
+      shell = pkgs.fish;
       extraGroups = [
-        "wheel"
         "docker"
+        "wheel"
       ];
       hashedPassword = "$y$j9T$dHqYv21jcB7S3jBrqffWx1$xUqbav37bG7iWc2A1bFUvPrwTB8.wCUXCZdm1QNb5n2";
       openssh.authorizedKeys.keys = [

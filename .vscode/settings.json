@@ -3,6 +3,10 @@
     "**/flake.lock": true
   },
   "files.exclude": {
-    "result": true
+    "result": true,
+    ".direnv": true,
+  },
+  "files.associations": {
+    ".envrc": "shellcheckrc"
   }
 }

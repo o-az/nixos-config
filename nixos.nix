@@ -3,7 +3,6 @@ name:
   user,
   inputs,
   nixvim,
-  # ghostty,
   system,
   nixpkgs,
   overlays,
@@ -16,7 +15,6 @@ nixpkgs.lib.nixosSystem rec {
   modules = [
     { nixpkgs.overlays = overlays; }
     ./modules/configuration.nix
-    # ./modules/tailscale.nix
     ./modules/orbstack.nix
     ./modules/nixpkgs.nix
     ./modules/users.nix
@@ -38,11 +36,11 @@ nixpkgs.lib.nixosSystem rec {
             ./home-modules/helix
             ./home-modules/zellij
             ./home-modules/neovim
+            # ./home-modules/ghostty
             ./home-modules/bat.nix
             ./home-modules/git.nix
             ./home-modules/direnv.nix
             ./home-modules/lazygit.nix
-            ./home-modules/ghostty.nix
             ./home-modules/keybase.nix
             ./home-modules/starship.nix
           ];

@@ -26,6 +26,13 @@ in
       package = pkgs.fish;
       functions = fishFunctions;
       interactiveShellInit = builtins.readFile ./init.fish;
+      # interactiveShellInit = lib.strings.concatStrings (lib.strings.intersperse "\n" ([
+      #   "source ${sources.theme-bobthefish}/functions/fish_prompt.fish"
+      #   "source ${sources.theme-bobthefish}/functions/fish_right_prompt.fish"
+      #   "source ${sources.theme-bobthefish}/functions/fish_title.fish"
+      #   (builtins.readFile ./config.fish)
+      #   "set -g SHELL ${pkgs.fish}/bin/fish"
+      # ]));
       plugins = with pkgs.fishPlugins; [
         {
           name = "sponge";

@@ -10,6 +10,8 @@
       userEmail = "omaraziz.dev@proton.me";
       lfs.enable = true;
       extraConfig = {
+        branch.autosetuprebase = "always";
+        credential.helper = "store"; # want to make this more secure
         github.user = "o-az";
         gpg.format = "ssh";
         init.defaultBranch = "main";
