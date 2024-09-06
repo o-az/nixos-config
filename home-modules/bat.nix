@@ -11,7 +11,7 @@
       batman
       batpipe
       batwatch
-      batdiff
+      # batdiff
     ];
   };
 }

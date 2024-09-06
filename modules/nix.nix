@@ -4,10 +4,11 @@
     package = pkgs.nix;
     settings = {
       sandbox = "relaxed";
-      warn-dirty = false;
+      warn-dirty = true;
+      auto-optimise-store = true;
       trusted-users = [
         "root"
-        "omar"
+        "o"
       ];
       experimental-features = [
         "nix-command"
@@ -15,11 +16,13 @@
         "repl-flake"
       ];
       substituters = [
+        "https://cache.garnix.io/"
         "https://union.cachix.org/"
         "https://nix-community.cachix.org/"
         "https://helix.cachix.org/"
       ];
       trusted-substituters = [
+        "https://cache.garnix.io"
         "https://nix-community.cachix.org"
         "https://union.cachix.org"
       ];
@@ -30,9 +33,9 @@
       ];
     };
     extraOptions = ''
-      experimental-features = nix-command flakes
       keep-outputs = true
       keep-derivations = true
+      experimental-features = nix-command flakes
     '';
   };
 }

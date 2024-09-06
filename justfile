@@ -29,6 +29,9 @@ upgrade-no-log:
 upgrade-impure:
 	sudo nixos-rebuild switch --flake $VM --upgrade --impure --print-build-logs --show-trace
 
+remove-fonts:
+  sudo rm -rf /etc/fonts
+	
 update-lockfile:
   sudo nix flake update
 

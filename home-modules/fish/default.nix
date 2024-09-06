@@ -60,6 +60,7 @@ in
         j = "just";
         code = "code-insiders";
         walk = "walk --icons";
+        zed = "/Applications/Zed.app/Contents/MacOS/cli";
         cat = "bat --theme='1337' --paging='never' --style='changes,header,grid'";
         rg = "batgrep --color=always --paging='never' --iglob='!*.lock,!*lock.json,!_'";
         grep = "batgrep --color=always --paging='never' --iglob='!*.lock,!*lock.json,!_'";
@@ -109,6 +110,8 @@ in
         --location
         --show-error
         --trace-time"
+
+        set --global --export FONTCONFIG_FILE ${pkgs.fontconfig.out}/etc/fonts/fonts.conf
       '';
     };
     nix-index.enableFishIntegration = true;

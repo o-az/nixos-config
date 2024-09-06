@@ -13,10 +13,19 @@ with lib;
 
 {
 
+  # Add OrbStack CLI tools to PATH
+  environment.shellInit = ''
+    . /opt/orbstack-guest/etc/profile-early
+
+    # add your customizations here
+
+    . /opt/orbstack-guest/etc/profile-late
+  '';
+
   # sudoers
   security.sudo.extraRules = [
     {
-      users = [ "omar" ];
+      users = [ "o" ];
       commands = [
         {
           command = "ALL";
@@ -39,15 +48,6 @@ with lib;
     info.enable = false;
     nixos.enable = true;
   };
-
-  # Add OrbStack CLI tools to PATH
-  environment.shellInit = ''
-    . /opt/orbstack-guest/etc/profile-early
-
-    # add your customizations here
-
-    . /opt/orbstack-guest/etc/profile-late
-  '';
 
   # Disable systemd-resolved
   services.resolved.enable = false;
@@ -90,6 +90,11 @@ with lib;
   programs.ssh.extraConfig = ''
     Include /opt/orbstack-guest/etc/ssh_config
   '';
+
+  # extra certificates
+  # security.pki.certificateFiles = [
+  #   "/opt/orbstack-guest/run/extra-certs.crt"
+  # ];
 
   # indicate builder support for emulated architectures
   nix.settings.extra-platforms = [

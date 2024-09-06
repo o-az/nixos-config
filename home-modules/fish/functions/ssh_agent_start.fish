@@ -27,13 +27,13 @@ if [ -n "$SSH_AGENT_PID" ]
         test_identities
     end  
 else
-    if [ -f $SSH_ENV ]
-        . $SSH_ENV > /dev/null
-    end  
-    ps -ef | grep $SSH_AGENT_PID | grep -v grep | grep ssh-agent > /dev/null
-    if [ $status -eq 0 ]
+    if test -f $SSH_ENV
+        source $SSH_ENV > /dev/null
+    end
+    ps -ef | string match -e $SSH_AGENT_PID | string match -v grep | string match -e ssh-agent > /dev/null
+    if test $status -eq 0
         test_identities
     else 
         start_agent
-    end  
+    end
 end

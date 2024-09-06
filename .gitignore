@@ -3,3 +3,4 @@ _
 .direnv
 result
 .env
+._*

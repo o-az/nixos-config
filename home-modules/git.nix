@@ -2,18 +2,23 @@
 {
   programs.git =
     let
-      sshSigningKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGnFdSHtSGiwHlDEESfJseOArZ8HNCVlIcreGc2VS7b2";
+      sshSigningKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJNMtRVUTD0g9VNsHXK3EpDrgyndSAFbLqNmTEtJRfJI";
     in
     {
       enable = true;
+      lfs.enable = true;
       userName = "o-az";
       userEmail = "omaraziz.dev@proton.me";
-      lfs.enable = true;
+      signing = {
+        signByDefault = true;
+        key = sshSigningKey;
+      };
       extraConfig = {
         branch.autosetuprebase = "always";
         credential.helper = "store"; # want to make this more secure
         github.user = "o-az";
         gpg.format = "ssh";
+        gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
         init.defaultBranch = "main";
         url."git@github.com:".insteadOf = "https://github.com/";
         commit.gpgsign = true;
@@ -28,7 +33,7 @@
           default = "current";
         };
         core = {
-          editor = "hx";
+          editor = "/Applications/Zed.app/Contents/MacOS/cli";
           symlinks = true;
           excludesfile = "~/.gitignore";
           pager = "diff-so-fancy | less --tabs=2 -RFX";
@@ -79,7 +84,6 @@
         undo = "reset --soft HEAD^";
         unstage = "reset HEAD --";
       };
-
       ignores = [
         "_"
         "._*"

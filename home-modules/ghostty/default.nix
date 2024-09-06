@@ -1,44 +1,24 @@
 { config, ... }:
 let
-  colors = import ./colors.nix;
   ghosttyPath = "${config.xdg.configHome}/ghostty";
 in
 {
   home.file."${ghosttyPath}/config".text = ''
-    background = ${colors.primary.background}
-    foreground = ${colors.primary.foreground}
-
-    keybind = ctrl+z=close_surface
-    keybind = ctrl+super+f=toggle_fullscreen
-    keybind = super+t=ignore
-
-    macos-non-native-fullscreen = true
-
-    font-size = 16
-    font-family = JetBrains Mono
-    mouse-hide-while-typing = true
-
-    title = " "
-    macos-titlebar-tabs = true
-
+    title =
+    font-size = "18"
+    theme = tokyonight
     window-padding-x = 16
     window-padding-y = 16
-
-    palette = 0=${colors.normal.black}
-    palette = 1=${colors.normal.red}
-    palette = 2=${colors.normal.green}
-    palette = 3=${colors.normal.yellow}
-    palette = 4=${colors.normal.blue}
-    palette = 5=${colors.normal.magenta}
-    palette = 6=${colors.normal.cyan}
-    palette = 7=${colors.normal.white}
-    palette = 8=${colors.bright.black}
-    palette = 9=${colors.bright.red}
-    palette = 10=${colors.bright.green}
-    palette = 11=${colors.bright.yellow}
-    palette = 12=${colors.bright.blue}
-    palette = 13=${colors.bright.magenta}
-    palette = 14=${colors.bright.cyan}
-    palette = 15=${colors.bright.white}
+    keybind = super+t=ignore
+    shell-integration = fish
+    macos-titlebar-tabs = true
+    macos-option-as-alt = true
+    font-family = IBMPlex Mono
+    keybind = ctrl+z=close_surface
+    mouse-hide-while-typing = true
+    shell-integration-features = sudo
+    macos-non-native-fullscreen = true
+    keybind = ctrl+super+f=toggle_fullscreen
+    term = xterm-ghostty
   '';
 }

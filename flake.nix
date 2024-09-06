@@ -9,12 +9,6 @@
 
     helix.url = "github:helix-editor/helix";
 
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-    neovim-nightly-overlay.inputs.nixpkgs.follows = "nixpkgs";
-
-    nixvim.url = "github:nix-community/nixvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
-
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -22,24 +16,24 @@
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
     # need to fix ssh setup first
-    # ghostty.url = "git+ssh://git@github.com/ghostty-org/ghostty.git";
+    ghostty.url = "git+ssh://git@github.com/ghostty-org/ghostty";
+    ghostty.inputs.nixpkgs-stable.follows = "nixpkgs";
   };
 
   outputs =
     inputs@{
-      nixvim,
       nixpkgs,
-      # ghostty,
+      ghostty,
       home-manager,
       ...
     }:
     let
-      user = "omar";
+      user = "o";
       system = "aarch64-linux";
       supportedSystems = [ "aarch64-linux" ];
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
       mkNixos = import ./nixos.nix;
-      overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
+      overlays = [ ];
     in
     {
       # Custom packages and modifications, exported as overlays
@@ -62,10 +56,9 @@
           inherit
             user
             inputs
-            nixvim
             system
             nixpkgs
-            # ghostty
+            ghostty
             overlays
             home-manager
             ;

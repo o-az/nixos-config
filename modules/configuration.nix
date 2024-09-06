@@ -1,6 +1,6 @@
 {
   modulesPath,
-  # ghostty,
+  ghostty,
   pkgs,
   lib,
   ...
@@ -24,6 +24,9 @@ with lib;
     useDHCP = false;
     dhcpcd.enable = false;
     useHostResolvConf = false;
+    interfaces = {
+      eth0.useDHCP = true;
+    };
   };
 
   systemd.network = {
@@ -49,25 +52,27 @@ with lib;
       with pkgs;
       with pkgs.nodePackages_latest;
       [
-        # ghostty.packages.x86_64-linux.default
-        duf
-        tldr
-        glances
+        ghostty.packages.x86_64-linux.default
         fd
         fx
         jq
         yq
-        gh
         niv
+        duf
         git
         oha
         gcc
         dig
+        nil
         age
+        yazi
+        time
         dura
-        jrnl
+        tldr
         jump
         curl
+        ctop
+        navi
         kmon
         nixd
         just
@@ -75,66 +80,65 @@ with lib;
         walk
         btop
         wget
-        xplr
-        delta
-        ngrok
+        taplo
         atuin
         unzip
-        jless
-        trippy
         direnv
-        kalker
-        poppler
-        grpcurl
-        gh-dash
-        ripgrep
-        termscp
-        termshot
-        gnumake
-        hadolint
-        killall
-        git-lfs
-        lazygit
-        zathura
-        ast-grep
-        nix-tree
-        tailspin
-        nix-diff
-        starship
-        nix-init
-        localsend
-        lazydocker
-        superfile
-        fastfetch
-        bandwhich
-        nix-update
-        ripgrep-all
-        openapi-tui
-        diff-so-fancy
-        coreutils-full
-        nil
-        biome
-        taplo
-        serve
-        gopls
-        cspell
         fnlfmt
         statix
         devenv
         deadnix
         gotools
-        bore-cli
-        proselint
+        poppler
+        grpcurl
+        gh-dash
+        ripgrep
+        termscp
+        gnumake
+        killall
+        git-lfs
+        lazygit
+        glances
+        termshot
+        hadolint
+        ast-grep
+        nix-tree
+        tailspin
+        nix-diff
+        starship
+        superfile
+        fastfetch
+        git-extras
+        lazydocker
+        nix-update
+        _1password
         cloudflared
         nixpkgs-fmt
-        openscad-lsp
+        ripgrep-all
+        diff-so-fancy
+        bitwarden-cli
+        coreutils-full
         nixfmt-rfc-style
-        nodePackages_latest.sass
-        vscode-json-languageserver
-        sumneko-lua-language-server
-        vscode-langservers-extracted
-        nodePackages_latest.typescript
         nodePackages.bash-language-server
+        # jrnl
+        # xplr
+        # biome
+        # serve
+        # gopls
+        # jless
+        # trippy
+        # kalker
+        # zathura
+        # bore-cli
+        # proselint
+        # localsend
+        # openapi-tui
+        # openscad-lsp
+        # nodePackages_latest.sass
+        # vscode-json-languageserver
+        # sumneko-lua-language-server
+        # vscode-langservers-extracted
+        # nodePackages_latest.typescript
       ];
 
     variables = {
@@ -144,10 +148,6 @@ with lib;
 
     shells = with pkgs; [ fish ];
     shellAliases = { };
-  };
-
-  users = {
-    defaultUserShell = pkgs.fish;
   };
 
   programs = {
@@ -177,13 +177,7 @@ with lib;
     ''
   ];
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "21.05"; # Did you read the comment?
+  system.stateVersion = "unstable"; # Did you read the comment?
 
   environment.noXlibs = false;
 }

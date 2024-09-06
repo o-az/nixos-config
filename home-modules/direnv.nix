@@ -10,5 +10,9 @@
       enable = true;
       package = pkgs.nix-direnv;
     };
+    config.global = {
+      # Make direnv messages less verbose
+      hide_env_diff = true;
+    };
   };
 }
