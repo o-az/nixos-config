@@ -15,7 +15,6 @@
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
-    # need to fix ssh setup first
     ghostty.url = "git+ssh://git@github.com/ghostty-org/ghostty";
     ghostty.inputs.nixpkgs-stable.follows = "nixpkgs";
   };

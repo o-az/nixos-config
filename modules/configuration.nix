@@ -143,6 +143,7 @@ with lib;
 
     variables = {
       EDITOR = "hx";
+      TERM = "xterm-ghostty";
       XDG_CONFIG_HOME = "$HOME/.config";
     };
 
