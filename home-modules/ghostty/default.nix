@@ -13,7 +13,9 @@ in
     shell-integration = fish
     macos-titlebar-tabs = true
     macos-option-as-alt = true
-    font-family = IBMPlex Mono
+    font-family = BlexMono Nerd Font Mono
+    font-family-bold = BlexMono Nerd Font Mono Bold
+    font-family-italic = BlexMono Nerd Font Mono Italic
     keybind = ctrl+z=close_surface
     mouse-hide-while-typing = true
     shell-integration-features = sudo

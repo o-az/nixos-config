@@ -52,7 +52,7 @@ with lib;
       with pkgs;
       with pkgs.nodePackages_latest;
       [
-        ghostty.packages.x86_64-linux.default
+        ghostty.packages.${pkgs.system}.default
         fd
         fx
         jq
