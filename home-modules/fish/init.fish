@@ -26,6 +26,8 @@ set -g direnv_fish_mode eval_on_arrow # trigger direnv at prompt, and on every a
 # bat
 eval (batpipe)
 
+fzf --fish | source
+
 # fzf
 set -U FZF_LEGACY_KEYBINDS 0
 fzf_configure_bindings --directory=\cf --processes=\cp --git_log=\cl --git_status=\cs --history=\ch
@@ -41,7 +43,7 @@ set -Ux fish_cursor_default 'block'
 set -Ux fish_cursor_insert 'line blink'
 
 batman --export-env | source
-set -Ux BAT_THEME 'Solarized (light)'
+set -Ux BAT_THEME '1337'
 
 # forgit
 set -x PATH $PATH $FORGIT_INSTALL_DIR/bin
