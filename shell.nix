@@ -7,11 +7,11 @@
     # Enable experimental features without having to specify the argument
     NIX_CONFIG = "experimental-features = nix-command flakes";
     nativeBuildInputs = with pkgs; [
+      gh
       nix
       git
-      helix
-      gh
       fish
+      helix
     ];
   };
 }

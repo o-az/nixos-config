@@ -18,13 +18,11 @@
       };
     };
     packages = with pkgs; [
-      noto-fonts
-      noto-fonts-emoji
       ibm-plex
-      fira-code
-      fira-code-symbols
+      nerdfonts
+      noto-fonts
       jetbrains-mono
-      iosevka
+      noto-fonts-emoji
       (pkgs.nerdfonts.override {
         fonts = [
           "Iosevka"

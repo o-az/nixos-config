@@ -8,10 +8,6 @@ end
 
 set -x LANG en_US.UTF-8
 
-#-------------------------------------------------------------------------------
-# SSH Agent
-#-------------------------------------------------------------------------------
-
 # https://ryantm.github.io/nixpkgs/using/configuration/#sec-allow-broken
 set -x NIXPKGS_ALLOW_UNFREE 1
 
@@ -40,6 +36,12 @@ set -Ux FZF_DEFAULT_OPTS "--height 100% --inline-info --layout=reverse --margin=
 set fzf_git_log_format "%H %s"
 set fzf_history_time_format "%y-%m-%d"
 set fzf_diff_highlighter diff-so-fancy
+
+set -Ux fish_cursor_default 'block'
+set -Ux fish_cursor_insert 'line blink'
+
+batman --export-env | source
+set -Ux BAT_THEME 'Solarized (light)'
 
 # forgit
 set -x PATH $PATH $FORGIT_INSTALL_DIR/bin

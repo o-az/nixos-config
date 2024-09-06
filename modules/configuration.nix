@@ -108,6 +108,7 @@ with lib;
         starship
         superfile
         fastfetch
+        # zed-editor
         git-extras
         lazydocker
         nix-update
