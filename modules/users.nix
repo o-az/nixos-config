@@ -3,7 +3,9 @@
   security.sudo.wheelNeedsPassword = false;
   users = {
     mutableUsers = false;
+    defaultUserShell = pkgs.fish;
     users.o = {
+      # isNormalUser = true;
       uid = 501;
       group = "users";
       homeMode = "700";
@@ -12,7 +14,6 @@
       # simulate isNormalUser, but with an arbitrary UID
       isSystemUser = true;
       useDefaultShell = true;
-      # isNormalUser = true;
       shell = pkgs.fish;
       extraGroups = [
         "docker"

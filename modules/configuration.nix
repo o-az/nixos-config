@@ -81,6 +81,7 @@ with lib;
         btop
         wget
         taplo
+        tmate
         atuin
         unzip
         direnv
@@ -113,7 +114,6 @@ with lib;
         lazydocker
         nix-update
         _1password
-        cloudflared
         nixpkgs-fmt
         ripgrep-all
         diff-so-fancy

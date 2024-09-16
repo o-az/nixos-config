@@ -46,16 +46,16 @@ nixpkgs.lib.nixosSystem rec {
         };
         # Arguments exposed to each home-module
         extraSpecialArgs = {
-          pkgs = import inputs.nixpkgs {
-            inherit system;
-            # allowBroken = true;
-            config.allowUnfree = true;
-          };
           currentSystem = system;
           currentSystemName = name;
+          pkgs = import inputs.nixpkgs {
+            inherit system;
+            allowBroken = true;
+            config.allowUnfree = true;
+          };
           inherit inputs;
-          inherit ghostty;
           inherit overlays;
+          inherit ghostty;
         };
       };
     }
@@ -65,7 +65,6 @@ nixpkgs.lib.nixosSystem rec {
       config._module.args = {
         currentSystem = system;
         currentSystemName = name;
-        # pkgs = import inputs.nixpkgs { inherit system; config.allowUnfree = true; };
         inherit ghostty;
       };
     }

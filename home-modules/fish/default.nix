@@ -26,13 +26,6 @@ in
       package = pkgs.fish;
       functions = fishFunctions;
       interactiveShellInit = builtins.readFile ./init.fish;
-      # interactiveShellInit = lib.strings.concatStrings (lib.strings.intersperse "\n" ([
-      #   "source ${sources.theme-bobthefish}/functions/fish_prompt.fish"
-      #   "source ${sources.theme-bobthefish}/functions/fish_right_prompt.fish"
-      #   "source ${sources.theme-bobthefish}/functions/fish_title.fish"
-      #   (builtins.readFile ./config.fish)
-      #   "set -g SHELL ${pkgs.fish}/bin/fish"
-      # ]));
       plugins = with pkgs.fishPlugins; [
         {
           name = "sponge";
@@ -60,7 +53,7 @@ in
         j = "just";
         code = "code-insiders";
         walk = "walk --icons";
-        zed = "/Applications/Zed.app/Contents/MacOS/cli";
+        # zed = "/Applications/Zed.app/Contents/MacOS/cli";
         cat = "bat --theme='1337' --paging='never' --style='changes,header,grid'";
         rg = "batgrep --color=always --paging='never' --iglob='!*.lock,!*lock.json,!_'";
         grep = "batgrep --color=always --paging='never' --iglob='!*.lock,!*lock.json,!_'";
@@ -102,6 +95,7 @@ in
         glog = "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
         convert = "magick";
         lzd = "lazydocker";
+        lzg = "lazygit";
       };
       shellInit = ''
         touch $XDG_CONFIG_HOME/.curlrc
@@ -110,8 +104,6 @@ in
         --location
         --show-error
         --trace-time"
-
-        set --global --export FONTCONFIG_FILE ${pkgs.fontconfig.out}/etc/fonts/fonts.conf
       '';
     };
     nix-index.enableFishIntegration = true;

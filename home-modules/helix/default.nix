@@ -11,7 +11,7 @@
     enable = true;
     package = inputs.helix.packages.${pkgs.system}.default;
     settings = {
-      theme = "amberwood";
+      theme = "base16_transparent";
       editor = {
         scrolloff = 0;
         auto-save = true;

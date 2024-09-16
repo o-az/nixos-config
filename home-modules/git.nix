@@ -12,6 +12,7 @@
       signing = {
         signByDefault = true;
         key = sshSigningKey;
+
       };
       extraConfig = {
         branch.autosetuprebase = "always";
