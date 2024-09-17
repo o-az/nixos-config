@@ -15,6 +15,7 @@ nixpkgs.lib.nixosSystem rec {
   modules = [
     { nixpkgs.overlays = overlays; }
     ./modules/configuration.nix
+    ./modules/1password.nix
     ./modules/orbstack.nix
     ./modules/nixpkgs.nix
     ./modules/users.nix

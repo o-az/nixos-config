@@ -65,7 +65,7 @@ with lib;
         dig
         nil
         age
-        yazi
+        oha
         time
         dura
         tldr
@@ -108,6 +108,7 @@ with lib;
         nix-diff
         starship
         superfile
+        hyperfine
         fastfetch
         # zed-editor
         git-extras
