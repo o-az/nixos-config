@@ -17,11 +17,13 @@ set -Ux XDG_CONFIG_HOME ~/.config
 zoxide init fish | source
 set -U ZOXIDE_ECHO 1
 
-source $HOME/nixos-config/home-modules/fish/functions/ssh_agent_start.fish
+source $HOME/nixos-config/home-modules/shells/fish/functions/ssh_agent_start.fish
 
 # direnv
 direnv hook fish | source
 set -g direnv_fish_mode eval_on_arrow # trigger direnv at prompt, and on every arrow-based directory change (default)
+
+restish completion fish | source
 
 # bat
 eval (batpipe)

@@ -58,14 +58,20 @@ with lib;
         jq
         yq
         niv
+        vhs
         duf
         git
         oha
+        pop
         gcc
         dig
         nil
         age
         oha
+        gum
+        melt
+        iamb
+        entr
         time
         dura
         tldr
@@ -80,14 +86,20 @@ with lib;
         walk
         btop
         wget
+        tmux
+        glow
+        mods
         taplo
         tmate
         atuin
+        skate
         unzip
+        glibc
         direnv
         fnlfmt
         statix
         devenv
+        restish
         deadnix
         gotools
         poppler
@@ -110,16 +122,18 @@ with lib;
         superfile
         hyperfine
         fastfetch
-        # zed-editor
+        zed-editor
         git-extras
         lazydocker
         nix-update
         _1password
         nixpkgs-fmt
         ripgrep-all
+        charm-freeze
         diff-so-fancy
         bitwarden-cli
         coreutils-full
+        bashInteractive
         nixfmt-rfc-style
         nodePackages.bash-language-server
         # jrnl
@@ -149,7 +163,9 @@ with lib;
       XDG_CONFIG_HOME = "$HOME/.config";
     };
 
-    shells = with pkgs; [ fish ];
+    shells = with pkgs; [
+      fish
+    ];
     shellAliases = { };
   };
 
@@ -181,6 +197,4 @@ with lib;
   ];
 
   system.stateVersion = "unstable"; # Did you read the comment?
-
-  environment.noXlibs = false;
 }

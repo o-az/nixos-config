@@ -4,6 +4,7 @@
     enable = true;
     enableTransience = true;
     enableFishIntegration = true;
+    enableBashIntegration = true;
     settings = {
       scan_timeout = 10;
       add_newline = true;

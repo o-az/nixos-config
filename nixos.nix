@@ -32,7 +32,8 @@ nixpkgs.lib.nixosSystem rec {
         users.o = {
           imports = [
             { home.stateVersion = "23.11"; }
-            ./home-modules/fish
+            ./home-modules/shells/bash
+            ./home-modules/shells/fish
             ./home-modules/helix
             ./home-modules/zellij
             ./home-modules/ghostty

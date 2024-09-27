@@ -34,7 +34,7 @@
           default = "current";
         };
         core = {
-          editor = "/Applications/Zed.app/Contents/MacOS/cli";
+          editor = "hx";
           symlinks = true;
           excludesfile = "~/.gitignore";
           pager = "diff-so-fancy | less --tabs=2 -RFX";

@@ -10,13 +10,16 @@
   programs.helix = {
     enable = true;
     package = inputs.helix.packages.${pkgs.system}.default;
+    extraPackages = [
+      pkgs.marksman
+    ];
     settings = {
-      theme = "base16_transparent";
+      theme = "tokyonight";
       editor = {
         scrolloff = 0;
         auto-save = true;
         scroll-lines = 1;
-        rulers = [ 120 ];
+        rulers = [ 100 ];
         auto-pairs = true;
         cursorline = true;
         true-color = true;
