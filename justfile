@@ -46,5 +46,9 @@ fml: fmt lint
 permissions:
   sudo chown -R $USER .
 
+[group('cleanup')]
+rm-dots:
+  sudo find . -type f -name "._*" -exec rm -r {} +
+
 home-manager:
   home-manager switch -b bk

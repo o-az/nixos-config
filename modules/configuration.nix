@@ -131,32 +131,12 @@ with lib;
         nixpkgs-fmt
         ripgrep-all
         charm-freeze
-        lan-mouse_git
         diff-so-fancy
         bitwarden-cli
         coreutils-full
         bashInteractive
         nixfmt-rfc-style
         nodePackages.bash-language-server
-        # jrnl
-        # xplr
-        # biome
-        # serve
-        # gopls
-        # jless
-        # trippy
-        # kalker
-        # zathura
-        # bore-cli
-        # proselint
-        # localsend
-        # openapi-tui
-        # openscad-lsp
-        # nodePackages_latest.sass
-        # vscode-json-languageserver
-        # sumneko-lua-language-server
-        # vscode-langservers-extracted
-        # nodePackages_latest.typescript
       ];
 
     variables = {
