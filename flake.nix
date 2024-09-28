@@ -8,12 +8,16 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     flake-utils.url = "github:numtide/flake-utils";
-    flake-parts.url = "github:hercules-ci/flake-parts";
 
-    helix.url = "github:helix-editor/helix";
+    flake-parts.url = "github:hercules-ci/flake-parts";
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    microvm.url = "github:astro/microvm.nix";
+    microvm.inputs.nixpkgs.follows = "nixpkgs";
+
+    helix.url = "github:helix-editor/helix";
 
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
