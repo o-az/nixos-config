@@ -14,9 +14,10 @@
         "o"
       ];
       experimental-features = [
-        "nix-command"
         "flakes"
         "repl-flake"
+        "nix-command"
+        "recursive-nix"
       ];
       substituters = [
         "https://cache.garnix.io/"

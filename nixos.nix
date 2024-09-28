@@ -34,6 +34,7 @@ nixpkgs.lib.nixosSystem rec {
             { home.stateVersion = "23.11"; }
             ./home-modules/shells/bash
             ./home-modules/shells/fish
+            ./home-modules/home.nix
             ./home-modules/helix
             ./home-modules/zellij
             ./home-modules/ghostty

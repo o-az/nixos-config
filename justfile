@@ -31,7 +31,7 @@ upgrade-impure:
 
 remove-fonts:
   sudo rm -rf /etc/fonts
-	
+
 update-lockfile:
   sudo nix flake update
 
@@ -45,3 +45,6 @@ fml: fmt lint
 
 permissions:
   sudo chown -R $USER .
+
+home-manager:
+  home-manager switch -b bk

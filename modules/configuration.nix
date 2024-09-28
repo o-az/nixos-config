@@ -69,6 +69,7 @@ with lib;
         age
         oha
         gum
+        gawk
         melt
         iamb
         entr
@@ -130,6 +131,7 @@ with lib;
         nixpkgs-fmt
         ripgrep-all
         charm-freeze
+        lan-mouse_git
         diff-so-fancy
         bitwarden-cli
         coreutils-full
