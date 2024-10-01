@@ -1,4 +1,6 @@
 * text=auto
 .gitattributes !filter !diff
 
+.envrc linguist-language=Shell
+
 .vscode/*.json linguist-language=JSON-with-Comments

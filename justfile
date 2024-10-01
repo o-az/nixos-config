@@ -36,7 +36,7 @@ update-lockfile:
   sudo nix flake update
 
 lint:
-	deadnix && statix check .
+	deadnix --no-lambda-pattern-names && statix check .
 
 fmt:
 	nixfmt *.nix **/*.nix **/**/*.nix --width=100

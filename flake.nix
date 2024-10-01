@@ -2,6 +2,7 @@
   description = "NixOS configuration";
 
   inputs = {
+    # consider switching to? github:numtide/nixpkgs-unfree?ref=nixos-unstable
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     nix-darwin.url = "github:lnl7/nix-darwin/master";
@@ -13,9 +14,6 @@
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    microvm.url = "github:astro/microvm.nix";
-    microvm.inputs.nixpkgs.follows = "nixpkgs";
 
     helix.url = "github:helix-editor/helix";
 

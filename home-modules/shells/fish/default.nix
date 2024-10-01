@@ -29,15 +29,15 @@ in
       plugins = with pkgs.fishPlugins; [
         {
           name = "sponge";
-          src = sponge.src;
+          inherit (sponge) src;
         }
         {
           name = "fzf";
-          src = fzf-fish.src;
+          inherit (fzf-fish) src;
         }
         {
           name = "autopair";
-          src = autopair.src;
+          inherit (autopair) src;
         }
         {
           name = "spark";
