@@ -3,6 +3,7 @@ name:
   user,
   inputs,
   system,
+  devenv,
   nixpkgs,
   ghostty,
   overlays,
@@ -20,6 +21,7 @@ nixpkgs.lib.nixosSystem rec {
     ./modules/orbstack.nix
     ./modules/nixpkgs.nix
     ./modules/openssh.nix
+    ./modules/xserver.nix
     ./modules/users.nix
     ./modules/fonts.nix
     ./modules/nix.nix
@@ -35,12 +37,13 @@ nixpkgs.lib.nixosSystem rec {
           imports = [
             { home.stateVersion = "23.11"; }
             ./home-modules/home.nix
+            ./home-modules/kitty
             ./home-modules/helix
             ./home-modules/zellij
             ./home-modules/ghostty
             ./home-modules/bat.nix
             ./home-modules/git.nix
-            ./home-modules/direnv.nix
+            # ./home-modules/fonts.nix
             ./home-modules/direnv.nix
             ./home-modules/shells/bash
             ./home-modules/shells/fish
@@ -53,7 +56,6 @@ nixpkgs.lib.nixosSystem rec {
         };
         # Arguments exposed to each home-module
         extraSpecialArgs = {
-
           currentSystem = system;
           currentSystemName = name;
           pkgs = import inputs.nixpkgs {
@@ -62,8 +64,9 @@ nixpkgs.lib.nixosSystem rec {
             config.allowUnfree = true;
           };
           inherit inputs;
-          inherit overlays;
+          inherit devenv;
           inherit ghostty;
+          inherit overlays;
         };
       };
     }

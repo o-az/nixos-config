@@ -1,6 +1,11 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  devenv,
+  ...
+}:
 {
   home.packages = with pkgs; [
+    devenv.packages.${pkgs.system}.default
     fd
     fx
     yq
@@ -39,8 +44,6 @@
     skate
     statix
     fnlfmt
-    devenv
-    gh-dash
     restish
     deadnix
     gotools
@@ -68,7 +71,6 @@
     lazydocker
     nixpkgs-fmt
     ripgrep-all
-    clipboard-jh
     charm-freeze
     diff-so-fancy
     bitwarden-cli

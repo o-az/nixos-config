@@ -32,7 +32,10 @@ upgrade-impure:
 remove-fonts:
     sudo rm -rf /etc/fonts
 
-update-lockfile:
+lockup:
+    nix flake update
+
+sudo-lockup:
     sudo nix flake update
 
 lint:

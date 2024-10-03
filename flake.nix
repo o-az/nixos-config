@@ -22,10 +22,14 @@
 
     ghostty.url = "git+ssh://git@github.com/ghostty-org/ghostty";
     ghostty.inputs.nixpkgs-stable.follows = "nixpkgs";
+
+    devenv.url = "github:cachix/devenv";
+    devenv.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
     inputs@{
+      devenv,
       nixpkgs,
       ghostty,
       home-manager,
@@ -60,6 +64,7 @@
             user
             inputs
             system
+            devenv
             nixpkgs
             ghostty
             overlays
