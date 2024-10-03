@@ -7,7 +7,7 @@
   programs.bash = {
     enable = true;
     enableCompletion = true;
-    package = pkgs.bashInteractive;
+    package = pkgs.bash;
     bashrcExtra = ''
       eval "$(starship init bash)"
 

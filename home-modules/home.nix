@@ -1,4 +1,3 @@
-_:
-{
+_: {
   programs.home-manager.enable = true;
 }

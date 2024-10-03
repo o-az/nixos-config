@@ -18,6 +18,10 @@ with lib;
     ./orbstack.nix
   ];
 
+  # services.xserver.enable = true;
+  # services.xserver.layout = "us";
+  # services.xserver.xkbOptions = "eurosign:e";
+
   time.timeZone = "America/Los_Angeles";
 
   networking = {
@@ -48,96 +52,20 @@ with lib;
   };
 
   environment = {
-    systemPackages =
-      with pkgs;
-      with pkgs.nodePackages_latest;
-      [
-        ghostty.packages.${pkgs.system}.default
-        fd
-        fx
-        jq
-        yq
-        niv
-        vhs
-        duf
-        git
-        oha
-        pop
-        gcc
-        dig
-        nil
-        age
-        oha
-        gum
-        gawk
-        melt
-        iamb
-        entr
-        time
-        dura
-        tldr
-        jump
-        curl
-        ctop
-        navi
-        kmon
-        nixd
-        just
-        nurl
-        walk
-        btop
-        wget
-        tmux
-        glow
-        mods
-        taplo
-        tmate
-        atuin
-        skate
-        unzip
-        glibc
-        direnv
-        fnlfmt
-        statix
-        devenv
-        restish
-        deadnix
-        gotools
-        poppler
-        grpcurl
-        gh-dash
-        ripgrep
-        termscp
-        gnumake
-        killall
-        git-lfs
-        lazygit
-        glances
-        termshot
-        hadolint
-        ast-grep
-        nix-tree
-        tailspin
-        nix-diff
-        starship
-        superfile
-        hyperfine
-        fastfetch
-        zed-editor
-        git-extras
-        lazydocker
-        nix-update
-        _1password
-        nixpkgs-fmt
-        ripgrep-all
-        charm-freeze
-        diff-so-fancy
-        bitwarden-cli
-        coreutils-full
-        bashInteractive
-        nixfmt-rfc-style
-        nodePackages.bash-language-server
-      ];
+    systemPackages = with pkgs; [
+      ghostty.packages.${pkgs.system}.default
+      jq
+      git
+      age
+      curl
+      nixd
+      unzip
+      glibc
+      direnv
+      git-lfs
+      gnumake
+      killall
+    ];
 
     variables = {
       EDITOR = "hx";

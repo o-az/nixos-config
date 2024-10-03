@@ -41,11 +41,11 @@ set fzf_git_log_format "%H %s"
 set fzf_history_time_format "%y-%m-%d"
 set fzf_diff_highlighter diff-so-fancy
 
-set -Ux fish_cursor_default 'block'
+set -Ux fish_cursor_default block
 set -Ux fish_cursor_insert 'line blink'
 
 batman --export-env | source
-set -Ux BAT_THEME '1337'
+set -Ux BAT_THEME 1337
 
 # forgit
 set -x PATH $PATH $FORGIT_INSTALL_DIR/bin

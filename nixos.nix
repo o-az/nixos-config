@@ -19,6 +19,7 @@ nixpkgs.lib.nixosSystem rec {
     ./modules/tailscale.nix
     ./modules/orbstack.nix
     ./modules/nixpkgs.nix
+    # ./modules/openssh.nix
     ./modules/users.nix
     ./modules/fonts.nix
     ./modules/nix.nix
@@ -33,8 +34,6 @@ nixpkgs.lib.nixosSystem rec {
         users.o = {
           imports = [
             { home.stateVersion = "23.11"; }
-            ./home-modules/shells/bash
-            ./home-modules/shells/fish
             ./home-modules/home.nix
             ./home-modules/helix
             ./home-modules/zellij
@@ -42,8 +41,12 @@ nixpkgs.lib.nixosSystem rec {
             ./home-modules/bat.nix
             ./home-modules/git.nix
             ./home-modules/direnv.nix
+            ./home-modules/direnv.nix
+            ./home-modules/shells/bash
+            ./home-modules/shells/fish
             ./home-modules/lazygit.nix
             ./home-modules/keybase.nix
+            ./home-modules/packages.nix
             ./home-modules/starship.nix
             ./home-modules/github-cli.nix
           ];
