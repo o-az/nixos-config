@@ -60,6 +60,7 @@
     superfile
     hyperfine
     fastfetch
+    ssh-agents
     zed-editor
     git-extras
     nix-update

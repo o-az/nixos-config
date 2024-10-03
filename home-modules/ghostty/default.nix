@@ -4,22 +4,18 @@ let
 in
 {
   home.file."${ghosttyPath}/config".text = ''
-    title =
+    title = " "
     font-size = "18"
     theme = tokyonight
     window-padding-x = 16
     window-padding-y = 16
     keybind = super+t=ignore
     shell-integration = fish
-    macos-titlebar-tabs = true
-    macos-option-as-alt = true
-    font-family = BlexMono Nerd Font Mono
-    font-family-bold = BlexMono Nerd Font Mono Bold
-    font-family-italic = BlexMono Nerd Font Mono Italic
+    font-family = "BlexMono Nerd Font Mono"
     keybind = ctrl+z=close_surface
     mouse-hide-while-typing = true
-    shell-integration-features = sudo
-    macos-non-native-fullscreen = true
+    shell-integration-features = sudo,no-title
+    mouse-hide-while-typing = false
     keybind = ctrl+super+f=toggle_fullscreen
     term = xterm-ghostty
   '';

@@ -19,7 +19,7 @@ nixpkgs.lib.nixosSystem rec {
     ./modules/tailscale.nix
     ./modules/orbstack.nix
     ./modules/nixpkgs.nix
-    # ./modules/openssh.nix
+    ./modules/openssh.nix
     ./modules/users.nix
     ./modules/fonts.nix
     ./modules/nix.nix
@@ -53,6 +53,7 @@ nixpkgs.lib.nixosSystem rec {
         };
         # Arguments exposed to each home-module
         extraSpecialArgs = {
+
           currentSystem = system;
           currentSystemName = name;
           pkgs = import inputs.nixpkgs {

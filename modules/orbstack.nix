@@ -59,7 +59,7 @@ with lib;
   '';
 
   # disable sshd
-  services.openssh.enable = false;
+  # services.openssh.enable = false;
 
   systemd = {
     services = {
@@ -86,10 +86,12 @@ with lib;
   };
 
   # ssh config
-  programs.ssh.extraConfig = ''
-    Include /opt/orbstack-guest/etc/ssh_config
-  '';
-
+  programs.ssh = {
+    setXAuthLocation = true;
+    extraConfig = ''
+      Include /opt/orbstack-guest/etc/ssh_config
+    '';
+  };
   # extra certificates
   # security.pki.certificateFiles = [
   #   "/opt/orbstack-guest/run/extra-certs.crt"

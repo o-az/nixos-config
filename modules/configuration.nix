@@ -22,14 +22,14 @@ with lib;
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e";
   # services.xserver.displayManager.gdm.wayland = false;
-  # services.xserver = {
-  #   enable = true;
-  #   xkb = {
-  #     layout = "us";
-  #     options = "eurosign:e";
-  #   };
-  #   # displayManager.gdm.wayland = false;
-  # };
+  services.xserver = {
+    enable = true;
+    xkb = {
+      layout = "us";
+      options = "eurosign:e";
+    };
+    # displayManager.gdm.wayland = false;
+  };
 
   time.timeZone = "America/Los_Angeles";
 
@@ -70,6 +70,7 @@ with lib;
       nixd
       unzip
       glibc
+      xmoji
       direnv
       git-lfs
       gnumake
