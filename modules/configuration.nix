@@ -19,8 +19,17 @@ with lib;
   ];
 
   # services.xserver.enable = true;
-  # services.xserver.layout = "us";
-  # services.xserver.xkbOptions = "eurosign:e";
+  # services.xserver.xkb.layout = "us";
+  # services.xserver.xkb.options = "eurosign:e";
+  # services.xserver.displayManager.gdm.wayland = false;
+  # services.xserver = {
+  #   enable = true;
+  #   xkb = {
+  #     layout = "us";
+  #     options = "eurosign:e";
+  #   };
+  #   # displayManager.gdm.wayland = false;
+  # };
 
   time.timeZone = "America/Los_Angeles";
 
