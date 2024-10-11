@@ -17,6 +17,7 @@
     nil
     oha
     gum
+    dive
     gawk
     melt
     iamb
@@ -58,6 +59,7 @@
     tailspin
     nix-diff
     starship
+    distrobox
     superfile
     hyperfine
     fastfetch
@@ -70,6 +72,7 @@
     nixpkgs-fmt
     ripgrep-all
     charm-freeze
+    distrobox-tui
     diff-so-fancy
     bitwarden-cli
     coreutils-full
