@@ -17,6 +17,9 @@
 
     helix.url = "github:helix-editor/helix";
 
+    nvix.url = "github:niksingh710/nvix";
+    nvix.inputs.nixpkgs.follows = "nixpkgs";
+
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -26,6 +29,7 @@
 
   outputs =
     inputs@{
+      nvix,
       nixpkgs,
       ghostty,
       home-manager,
@@ -44,7 +48,7 @@
       overlays = import ./overlays { inherit inputs nixpkgs; };
 
       # Devshell for bootstrapping
-      # Acessible through 'nix develop' or 'nix-shell' (legacy)
+      # Accessible through 'nix develop' or 'nix-shell' (legacy)
       devShells = forAllSystems (
         system:
         let
@@ -57,6 +61,7 @@
       nixosConfigurations = {
         vm-orb = mkNixos "vm-orb" {
           inherit
+            nvix
             user
             inputs
             system

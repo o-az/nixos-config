@@ -1,19 +1,21 @@
 {
-  modulesPath,
   pkgs,
-  lib,
   ...
 }:
 
-with lib;
-
 {
   services.xserver = {
-    enable = true;
+    enable = false;
+    desktopManager = {
+      xfce.enable = false;
+    };
     xkb = {
       layout = "us";
       options = "eurosign:e";
     };
-    # displayManager.gdm.wayland = false;
+    displayManager.gdm = {
+      enable = false;
+      wayland = false;
+    };
   };
 }

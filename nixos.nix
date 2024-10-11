@@ -1,5 +1,6 @@
 name:
 {
+  nvix,
   user,
   inputs,
   system,
@@ -62,6 +63,7 @@ nixpkgs.lib.nixosSystem rec {
             allowBroken = true;
             config.allowUnfree = true;
           };
+          inherit nvix;
           inherit inputs;
           inherit ghostty;
           inherit overlays;
