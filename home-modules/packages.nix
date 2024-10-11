@@ -1,11 +1,9 @@
 {
   pkgs,
-  devenv,
   ...
 }:
 {
   home.packages = with pkgs; [
-    devenv.packages.${pkgs.system}.default
     fd
     fx
     yq

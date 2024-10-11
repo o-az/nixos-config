@@ -1,6 +1,5 @@
 {
   modulesPath,
-  ghostty,
   pkgs,
   lib,
   ...

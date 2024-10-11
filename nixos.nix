@@ -3,7 +3,6 @@ name:
   user,
   inputs,
   system,
-  devenv,
   nixpkgs,
   ghostty,
   overlays,
@@ -64,7 +63,6 @@ nixpkgs.lib.nixosSystem rec {
             config.allowUnfree = true;
           };
           inherit inputs;
-          inherit devenv;
           inherit ghostty;
           inherit overlays;
         };
