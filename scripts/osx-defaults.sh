@@ -2,6 +2,14 @@
 
 set -euox pipefail
 
+# disable spotlight (if you use raycast/alfred/etc)
+sudo mdutil -a -i off
+sudo mdutil -d /Volumes/"$(diskutil info / | grep "Volume Name" | cut -d ' ' -f 5)"
+
+# system integrity protection (SIP) https://ss64.com/mac/csrutil.html
+
+sudo csrutil disable
+
 # https://github.com/yannbertrand/macos-defaults
 
 # show all extensions

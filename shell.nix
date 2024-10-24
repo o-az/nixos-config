@@ -5,7 +5,7 @@
 {
   default = pkgs.mkShell {
     # Enable experimental features without having to specify the argument
-    NIX_CONFIG = "experimental-features = nix-command flakes recursive-nix repl-flake";
+    NIX_CONFIG = "experimental-features = nix-command flakes recursive-nix";
     nativeBuildInputs = with pkgs; [
       gh
       nix

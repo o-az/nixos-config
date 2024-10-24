@@ -15,10 +15,11 @@ nixpkgs.lib.nixosSystem rec {
   # NixOS System level modules
   modules = [
     { nixpkgs.overlays = overlays; }
-    ./modules/configuration.nix
+    ./orbstack/configuration.nix
+    ./orbstack/orbstack.nix
+
     ./modules/1password.nix
     ./modules/tailscale.nix
-    ./modules/orbstack.nix
     ./modules/nixpkgs.nix
     ./modules/openssh.nix
     ./modules/xserver.nix

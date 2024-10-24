@@ -50,14 +50,11 @@ with lib;
   environment = {
     systemPackages = with pkgs; [
       ghostty.packages.${pkgs.system}.default
-      jq
       git
       age
       curl
-      nixd
       unzip
       glibc
-      xmoji
       direnv
       git-lfs
       gnumake

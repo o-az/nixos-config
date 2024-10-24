@@ -26,7 +26,6 @@
       noto-fonts-emoji
       (pkgs.nerdfonts.override {
         fonts = [
-          "Iosevka"
           "IBMPlexMono"
           "JetBrainsMono"
         ];

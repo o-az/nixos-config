@@ -9,6 +9,7 @@
     fd
     fx
     yq
+    jq
     niv
     vhs
     duf
@@ -22,6 +23,7 @@
     dive
     gawk
     melt
+    nixd
     iamb
     entr
     time
@@ -43,6 +45,7 @@
     taplo
     atuin
     skate
+    devenv
     statix
     fnlfmt
     restish
@@ -54,6 +57,7 @@
     termscp
     glances
     lazygit
+    horcrux
     termshot
     hadolint
     ast-grep

@@ -62,8 +62,8 @@ in
     nix-index.enableFishIntegration = true;
     eza = {
       git = true;
-      icons = true;
       enable = true;
+      icons = "auto";
       package = pkgs.eza;
       enableFishIntegration = true;
     };
