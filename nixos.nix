@@ -1,5 +1,6 @@
 name:
 {
+  pls,
   nvix,
   user,
   inputs,
@@ -44,6 +45,7 @@ nixpkgs.lib.nixosSystem rec {
             ./home-modules/ghostty
             ./home-modules/bat.nix
             ./home-modules/git.nix
+            ./home-modules/pls.nix
             # ./home-modules/fonts.nix
             ./home-modules/direnv.nix
             ./home-modules/shells/bash
@@ -64,6 +66,7 @@ nixpkgs.lib.nixosSystem rec {
             allowBroken = true;
             config.allowUnfree = true;
           };
+          inherit pls;
           inherit nvix;
           inherit inputs;
           inherit ghostty;

@@ -4,6 +4,7 @@
   pkgs,
   ...
 }:
-with lib; {
-  imports = [];
+with lib;
+{
+  imports = [ ];
 }

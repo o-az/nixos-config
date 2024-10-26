@@ -1,5 +1,6 @@
 {
   j = "just";
+  rm-dots = "sudo find . -type f -name \"._*\" -exec rm -r {} +";
   code = "code-insiders";
   walk = "walk --icons";
   # zed = "/Applications/Zed.app/Contents/MacOS/cli";

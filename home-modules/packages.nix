@@ -83,6 +83,7 @@
     bitwarden-cli
     coreutils-full
     bashInteractive
+    uutils-coreutils
     nixfmt-rfc-style
   ];
 }

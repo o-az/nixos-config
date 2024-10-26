@@ -15,6 +15,10 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    # https://github.com/pls-rs/pls
+    pls.url = "github:pls-rs/pls";
+    pls.flake = false;
+
     helix.url = "github:helix-editor/helix";
 
     nvix.url = "github:niksingh710/nvix";
@@ -29,6 +33,7 @@
 
   outputs =
     inputs@{
+      pls,
       nvix,
       nixpkgs,
       ghostty,
@@ -67,6 +72,7 @@
           # orbstack machine
           vm-orb = mkNixos "vm-orb" {
             inherit
+              pls
               nvix
               user
               inputs
