@@ -1,5 +1,5 @@
 {
-  description = "NixOS configuration";
+  description = "NixOS systems & configuration";
 
   inputs = {
     # consider switching to github:numtide/nixpkgs-unfree?ref=nixos-unstable
@@ -37,16 +37,20 @@
       nvix,
       nixpkgs,
       ghostty,
+      nix-darwin,
       home-manager,
       ...
     }:
     let
       user = "o";
-      system = "aarch64-linux";
-      supportedSystems = [ "aarch64-linux" ];
-      forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
-      mkNixos = import ./nixos.nix;
+      supportedSystems = [
+        "aarch64-linux"
+        "aarch64-darwin"
+      ];
       overlays = [ ];
+      mkNixos = import ./nixos.nix;
+      mkDarwin = import ./darwin.nix;
+      forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
     in
     {
       # Custom packages and modifications, exported as overlays
@@ -61,6 +65,29 @@
         in
         import ./shell.nix { inherit pkgs; }
       );
+      # Darwin configuration entrypoint
+      # Available through 'nixos-rebuild --flake .#r'
+      darwinConfigurations =
+        let
+          system = "aarch64-darwin";
+        in
+        {
+          vm-osx = mkDarwin "vm-osx" {
+            inherit
+              pls
+              nvix
+              user
+              inputs
+              system
+              nixpkgs
+              ghostty
+              overlays
+              nix-darwin
+              home-manager
+              ;
+          };
+        };
+
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations =
@@ -68,7 +95,6 @@
           system = "aarch64-linux";
         in
         {
-
           # orbstack machine
           vm-orb = mkNixos "vm-orb" {
             inherit
@@ -87,18 +113,18 @@
           # TODO: add more machines (parallels NixOS, etc.)
 
           # parallels vm, installed .iso from https://channels.nixos.org/nixos-24.05/latest-nixos-gnome-aarch64-linux.iso
-          # vm-aarch64-parallels = mkNixos "vm-aarch64-parallels" {
-          #   inherit
-          #     nvix
-          #     user
-          #     inputs
-          #     system
-          #     nixpkgs
-          #     ghostty
-          #     overlays
-          #     home-manager
-          #     ;
-          # };
+          vm-aarch64-parallels = mkNixos "vm-aarch64-parallels" {
+            inherit
+              nvix
+              user
+              inputs
+              system
+              nixpkgs
+              ghostty
+              overlays
+              home-manager
+              ;
+          };
         };
     };
 }

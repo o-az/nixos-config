@@ -20,6 +20,8 @@
     nil
     oha
     gum
+    tdf
+    viu
     dive
     gawk
     melt
@@ -42,6 +44,7 @@
     btop
     tmux
     tmate
+    mdcat
     taplo
     atuin
     skate
@@ -54,15 +57,16 @@
     poppler
     grpcurl
     ripgrep
-    termscp
+    # termscp
     glances
     lazygit
     horcrux
+    onefetch
     termshot
     hadolint
     ast-grep
     nix-tree
-    tailspin
+    # tailspin
     nix-diff
     starship
     distrobox
@@ -70,17 +74,17 @@
     hyperfine
     fastfetch
     ssh-agents
-    zed-editor
+    # zed-editor
     git-extras
     nix-update
-    _1password
     lazydocker
     nixpkgs-fmt
     ripgrep-all
-    charm-freeze
+    # charm-freeze
     distrobox-tui
     diff-so-fancy
-    bitwarden-cli
+    # bitwarden-cli
+    _1password-cli
     coreutils-full
     bashInteractive
     uutils-coreutils

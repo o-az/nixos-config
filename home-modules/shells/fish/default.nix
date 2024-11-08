@@ -28,10 +28,6 @@ in
       interactiveShellInit = builtins.readFile ./init.fish;
       plugins = with pkgs.fishPlugins; [
         {
-          name = "sponge";
-          inherit (sponge) src;
-        }
-        {
           name = "fzf";
           inherit (fzf-fish) src;
         }
