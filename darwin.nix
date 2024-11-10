@@ -20,10 +20,6 @@ nix-darwin.lib.darwinSystem rec {
     ./modules/nix.nix
     home-manager.darwinModules.home-manager
     {
-      # home-manager.users.o = {
-      #   name = "o";
-      #   home = "/Users/o";
-      # };
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
@@ -40,7 +36,6 @@ nix-darwin.lib.darwinSystem rec {
             ./home-modules/ghostty
             ./home-modules/bat.nix
             ./home-modules/git.nix
-            ./home-modules/pls.nix
             # ./home-modules/fonts.nix
             ./home-modules/direnv.nix
             ./home-modules/shells/bash
@@ -66,11 +61,18 @@ nix-darwin.lib.darwinSystem rec {
     }
   ];
   specialArgs = {
-    inherit inputs;
-    inherit system;
-    inherit nixpkgs;
-    inherit ghostty;
-    inherit overlays;
+    inherit
+      inputs
+      system
+      nixpkgs
+      ghostty
+      overlays
+      ;
+  };
+  environment = {
+    variables = {
+      EDITOR = "hx";
+    };
   };
   homebrew = {
     enable = true;

@@ -66,11 +66,13 @@ nixpkgs.lib.nixosSystem rec {
             allowBroken = true;
             config.allowUnfree = true;
           };
-          inherit pls;
-          inherit nvix;
-          inherit inputs;
-          inherit ghostty;
-          inherit overlays;
+          inherit
+            pls
+            nvix
+            inputs
+            ghostty
+            overlays
+            ;
         };
       };
     }

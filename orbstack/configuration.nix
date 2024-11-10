@@ -9,6 +9,21 @@
 with lib;
 
 {
+  #
+  # nix-ld is specifically so that wrangler can work
+  # https://github.com/unlux/workerd/blob/main/docs/nixos.md
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    icu
+    nss
+    curl
+    zlib
+    fuse3
+    expat
+    openssl
+    stdenv.cc.cc
+  ];
+
   imports = [
     # Include the default lxd configuration.
     "${modulesPath}/virtualisation/lxc-container.nix"
