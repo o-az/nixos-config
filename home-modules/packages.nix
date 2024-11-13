@@ -48,6 +48,7 @@
     taplo
     atuin
     skate
+    freeze
     devenv
     statix
     fnlfmt
