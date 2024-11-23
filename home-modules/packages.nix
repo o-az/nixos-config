@@ -1,11 +1,9 @@
 {
-  nvix,
   pkgs,
   ...
 }:
 {
   home.packages = with pkgs; [
-    nvix.packages.${pkgs.system}.default
     fd
     fx
     yq

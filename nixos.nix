@@ -1,7 +1,6 @@
 name:
 {
   pls,
-  nvix,
   user,
   inputs,
   system,
@@ -68,7 +67,6 @@ nixpkgs.lib.nixosSystem rec {
           };
           inherit
             pls
-            nvix
             inputs
             ghostty
             overlays

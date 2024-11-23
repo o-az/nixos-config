@@ -23,9 +23,6 @@
 
     helix.url = "github:helix-editor/helix";
 
-    nvix.url = "github:niksingh710/nvix";
-    nvix.inputs.nixpkgs.follows = "nixpkgs";
-
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -36,7 +33,6 @@
   outputs =
     inputs@{
       pls,
-      nvix,
       chaotic,
       nixpkgs,
       ghostty,
@@ -78,7 +74,6 @@
           vm-osx = mkDarwin "vm-osx" {
             inherit
               pls
-              nvix
               user
               inputs
               system
@@ -102,7 +97,6 @@
           vm-orb = mkNixos "vm-orb" {
             inherit
               pls
-              nvix
               user
               inputs
               system
@@ -118,7 +112,6 @@
           # parallels vm, installed .iso from https://channels.nixos.org/nixos-24.05/latest-nixos-gnome-aarch64-linux.iso
           # vm-aarch64-parallels = mkNixos "vm-aarch64-parallels" {
           #   inherit
-          #     nvix
           #     user
           #     inputs
           #     system

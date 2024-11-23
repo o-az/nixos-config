@@ -2,7 +2,6 @@
 name:
 {
   pls,
-  nvix,
   user,
   inputs,
   system,
@@ -66,7 +65,6 @@ nix-darwin.lib.darwinSystem rec {
   specialArgs = {
     inherit
       pls
-      nvix
       inputs
       system
       nixpkgs
