@@ -64,7 +64,6 @@ nixpkgs.lib.nixosSystem rec {
             config.allowUnfree = true;
           };
           inherit
-            pls
             inputs
             ghostty
             overlays
