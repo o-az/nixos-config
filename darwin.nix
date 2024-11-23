@@ -1,6 +1,8 @@
 # https://daiderd.com/nix-darwin/manual/index.html
 name:
 {
+  pls,
+  nvix,
   user,
   inputs,
   system,
@@ -36,6 +38,7 @@ nix-darwin.lib.darwinSystem rec {
             ./home-modules/ghostty
             ./home-modules/bat.nix
             ./home-modules/git.nix
+            ./home-modules/pls.nix
             # ./home-modules/fonts.nix
             ./home-modules/direnv.nix
             ./home-modules/shells/bash
@@ -62,6 +65,8 @@ nix-darwin.lib.darwinSystem rec {
   ];
   specialArgs = {
     inherit
+      pls
+      nvix
       inputs
       system
       nixpkgs

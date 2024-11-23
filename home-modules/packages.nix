@@ -58,13 +58,11 @@
     poppler
     grpcurl
     ripgrep
-    # termscp
     glances
     lazygit
     horcrux
     onefetch
     termshot
-    hadolint
     ast-grep
     nix-tree
     # tailspin
@@ -75,16 +73,13 @@
     hyperfine
     fastfetch
     ssh-agents
-    # zed-editor
     git-extras
     nix-update
     lazydocker
     nixpkgs-fmt
     ripgrep-all
-    # charm-freeze
     distrobox-tui
     diff-so-fancy
-    # bitwarden-cli
     _1password-cli
     coreutils-full
     bashInteractive
