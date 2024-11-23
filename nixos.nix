@@ -1,6 +1,5 @@
 name:
 {
-  pls,
   user,
   inputs,
   system,
@@ -44,7 +43,6 @@ nixpkgs.lib.nixosSystem rec {
             ./home-modules/ghostty
             ./home-modules/bat.nix
             ./home-modules/git.nix
-            ./home-modules/pls.nix
             # ./home-modules/fonts.nix
             ./home-modules/direnv.nix
             ./home-modules/shells/bash

@@ -369,22 +369,6 @@
         "type": "github"
       }
     },
-    "pls": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1730926560,
-        "narHash": "sha256-oHl6EbQFpXkjN8kpqNoqChtslDJpdf0xB7RXuok3eo8=",
-        "owner": "pls-rs",
-        "repo": "pls",
-        "rev": "f6517cdcb44970e18598c6c9413a322065ad476f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "pls-rs",
-        "repo": "pls",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "chaotic": "chaotic",
@@ -395,8 +379,7 @@
         "home-manager": "home-manager_2",
         "nix-darwin": "nix-darwin",
         "nix-index-database": "nix-index-database",
-        "nixpkgs": "nixpkgs_3",
-        "pls": "pls"
+        "nixpkgs": "nixpkgs_3"
       }
     },
     "rust-overlay": {
