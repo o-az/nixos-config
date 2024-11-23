@@ -73,7 +73,6 @@
         {
           vm-osx = mkDarwin "vm-osx" {
             inherit
-              pls
               user
               inputs
               system

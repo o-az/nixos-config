@@ -9,20 +9,24 @@
 with lib;
 
 {
-  #
-  # nix-ld is specifically so that wrangler can work
-  # https://github.com/unlux/workerd/blob/main/docs/nixos.md
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    icu
-    nss
-    curl
-    zlib
-    fuse3
-    expat
-    openssl
-    stdenv.cc.cc
-  ];
+
+  programs = {
+    fish.enable = true;
+    #
+    # nix-ld is specifically so that wrangler can work
+    # https://github.com/unlux/workerd/blob/main/docs/nixos.md
+    nix-ld.enable = true;
+    nix-ld.libraries = with pkgs; [
+      icu
+      nss
+      curl
+      zlib
+      fuse3
+      expat
+      openssl
+      stdenv.cc.cc
+    ];
+  };
 
   imports = [
     # Include the default lxd configuration.
@@ -86,12 +90,6 @@ with lib;
       fish
     ];
     shellAliases = { };
-  };
-
-  programs = {
-    fish = {
-      enable = true;
-    };
   };
 
   # Extra certificates from OrbStack.
