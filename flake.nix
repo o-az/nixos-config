@@ -39,11 +39,11 @@
       user = "o";
       supportedSystems = [
         "aarch64-linux"
-        "aarch64-darwin"
+        # "aarch64-darwin"
       ];
       overlays = [ ];
       mkNixos = import ./nixos.nix;
-      mkDarwin = import ./darwin.nix;
+      # mkDarwin = import ./darwin.nix;
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
     in
     {
@@ -59,29 +59,9 @@
         in
         import ./shell.nix { inherit pkgs; }
       );
-      # Darwin configuration entrypoint
-      # Available through 'nixos-rebuild --flake .#r'
-      darwinConfigurations =
-        let
-          system = "aarch64-darwin";
-        in
-        {
-          vm-osx = mkDarwin "vm-osx" {
-            inherit
-              user
-              inputs
-              system
-              nixpkgs
-              ghostty
-              overlays
-              nix-darwin
-              home-manager
-              ;
-          };
-        };
 
       # NixOS configuration entrypoint
-      # Available through 'nixos-rebuild --flake .#your-hostname'
+      # Available through 'nixos-rebuild --flake .#hostname'
       nixosConfigurations =
         let
           system = "aarch64-linux";
@@ -101,6 +81,27 @@
           };
 
           # TODO: add more machines (parallels NixOS, etc.)
+
+          # Darwin configuration entrypoint
+          # Available through 'nixos-rebuild --flake .#hostname'
+          # darwinConfigurations =
+          #   let
+          #     system = "aarch64-darwin";
+          #   in
+          #   {
+          #     vm-osx = mkDarwin "vm-osx" {
+          #       inherit
+          #         user
+          #         inputs
+          #         system
+          #         nixpkgs
+          #         ghostty
+          #         overlays
+          #         nix-darwin
+          #         home-manager
+          #         ;
+          #     };
+          #   };
 
           # parallels vm, installed .iso from https://channels.nixos.org/nixos-24.05/latest-nixos-gnome-aarch64-linux.iso
           # vm-aarch64-parallels = mkNixos "vm-aarch64-parallels" {

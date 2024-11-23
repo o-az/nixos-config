@@ -25,4 +25,5 @@ jobs:
         with:
           name: "index/nixos-config"
           rolling: true
+          logger: "full"
           visibility: "public"
