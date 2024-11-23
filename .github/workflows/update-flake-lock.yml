@@ -36,3 +36,4 @@ jobs:
           git-author-email: ${{ secrets.AUTHOR_EMAIL }}
           git-author-name: ${{ secrets.AUTHOR_NAME }}
           git-committer-email: ${{ secrets.AUTHOR_EMAIL }}
+          gpg-private-key: ${{ secrets.SIGNING_KEY }}
