@@ -1,7 +1,6 @@
 # https://daiderd.com/nix-darwin/manual/index.html
 name:
 {
-  user,
   inputs,
   system,
   nixpkgs,
@@ -29,21 +28,24 @@ nix-darwin.lib.darwinSystem rec {
           imports = [
             # TODO: check do I need this
             { home.stateVersion = "23.11"; }
-            ./home-modules/home.nix
+            ./home-modules/tmux
             ./home-modules/kitty
             ./home-modules/helix
             ./home-modules/zellij
             ./home-modules/ghostty
             ./home-modules/bat.nix
             ./home-modules/git.nix
-            # ./home-modules/fonts.nix
+            ./home-modules/home.nix
+            ./home-modules/fonts.nix
             ./home-modules/direnv.nix
             ./home-modules/shells/bash
             ./home-modules/shells/fish
+            ./home-modules/shells/nushell
             ./home-modules/lazygit.nix
             ./home-modules/keybase.nix
             ./home-modules/packages.nix
             ./home-modules/starship.nix
+            ./home-modules/fastfetch.nix
             ./home-modules/github-cli.nix
           ];
         };

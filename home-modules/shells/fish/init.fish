@@ -23,8 +23,6 @@ source $HOME/nixos-config/home-modules/shells/fish/functions/ssh_agent_start.fis
 direnv hook fish | source
 set -g direnv_fish_mode eval_on_arrow # trigger direnv at prompt, and on every arrow-based directory change (default)
 
-restish completion fish | source
-
 # bat
 eval (batpipe)
 

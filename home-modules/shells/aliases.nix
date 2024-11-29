@@ -1,11 +1,13 @@
 {
+  open-ports = "ss -tulpn | awk 'NR>1{split($5,a,\":\"); split($7,b,\",\"); if(b[2]) print a[length(a)], b[2]}'";
+  rm = "rip";
+  loc = "tokei --sort=files --compact";
   j = "just";
   rm-dots = "sudo find . -type f -name \"._*\" -exec rm -r {} +";
   code = "code-insiders";
   walk = "walk --icons";
-  # zed = "/Applications/Zed.app/Contents/MacOS/cli";
   cat = "bat --theme='1337' --paging='never' --style='changes,header,grid'";
-  rg = "batgrep --color=always --paging='never' --iglob='!*.lock,!*lock.json,!_'";
+  rg = "batgrep --rga --color=always --paging='never' --iglob='!*.lock,!*lock.json,!_'";
   grep = "batgrep --color=always --paging='never' --iglob='!*.lock,!*lock.json,!_'";
   man = "BAT_THEME='Solarized (light)' batman";
   less = "batpipe";
@@ -17,7 +19,7 @@
   ".." = "cd ..";
   "..." = "cd ../..";
   yless = "jless --yaml";
-  tree = "eza --all --color='always' --icons='always' --oneline --git-ignore --tree";
+  tree = "eza --all --color='always' --icons='always' --oneline --git-ignore --tree -la";
   ls = "eza --all --color='always' --icons='always' --oneline --git-ignore";
   dnscheck = "curl https://am.i.mullvad.net/json | jq";
   # https://github.com/antfu/taze

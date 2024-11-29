@@ -7,6 +7,7 @@
     {
       enable = true;
       lfs.enable = true;
+      difftastic.enable = true;
       userName = "o-az";
       userEmail = "omaraziz.dev@proton.me";
       signing = {

@@ -55,30 +55,5 @@ in
         --trace-time"
       '';
     };
-    nix-index.enableFishIntegration = true;
-    eza = {
-      git = true;
-      enable = true;
-      icons = "auto";
-      package = pkgs.eza;
-      enableFishIntegration = true;
-    };
-    fzf = {
-      enable = true;
-      enableFishIntegration = false;
-    };
-    broot = {
-      enable = true;
-      enableFishIntegration = true;
-    };
-    dircolors = {
-      enable = true;
-      enableFishIntegration = true;
-    };
-    zoxide = {
-      enable = true;
-      enableFishIntegration = true;
-      package = pkgs.zoxide;
-    };
   };
 }

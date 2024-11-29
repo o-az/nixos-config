@@ -5,6 +5,7 @@
     enableTransience = true;
     enableFishIntegration = true;
     enableBashIntegration = true;
+    enableNushellIntegration = true;
     settings = {
       scan_timeout = 10;
       add_newline = true;

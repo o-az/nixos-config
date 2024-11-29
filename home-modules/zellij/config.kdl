@@ -1,15 +1,16 @@
-pane_frames false
-session_serialization false
-default_shell "fish"
-copy_command "pbcopy"
-default_layout "compact"
-on_force_close "quit"
-simplified_ui true
-theme "tokyo-night-dark"
-default_layout "compact"
 mouse_mode true
-scroll_buffer_size 100000
+pane_frames false
+simplified_ui true
+copy_on_select true
+default_shell "fish"
+on_force_close "quit"
+copy_command "pbcopy"
 styled_underlines false
+default_layout "compact"
+theme "catppuccin-mocha"
+default_layout "compact"
+scroll_buffer_size 100000
+session_serialization false
 
 plugins {
   tab-bar location="zellij:tab-bar"
@@ -33,4 +34,12 @@ keybinds {
 	session {
 		bind "Ctrl k" { SwitchToMode "Normal"; }
 	}
+  // https://github.com/Nacho114/harpoon
+  shared_except "locked" {
+    bind "Ctrl y" {
+       LaunchOrFocusPlugin "file:~/.config/zellij/plugins/harpoon.wasm" {
+          floating true; move_to_focused_tab true;
+      }
+    }
+  }
 }

@@ -1,4 +1,22 @@
 {
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nixd",
+  "nix.serverSettings": {
+    "nixd": {
+      "formatting": {
+        "command": [
+          "nixfmt",
+          "--width=100",
+        ],
+      }
+    }
+  },
+  "files.associations": {
+    ".env": "dotenv",
+    ".env.*": "dotenv",
+    ".envrc": "shellscript",
+    ".vscode/*.json": "jsonc"
+  },
   "search.exclude": {
     "**/flake.lock": true
   },
@@ -6,8 +24,4 @@
     "result": true,
     ".direnv": true,
   },
-  "files.associations": {
-    ".envrc": "shellcheckrc"
-  },
-  "nix.enableLanguageServer": true
 }

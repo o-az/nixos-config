@@ -1,8 +1,11 @@
 {
   "recommendations": [
+    "mkhl.direnv",
     "bbenoist.nix",
+    "jnoortheen.nix-ide",
     "timonwong.shellcheck",
     "bmalehorn.vscode-fish",
-    "arrterian.nix-env-selector"
+    "arrterian.nix-env-selector",
+    "thenuprojectcontributors.vscode-nushell-lang",
   ]
 }

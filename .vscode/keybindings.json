@@ -1,0 +1,195 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "cmd+;",
+    "command": "editor.action.goToDeclaration"
+  },
+  {
+    "key": "cmd+alt+i",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "shift+cmd+;",
+    "command": "workbench.action.navigateBack",
+    "when": "canNavigateBack"
+  },
+  {
+    "key": "alt+left",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u001b[1;5D" // cursor one word left
+    },
+    "when": "terminalFocus"
+  },
+  {
+    "key": "alt+right",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u001b[1;5C" // cursor one word right
+    },
+    "when": "terminalFocus"
+  },
+  {
+    "key": "alt+up",
+    "command": "workbench.action.terminal.scrollToTop",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "alt+down",
+    "command": "workbench.action.terminal.scrollToBottom",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "alt+right",
+    "command": "editor.action.inlineSuggest.showNext",
+    "when": "textInputFocus && inlineSuggestionVisible"
+  },
+  {
+    "key": "alt+left",
+    "command": "editor.action.inlineSuggest.showPrevious",
+    "when": "inlineSuggestionVisible && textInputFocus"
+  },
+  {
+    "key": "alt+down",
+    "command": "editor.action.triggerSuggest",
+    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible && inlineSuggestionVisible"
+  },
+  // cmd+k clear terminal
+  {
+    "key": "cmd+k",
+    "command": "workbench.action.terminal.clear"
+  },
+  // cmd+shift+enter open terminal
+  {
+    "key": "cmd+shift+enter",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "cmd+shift+backspace",
+    "command": "workbench.action.terminal.kill"
+  },
+  // {
+  //   "key": "tab",
+  //   "command": "",
+  //   "when": "textInputFocus && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorTabMovesFocus"
+  // },
+  {
+    "key": "ctrl+]",
+    "command": "ctrl+]",
+    "when": "editor.action.inlineSuggest.showNext"
+  },
+  {
+    "key": "cmd+shift+l",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus",
+    "args": {
+      "snippet": "console.info(${TM_SELECTED_TEXT}$1)$0"
+    }
+  },
+  {
+    "key": "cmd+shift+j",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus",
+    "args": {
+      "snippet": "JSON.stringify(${TM_SELECTED_TEXT}$1, undefined, 2)$0"
+    }
+  },
+  {
+    "key": "shift+cmd+-",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus",
+    "args": {
+      "snippet": "then(_ => console.log(JSON.stringify(_, undefined, 2)))"
+    }
+  },
+  {
+    "key": "shift+cmd+t",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus",
+    "args": {
+      "snippet": "try {} catch(error) { const errorMessage = error instanceof Error ? error.message : error; console.error(errorMessage);}"
+    }
+  },
+  {
+    "key": "shift+cmd+r",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus",
+    "args": {
+      "snippet": "try { \n } catch(error) { \n }"
+    }
+  },
+  {
+    "key": "shift+cmd+s",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus",
+    "args": {
+      "snippet": "<script lang=\"ts\">\n</script>\n\n<style lang=\"postcss\"></style>"
+    }
+  },
+  {
+    "key": "shift+cmd+a",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus",
+    "args": {
+      "snippet": "---\ninterface Props {}\n---\n\n<script></script>\n\n<style></style>\n"
+    }
+  },
+  {
+    "key": "shift+cmd+i",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus",
+    "args": {
+      "snippet": "import * as React from 'react'"
+    }
+  },
+  {
+    "key": "shift+cmd+r",
+    "command": "-extension.vsKubernetesDescribe.Refresh",
+    "when": "vscodeKubernetesDescribeContext"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "copilot-labs.use-brush-picker",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "-copilot-labs.use-brush-picker",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+up",
+    "command": "-workbench.action.terminal.accessibleBufferGoToPreviousCommand",
+    "when": "accessibilityModeEnabled && terminalAccessibleBufferFocus && terminalHasBeenCreated || accessibilityModeEnabled && terminalAccessibleBufferFocus && terminalProcessSupported"
+  },
+  {
+    "key": "alt+down",
+    "command": "-workbench.action.terminal.accessibleBufferGoToNextCommand",
+    "when": "accessibilityModeEnabled && terminalAccessibleBufferFocus || accessibilityModeEnabled && terminalAccessibleBufferFocus && terminalHasBeenCreated || accessibilityModeEnabled && terminalAccessibleBufferFocus && terminalProcessSupported"
+  },
+  {
+    "key": "cmd+r",
+    "command": "-python.refreshTensorBoard",
+    "when": "python.hasActiveTensorBoardSession"
+  },
+  {
+    "key": "cmd+r",
+    "command": "-workbench.action.terminal.runRecentCommand",
+    "when": "accessibilityModeEnabled && terminalFocus && terminalHasBeenCreated || accessibilityModeEnabled && terminalFocus && terminalProcessSupported || accessibilityModeEnabled && accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal' || accessibilityModeEnabled && accessibleViewIsShown && terminalProcessSupported && accessibleViewCurrentProviderId == 'terminal'"
+  },
+  {
+    "key": "cmd+r",
+    "command": "-workbench.action.reloadWindow",
+    "when": "isDevelopment"
+  },
+  {
+    "key": "cmd+r",
+    "command": "renameFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "-renameFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  }
+]

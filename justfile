@@ -2,32 +2,37 @@ set shell := ["fish", "-c"]
 set dotenv-load := true
 set positional-arguments := true
 
+#
+# set machine name in .env
+# example `VM=".#vm-orb"`
+
 alias b := build
 alias pms := permissions
 
-export VM := ".#vm-orb"
+nom := "2>&1 | nom"
+
 export NIXPKGS_BROKEN := "1"
 export NIXPKGS_ALLOW_UNFREE := "1"
 
 default: permissions fmt build
 
 build:
-    sudo nixos-rebuild switch --flake $VM --print-build-logs --show-trace
+    sudo nixos-rebuild switch --flake $VM --print-build-logs --show-trace {{nom}}
 
 build-impure:
-    sudo nixos-rebuild switch --flake $VM --impure --print-build-logs --show-trace
+    sudo nixos-rebuild switch --flake $VM --impure --print-build-logs --show-trace {{nom}}
 
 build-no-log:
-    sudo nixos-rebuild switch --flake $VM
+    sudo nixos-rebuild switch --flake $VM {{nom}}
 
 upgrade:
-    sudo nixos-rebuild switch --flake $VM --upgrade --print-build-logs --show-trace
+    sudo nixos-rebuild switch --flake $VM --upgrade --print-build-logs --show-trace {{nom}}
 
 upgrade-no-log:
-    sudo nixos-rebuild switch --flake $VM --upgrade
+    sudo nixos-rebuild switch --flake $VM --upgrade {{nom}}
 
 upgrade-impure:
-    sudo nixos-rebuild switch --flake $VM --upgrade --impure --print-build-logs --show-trace
+    sudo nixos-rebuild switch --flake $VM --upgrade --impure --print-build-logs --show-trace {{nom}}
 
 remove-fonts:
     sudo rm -rf /etc/fonts
@@ -51,6 +56,12 @@ permissions:
 
 [group('cleanup')]
 rm-dots:
+    sudo find . -type f -name "._*" -exec rm -r {} +
+    sudo find . -type f -name "._*" -exec rm -r {} +
+    sudo find . -type f -name "._*" -exec rm -r {} +
+    sudo find . -type f -name "._*" -exec rm -r {} +
+    sudo find . -type f -name "._*" -exec rm -r {} +
+    sudo find . -type f -name "._*" -exec rm -r {} +
     sudo find . -type f -name "._*" -exec rm -r {} +
 
 home-manager:

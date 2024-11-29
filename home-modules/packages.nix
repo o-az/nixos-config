@@ -1,17 +1,21 @@
 {
   pkgs,
+  zjstatus,
   ...
 }:
 {
   home.packages = with pkgs; [
+    zjstatus.packages.${pkgs.system}.default
     fd
     fx
+    sd
     yq
     jq
     niv
     vhs
     duf
     oha
+    lsd
     pop
     gcc
     dig
@@ -20,6 +24,10 @@
     gum
     tdf
     viu
+    nmap
+    kmon
+    dust
+    xplr
     dive
     gawk
     melt
@@ -28,7 +36,6 @@
     entr
     time
     dura
-    tldr
     jump
     ctop
     navi
@@ -40,48 +47,49 @@
     glow
     mods
     btop
-    tmux
+    lsof
+    tokei
     tmate
     mdcat
-    taplo
     atuin
     skate
+    gping
+    choose
     freeze
     devenv
     statix
     fnlfmt
-    restish
     deadnix
-    gotools
     poppler
     grpcurl
     ripgrep
     glances
     lazygit
     horcrux
+    tealdeer
     onefetch
     termshot
     ast-grep
     nix-tree
     # tailspin
+    rustscan
     nix-diff
     starship
     distrobox
     superfile
     hyperfine
-    fastfetch
     ssh-agents
     git-extras
     nix-update
     lazydocker
-    nixpkgs-fmt
+    rm-improved
     ripgrep-all
     distrobox-tui
-    diff-so-fancy
     _1password-cli
     coreutils-full
     bashInteractive
     uutils-coreutils
     nixfmt-rfc-style
+    nix-output-monitor
   ];
 }
