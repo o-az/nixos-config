@@ -43,36 +43,20 @@
       zjstatus,
       nix-darwin,
       catppuccin,
+      flake-utils,
       home-manager,
       ...
     }:
     let
       user = "o";
-      supportedSystems = [
-        "aarch64-linux"
-        "aarch64-darwin"
-      ];
-      overlays = [ ];
       mkNixos = import ./nixos.nix;
       mkDarwin = import ./darwin.nix;
-      forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
-    in
-    {
       # Custom packages and modifications, exported as overlays
       overlays = import ./overlays { inherit inputs nixpkgs; };
-
-      # Devshell for bootstrapping
-      # Accessible through 'nix develop' or 'nix-shell' (legacy)
-      devShells = forAllSystems (
-        system:
-        let
-          pkgs = nixpkgs.legacyPackages.${system};
-        in
-        import ./shell.nix { inherit pkgs; }
-      );
-
+    in
+    {
       # NixOS configuration entrypoint
-      # Available through 'nixos-rebuild --flake .#hostname'
+      # Available through 'nixos-rebuild --flake .#vm-orb'
       nixosConfigurations =
         let
           system = "aarch64-linux";
@@ -94,25 +78,26 @@
               ;
           };
 
-          # TODO: add more machines (parallels NixOS, etc.)
-
           # parallels vm, installed .iso from https://channels.nixos.org/nixos-24.05/latest-nixos-gnome-aarch64-linux.iso
-          # vm-aarch64-parallels = mkNixos "vm-aarch64-parallels" {
-          #   inherit
-          #     user
-          #     inputs
-          #     system
-          #     nixpkgs
-          #     ghostty
-          #     overlays
-          #     zjstatus
-          #     catppuccin
-          #     home-manager
-          #     ;
-          # };
+          # available through 'nixos-rebuild --flake .#vm-aarch64-parallels'
+          vm-aarch64-parallels = mkNixos "vm-aarch64-parallels" {
+            inherit
+              user
+              stylix
+              inputs
+              system
+              nixpkgs
+              ghostty
+              zjstatus
+              overlays
+              catppuccin
+              home-manager
+              ;
+          };
         };
+
       # Darwin configuration entrypoint
-      # Available through 'nixos-rebuild --flake .#hostname'
+      # Available through 'nixos-rebuild --flake .#o'
       darwinConfigurations =
         let
           system = "aarch64-darwin";
@@ -133,6 +118,15 @@
               ;
           };
         };
-    };
+    }
+    // (flake-utils.lib.eachDefaultSystem (
+      system:
+      let
+        pkgs = import nixpkgs { inherit system; };
+      in
+      {
+        devShells = import ./shell.nix { inherit pkgs; };
+      }
+    ));
 
 }
