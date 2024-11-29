@@ -49,12 +49,13 @@
     }:
     let
       user = "o";
+      overlays = [ ];
       mkNixos = import ./nixos.nix;
       mkDarwin = import ./darwin.nix;
-      # Custom packages and modifications, exported as overlays
-      overlays = import ./overlays { inherit inputs nixpkgs; };
     in
+    # Custom packages and modifications, exported as overlays
     {
+      overlays = import ./overlays { inherit inputs nixpkgs; };
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#vm-orb'
       nixosConfigurations =
