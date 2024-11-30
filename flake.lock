@@ -336,11 +336,11 @@
         "zig": "zig"
       },
       "locked": {
-        "lastModified": 1732726311,
-        "narHash": "sha256-GCP0NMqcXt/f2ezyAnhm+v3r8CTr2jr/JQEMgVJjAzQ=",
+        "lastModified": 1732905828,
+        "narHash": "sha256-kOEammQkghgl+1/p2qin9gPXHKXgR0kMdF2oJ0d4dGg=",
         "ref": "refs/heads/main",
-        "rev": "423f58c24c02f1fcb0401eee7e7b5b7ade7be57a",
-        "revCount": 8128,
+        "rev": "cf21689a883e774c7aa8d7a45cd774a2ace1aef3",
+        "revCount": 8130,
         "type": "git",
         "url": "ssh://git@github.com/ghostty-org/ghostty"
       },

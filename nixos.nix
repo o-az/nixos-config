@@ -51,12 +51,12 @@ nixpkgs.lib.nixosSystem rec {
             ./home-modules/direnv.nix
             ./home-modules/shells/bash
             ./home-modules/shells/fish
-            ./home-modules/shells/nushell
             ./home-modules/lazygit.nix
             ./home-modules/keybase.nix
             ./home-modules/packages.nix
             ./home-modules/starship.nix
             ./home-modules/fastfetch.nix
+            ./home-modules/shells/nushell
             ./home-modules/github-cli.nix
           ];
         };

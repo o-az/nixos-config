@@ -1,11 +1,14 @@
 # https://daiderd.com/nix-darwin/manual/index.html
 name:
 {
+  user,
   inputs,
   system,
   nixpkgs,
   ghostty,
+  zjstatus,
   overlays,
+  catppuccin,
   nix-darwin,
   home-manager,
 }:
@@ -17,6 +20,9 @@ nix-darwin.lib.darwinSystem rec {
     ./modules/darwin.nix
     ./modules/fonts.nix
     ./modules/nix.nix
+    #
+    # home-manager
+    #
     home-manager.darwinModules.home-manager
     {
       home-manager = {
@@ -40,12 +46,12 @@ nix-darwin.lib.darwinSystem rec {
             ./home-modules/direnv.nix
             ./home-modules/shells/bash
             ./home-modules/shells/fish
-            ./home-modules/shells/nushell
             ./home-modules/lazygit.nix
             ./home-modules/keybase.nix
             ./home-modules/packages.nix
             ./home-modules/starship.nix
             ./home-modules/fastfetch.nix
+            ./home-modules/shells/nushell
             ./home-modules/github-cli.nix
           ];
         };

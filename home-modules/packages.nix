@@ -80,10 +80,12 @@
     hyperfine
     ssh-agents
     git-extras
+    difftastic
     nix-update
     lazydocker
     rm-improved
     ripgrep-all
+    diff-so-fancy
     distrobox-tui
     _1password-cli
     coreutils-full
