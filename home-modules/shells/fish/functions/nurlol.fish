@@ -11,5 +11,7 @@ function nurlol --description "Get the nurl output and copy to clipboard. Usage:
     # set the command to a variable: "nurl https://github.com/$user/$repo 2>/dev/null"
     set -l nurlol_command "nurl https://github.com/$user/$repo 2>/dev/null"
     # Execute the command, copy to clipboard using pbcopy, and print the command
-    set -l nurlol_output (eval $nurlol_command); echo $nurlol_output | pbcopy; echo $nurlol_output
+    set -l nurlol_output (eval $nurlol_command)
+    echo $nurlol_output | pbcopy
+    echo $nurlol_output
 end

@@ -17,6 +17,7 @@ nix-darwin.lib.darwinSystem rec {
   inherit system;
   modules = [
     ./modules/1password.nix
+    ./modules/openssh.nix
     ./modules/darwin.nix
     ./modules/fonts.nix
     ./modules/nix.nix
@@ -25,6 +26,10 @@ nix-darwin.lib.darwinSystem rec {
     #
     home-manager.darwinModules.home-manager
     {
+      users.users.o = {
+        name = "o";
+        home = "/Users/o";
+      };
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
@@ -32,8 +37,6 @@ nix-darwin.lib.darwinSystem rec {
           name = "o";
           home = "/Users/o";
           imports = [
-            # TODO: check do I need this
-            { home.stateVersion = "23.11"; }
             ./home-modules/tmux
             ./home-modules/kitty
             ./home-modules/helix
@@ -44,6 +47,7 @@ nix-darwin.lib.darwinSystem rec {
             ./home-modules/home.nix
             ./home-modules/fonts.nix
             ./home-modules/direnv.nix
+            ./home-modules/darwin.nix
             ./home-modules/shells/bash
             ./home-modules/shells/fish
             ./home-modules/lazygit.nix

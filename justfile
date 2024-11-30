@@ -48,6 +48,7 @@ lint:
 fmt:
     just --fmt --unstable
     yamlfmt . --formatter
+    fish_indent --write **/*.fish
     nixfmt *.nix **/*.nix **/**/*.nix --width=100
 
 fml: fmt lint

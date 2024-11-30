@@ -48,3 +48,8 @@ set -Ux BAT_THEME 1337
 # forgit
 set -x PATH $PATH $FORGIT_INSTALL_DIR/bin
 set -Ux FORGIT_CHECKOUT_BRANCH_BRANCH_GIT_OPTS '--sort=-committerdate'
+
+# if `uname -r` result contains `orbstack`, add alias `xdg-open` to `open`
+if uname -r | rga --quiet orbstack
+    alias xdg-open open
+end

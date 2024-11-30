@@ -8,6 +8,9 @@ _: {
     '';
     authorizedKeysFiles = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJNMtRVUTD0g9VNsHXK3EpDrgyndSAFbLqNmTEtJRfJI"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJweyVEQv8a6t9p4magdhQcah9yqADTxkkG5+svwSkBL"
+
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDNyROH/lWSYGnwkMmmDqsjIFjo4zv/N4HHQS9GVxPLn"
     ];
     settings = {
       X11Forwarding = true;

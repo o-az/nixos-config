@@ -111,8 +111,8 @@
               system
               nixpkgs
               ghostty
-              overlays
               zjstatus
+              overlays
               catppuccin
               nix-darwin
               home-manager
