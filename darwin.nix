@@ -10,12 +10,14 @@ name:
   overlays,
   catppuccin,
   nix-darwin,
+  determinate,
   home-manager,
 }:
 
 nix-darwin.lib.darwinSystem rec {
   inherit system;
   modules = [
+    determinate.darwinModules.default
     ./modules/1password.nix
     ./modules/openssh.nix
     ./modules/darwin.nix

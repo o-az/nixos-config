@@ -2,9 +2,11 @@
   description = "NixOS systems & configuration";
 
   inputs = {
+    # consider switching to github:numtide/nixpkgs-unfree?ref=nixos-unstable
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
-    # consider switching to github:numtide/nixpkgs-unfree?ref=nixos-unstable
+    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/0.1";
+
     nix-darwin.url = "github:lnl7/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -44,6 +46,8 @@
       nix-darwin,
       catppuccin,
       flake-utils,
+      determinate,
+      flake-parts,
       home-manager,
       ...
     }:
@@ -75,6 +79,7 @@
               zjstatus
               overlays
               catppuccin
+              determinate
               home-manager
               ;
           };
@@ -92,6 +97,7 @@
               zjstatus
               overlays
               catppuccin
+              determinate
               home-manager
               ;
           };
@@ -115,6 +121,7 @@
               overlays
               catppuccin
               nix-darwin
+              determinate
               home-manager
               ;
           };

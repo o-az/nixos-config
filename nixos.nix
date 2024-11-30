@@ -9,6 +9,7 @@ name:
   zjstatus,
   overlays,
   catppuccin,
+  determinate,
   home-manager,
 }:
 
@@ -16,6 +17,7 @@ nixpkgs.lib.nixosSystem rec {
   inherit system;
   # NixOS System level modules
   modules = [
+    determinate.nixosModules.default
     { nixpkgs.overlays = overlays; }
     ./orbstack/configuration.nix
     ./orbstack/orbstack.nix
