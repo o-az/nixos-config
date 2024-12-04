@@ -139,7 +139,7 @@ nix-darwin.lib.darwinSystem rec {
           imports = [
             ./home-modules/tmux
             ./home-modules/kitty
-            # ./home-modules/helix
+            ./home-modules/helix
             ./home-modules/zellij
             ./home-modules/ghostty
             ./home-modules/bat.nix

@@ -23,7 +23,6 @@
     tdf
     viu
     nmap
-    kmon
     dust
     xplr
     dive
@@ -37,7 +36,6 @@
     jump
     ctop
     navi
-    kmon
     just
     nurl
     walk
