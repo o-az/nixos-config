@@ -1,11 +1,9 @@
 {
   pkgs,
-  zjstatus,
   ...
 }:
 {
   home.packages = with pkgs; [
-    zjstatus.packages.${pkgs.system}.default
     fd
     fx
     sd

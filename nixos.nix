@@ -6,7 +6,6 @@ name:
   stylix,
   nixpkgs,
   ghostty,
-  zjstatus,
   overlays,
   determinate,
   home-manager,
@@ -73,7 +72,6 @@ nixpkgs.lib.nixosSystem rec {
           inherit
             inputs
             ghostty
-            zjstatus
             overlays
             ;
         };

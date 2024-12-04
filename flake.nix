@@ -27,8 +27,6 @@
 
     stylix.url = "github:danth/stylix";
 
-    zjstatus.url = "github:dj95/zjstatus";
-
     helix.url = "github:helix-editor/helix";
   };
 
@@ -38,7 +36,6 @@
       chaotic,
       nixpkgs,
       ghostty,
-      zjstatus,
       nix-darwin,
       flake-utils,
       determinate,
@@ -73,7 +70,6 @@
               system
               nixpkgs
               ghostty
-              zjstatus
               overlays
               determinate
               home-manager
