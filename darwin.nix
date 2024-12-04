@@ -25,10 +25,10 @@ nix-darwin.lib.darwinSystem rec {
   };
   modules = [
     determinate.darwinModules.default
-    ./modules/1password.nix
-    ./modules/openssh.nix
+    # ./modules/1password.nix
+    # ./modules/openssh.nix
     ./modules/darwin.nix
-    ./modules/fonts.nix
+    # ./modules/fonts.nix
     ./modules/nix.nix
     #
     # home-manager
@@ -67,7 +67,7 @@ nix-darwin.lib.darwinSystem rec {
             ./home-modules/home.nix
             ./home-modules/fonts.nix
             ./home-modules/direnv.nix
-            # ./home-modules/darwin.nix
+            ./home-modules/darwin.nix
             ./home-modules/shells/bash
             ./home-modules/shells/fish
             ./home-modules/lazygit.nix
@@ -120,15 +120,15 @@ nix-darwin.lib.darwinSystem rec {
       #   };
       # };
     }
-    {
-      config._module.args = {
-        pkgs = import inputs.nixpkgs {
-          system = "aarch64-darwin";
-          allowBroken = true;
-          allowUnfree = true;
-        };
-      };
-    }
+    # {
+    #   config._module.args = {
+    #     pkgs = import inputs.nixpkgs {
+    #       system = "aarch64-darwin";
+    #       allowBroken = true;
+    #       allowUnfree = true;
+    #     };
+    #   };
+    # }
   ];
   # homebrew = {
   #   enable = true;

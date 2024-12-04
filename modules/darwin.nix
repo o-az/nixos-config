@@ -37,7 +37,7 @@
     {
       hostName = name;
       computerName = name;
-      localHostname = name;
+      localHostName = name;
     };
 
   # Used for backwards compatibility, please read the changelog before changing.
