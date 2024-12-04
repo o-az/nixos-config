@@ -34,7 +34,7 @@ nix-darwin.lib.darwinSystem rec {
       homebrew = {
         enable = true;
         onActivation = {
-          cleanup = true;
+          cleanup = "zap";
           upgrade = true;
           autoUpdate = true;
         };
