@@ -17,7 +17,7 @@ default: permissions fmt build
 
 [group('build-macos')]
 build-macos:
-    sudo darwin-rebuild switch --flake $VM --upgrade-all --fast --print-build-logs --show-trace {{ nom }}
+    sudo nix run nix-darwin -- switch --flake $VM --print-build-logs --show-trace {{ nom }}
 
 [group('build-darwin')]
 upgrade-macos:

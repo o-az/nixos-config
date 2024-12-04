@@ -57,6 +57,8 @@
       overlays = import ./overlays { inherit inputs nixpkgs; };
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#vm-orb'
+      # nix run nix-darwin -- switch --flake .#vm-osx --upgrade-all --fast --print-build-logs --show-trace
+      # nix run nix-darwin -- switch --flake ~/.config/nix-darwin
       nixosConfigurations =
         let
           system = "aarch64-linux";
@@ -91,7 +93,6 @@
               system
               nixpkgs
               ghostty
-              zjstatus
               overlays
               nix-darwin
               determinate
