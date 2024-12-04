@@ -2,13 +2,13 @@
 {
   nix = {
     # package = pkgs.nix;
+    optimise.automatic = true;
     gc = {
       automatic = true;
     };
     settings = {
       sandbox = "relaxed";
       warn-dirty = false;
-      auto-optimise-store = true;
       trusted-users = [
         "root"
         "o"
