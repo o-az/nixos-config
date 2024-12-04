@@ -97,7 +97,7 @@ nix-darwin.lib.darwinSystem rec {
           "font-blex-mono-nerd-font"
           "font-fira-code-nerd-font"
           "font-monaspace-nerd-font"
-          "font-jetbrains-mono-nerd-font"
+          # "font-jetbrains-mono-nerd-font"
         ];
       };
     }
