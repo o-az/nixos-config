@@ -38,7 +38,7 @@
       localHostName = name;
     };
 
-  nix.settings.trusted-users = [ user ];
+  nix.settings.trusted-users = [ "o" ];
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
