@@ -64,7 +64,7 @@ nix-darwin.lib.darwinSystem rec {
           "1password"
           "cleanshot"
           "hiddenbar"
-          "parallels"
+          # "parallels"
           "pixelsnap"
           "protonvpn"
           "appcleaner"
