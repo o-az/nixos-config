@@ -62,5 +62,5 @@
   # Add ability to used TouchID for sudo authentication
   security.pam.enableSudoTouchIdAuth = true;
 
-  programs.zsh.enable = true;
+  programs.fish.enable = true;
 }

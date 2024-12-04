@@ -9,7 +9,7 @@
   "theme": "Base16 Chalk",
   "use_auto_surround": true,
   "show_call_status_icon": true,
-  "show_inline_completions": false,
+  "show_inline_completions": true,
   "show_completions_on_input": true,
   "show_completion_documentation": true,
   "lsp": {
