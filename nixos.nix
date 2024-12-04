@@ -8,7 +8,6 @@ name:
   ghostty,
   zjstatus,
   overlays,
-  catppuccin,
   determinate,
   home-manager,
 }:
@@ -76,7 +75,6 @@ nixpkgs.lib.nixosSystem rec {
             ghostty
             zjstatus
             overlays
-            catppuccin
             ;
         };
       };

@@ -1,0 +1,54 @@
+// https://zed.dev/docs/key-bindings
+// To see the default key bindings run `zed: open default keymap`
+[
+  {
+    "bindings": {
+      "cmd-alt-i": "terminal_panel::ToggleFocus"
+    }
+  },
+  /**
+   * text replacement bindings
+   */
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-shift-l": ["workspace::SendKeystrokes", "console.info( )"]
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-shift-s": [
+        "workspace::SendKeystrokes",
+        "<script lang=\"ts\">\n</script>\n\n<style lang=\"postcss\"></style>"
+      ]
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-shift-a": [
+        "workspace::SendKeystrokes",
+        "---\ninterface Props {}\n---\n\n<script></script>\n\n<style></style>\n"
+      ]
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-shift-j": [
+        "workspace::SendKeystrokes",
+        "JSON.stringify( ,undefined,2)"
+      ]
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-shift-t": [
+        "workspace::SendKeystrokes",
+        "try {} catch(error) { const errorMessage = error instanceof Error ? error.message : error; console.error(errorMessage);}"
+      ]
+    }
+  }
+]

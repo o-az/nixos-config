@@ -6,9 +6,7 @@ name:
   system,
   nixpkgs,
   ghostty,
-  zjstatus,
   overlays,
-  catppuccin,
   nix-darwin,
   determinate,
   home-manager,
@@ -16,6 +14,15 @@ name:
 
 nix-darwin.lib.darwinSystem rec {
   inherit system;
+  specialArgs = {
+    inherit
+      inputs
+      system
+      nixpkgs
+      ghostty
+      overlays
+      ;
+  };
   modules = [
     determinate.darwinModules.default
     ./modules/1password.nix
@@ -28,16 +35,27 @@ nix-darwin.lib.darwinSystem rec {
     #
     home-manager.darwinModules.home-manager
     {
-      users.users.o = {
-        name = "o";
-        home = "/Users/o";
-      };
       home-manager = {
+
         useGlobalPkgs = true;
         useUserPackages = true;
+        extraSpecialArgs = {
+          currentSystem = system;
+          currentSystemName = name;
+          pkgs = import inputs.nixpkgs {
+            inherit system;
+            allowBroken = true;
+            config.allowUnfree = true;
+          };
+          inherit inputs;
+        };
         users.o = {
-          name = "o";
-          home = "/Users/o";
+          # name = "o";
+          # home = "/Users/o";
+          home = {
+            username = user;
+            homeDirectory = "/Users/o";
+          };
           imports = [
             ./home-modules/tmux
             ./home-modules/kitty
@@ -49,7 +67,7 @@ nix-darwin.lib.darwinSystem rec {
             ./home-modules/home.nix
             ./home-modules/fonts.nix
             ./home-modules/direnv.nix
-            ./home-modules/darwin.nix
+            # ./home-modules/darwin.nix
             ./home-modules/shells/bash
             ./home-modules/shells/fish
             ./home-modules/lazygit.nix
@@ -62,8 +80,46 @@ nix-darwin.lib.darwinSystem rec {
           ];
         };
       };
+      # home-manager = {
+      #   useGlobalPkgs = true;
+      #   useUserPackages = true;
+      #   users.o = {
+      #     # name = "o";
+      #     # home = "/Users/o";
+      #     home = {
+      #       username = user;
+      #       homeDirectory = "/Users/o";
+      #     };
+      #     imports = [
+      #       ./home-modules/tmux
+      #       ./home-modules/kitty
+      #       ./home-modules/helix
+      #       ./home-modules/zellij
+      #       ./home-modules/ghostty
+      #       ./home-modules/bat.nix
+      #       ./home-modules/git.nix
+      #       ./home-modules/home.nix
+      #       ./home-modules/fonts.nix
+      #       ./home-modules/direnv.nix
+      #       # ./home-modules/darwin.nix
+      #       ./home-modules/shells/bash
+      #       ./home-modules/shells/fish
+      #       ./home-modules/lazygit.nix
+      #       ./home-modules/keybase.nix
+      #       ./home-modules/packages.nix
+      #       ./home-modules/starship.nix
+      #       ./home-modules/fastfetch.nix
+      #       ./home-modules/shells/nushell
+      #       ./home-modules/github-cli.nix
+      #     ];
+      #   };
+      #   environment = {
+      #     variables = {
+      #       EDITOR = "hx";
+      #     };
+      #   };
+      # };
     }
-
     {
       config._module.args = {
         pkgs = import inputs.nixpkgs {
@@ -74,20 +130,6 @@ nix-darwin.lib.darwinSystem rec {
       };
     }
   ];
-  specialArgs = {
-    inherit
-      inputs
-      system
-      nixpkgs
-      ghostty
-      overlays
-      ;
-  };
-  environment = {
-    variables = {
-      EDITOR = "hx";
-    };
-  };
   homebrew = {
     enable = true;
     onActivation = {
@@ -100,70 +142,67 @@ nix-darwin.lib.darwinSystem rec {
       "Bitwarden" = 1352778147;
     };
     casks = [
-      "hey"
       "iina"
+      "warp"
       "kitty"
-      "slack"
       "qview"
-      "figma"
       "stats"
-      "signal"
-      "xcodes"
-      "iterm2"
       "gather"
-      "cursor"
+      "notion"
+      "signal"
+      "alt-tab"
+      "anytype"
+      "discord"
       "element"
-      "xquartz"
       "raycast"
+      "simplex"
+      "vivaldi"
+      "xquartz"
       "obsidian"
-      "transmit"
+      "orbstack"
       "qflipper"
       "telegram"
-      "orbstack"
+      "transmit"
+      "1password"
       "cleanshot"
       "hiddenbar"
       "parallels"
       "pixelsnap"
       "protonvpn"
-      "1password"
-      "alacritty"
-      "mullvadvpn"
-      "knockknock"
-      "cheatsheet"
       "appcleaner"
       "charmstone"
-      "powershell"
+      "cheatsheet"
+      "knockknock"
+      "mullvadvpn"
+      "pdf-expert"
       "proton-mail"
       "proton-pass"
       "zed@preview"
-      "transmission"
       "micro-snitch"
-      "little-snitch"
-      "screen-studio"
-      "1password-cli"
+      "transmission"
       "betterdisplay"
       "brave-browser"
+      "little-snitch"
+      "screen-studio"
       "beekeeper-studio"
       "eloston-chromium"
       "karabiner-elements"
       "sony-ps-remote-play"
-      "git-credential-manager"
       "firefox@developer-edition"
       "visual-studio-code@insiders"
+
+      # TODO: figure out font sharing
       #
-      # TODO: see if existing font config can work with nix-darwin
-      #
-      # font-monaspace
-      # font-open-dyslexic
-      # font-ibm-plex-mono
-      # font-jetbrains-mono
-      # font-hack-nerd-font
-      # font-3270-nerd-font
-      # font-0xproto-nerd-font
-      # font-monaspace-nerd-font
-      # font-blex-mono-nerd-font
-      # font-fira-code-nerd-font
-      # font-jetbrains-mono-nerd-font
+      # "font-monaspace"
+      # "font-ibm-plex-mono"
+      # "font-3270-nerd-font"
+      # "font-hack-nerd-font"
+      # "font-jetbrains-mono"
+      # "font-0xproto-nerd-font"
+      # "font-blex-mono-nerd-font"
+      # "font-fira-code-nerd-font"
+      # "font-monaspace-nerd-font"
+      # "font-jetbrains-mono-nerd-font"
     ];
   };
 }

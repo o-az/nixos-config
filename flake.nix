@@ -30,10 +30,6 @@
     zjstatus.url = "github:dj95/zjstatus";
 
     helix.url = "github:helix-editor/helix";
-
-    catppuccin.url = "github:catppuccin/nix";
-
-    _1password-shell-plugins.url = "github:1Password/shell-plugins";
   };
 
   outputs =
@@ -44,7 +40,6 @@
       ghostty,
       zjstatus,
       nix-darwin,
-      catppuccin,
       flake-utils,
       determinate,
       flake-parts,
@@ -78,33 +73,12 @@
               ghostty
               zjstatus
               overlays
-              catppuccin
-              determinate
-              home-manager
-              ;
-          };
-
-          # parallels vm, installed .iso from https://channels.nixos.org/nixos-24.05/latest-nixos-gnome-aarch64-linux.iso
-          # available through 'nixos-rebuild --flake .#vm-aarch64-parallels'
-          vm-aarch64-parallels = mkNixos "vm-aarch64-parallels" {
-            inherit
-              user
-              stylix
-              inputs
-              system
-              nixpkgs
-              ghostty
-              zjstatus
-              overlays
-              catppuccin
               determinate
               home-manager
               ;
           };
         };
 
-      # Darwin configuration entrypoint
-      # Available through 'nixos-rebuild --flake .#o'
       darwinConfigurations =
         let
           system = "aarch64-darwin";
@@ -119,7 +93,6 @@
               ghostty
               zjstatus
               overlays
-              catppuccin
               nix-darwin
               determinate
               home-manager

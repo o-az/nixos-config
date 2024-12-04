@@ -1,11 +1,16 @@
 {
-  config,
   lib,
   pkgs,
+  user,
+  config,
   ...
 }:
 
 {
+  users.users.o = {
+    name = user;
+    home = "/Users/o";
+  };
   services.nix-daemon.enable = true;
   environment = {
     systemPackages = with pkgs; [
@@ -27,7 +32,7 @@
 
   networking =
     let
-      name = "rekt";
+      name = "o";
     in
     {
       hostName = name;
