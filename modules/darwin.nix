@@ -19,7 +19,7 @@
       curl
       unzip
       cmake
-      glibc
+      # glibc
       direnv
       git-lfs
       gnumake
