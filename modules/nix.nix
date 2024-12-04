@@ -2,7 +2,7 @@
 {
   services.nix-daemon.enable = true;
   nix = {
-    package = pkgs.nix;
+    # package = pkgs.nix;
     optimise.automatic = true;
     gc = {
       automatic = true;
