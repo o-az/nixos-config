@@ -8,7 +8,7 @@
 
 {
   users.users.o = {
-    name = user;
+    name = "o";
     home = "/Users/o";
   };
   services.nix-daemon.enable = true;
