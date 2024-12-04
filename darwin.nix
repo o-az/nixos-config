@@ -107,9 +107,9 @@ nix-darwin.lib.darwinSystem rec {
     home-manager.darwinModules.home-manager
     {
       home-manager = {
-
         useGlobalPkgs = true;
         useUserPackages = true;
+        backupFileExtension = "backup";
         extraSpecialArgs = {
           currentSystem = system;
           currentSystemName = name;
