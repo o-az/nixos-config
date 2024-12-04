@@ -85,7 +85,7 @@
     distrobox-tui
     _1password-cli
     coreutils-full
-    bashInteractive
+    # bashInteractive
     uutils-coreutils
     nixfmt-rfc-style
     nix-output-monitor

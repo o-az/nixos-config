@@ -148,7 +148,7 @@ nix-darwin.lib.darwinSystem rec {
             # ./home-modules/fonts.nix
             ./home-modules/direnv.nix
             ./home-modules/darwin.nix
-            ./home-modules/shells/bash
+            # ./home-modules/shells/bash
             ./home-modules/shells/fish
             ./home-modules/lazygit.nix
             ./home-modules/keybase.nix
