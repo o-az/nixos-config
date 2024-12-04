@@ -130,79 +130,79 @@ nix-darwin.lib.darwinSystem rec {
       };
     }
   ];
-  homebrew = {
-    enable = true;
-    onActivation = {
-      cleanup = true;
-      upgrade = true;
-      autoUpdate = true;
-    };
-    global.autoUpdate = true;
-    masApps = {
-      "Bitwarden" = 1352778147;
-    };
-    casks = [
-      "iina"
-      "warp"
-      "kitty"
-      "qview"
-      "stats"
-      "gather"
-      "notion"
-      "signal"
-      "alt-tab"
-      "anytype"
-      "discord"
-      "element"
-      "raycast"
-      "simplex"
-      "vivaldi"
-      "xquartz"
-      "obsidian"
-      "orbstack"
-      "qflipper"
-      "telegram"
-      "transmit"
-      "1password"
-      "cleanshot"
-      "hiddenbar"
-      "parallels"
-      "pixelsnap"
-      "protonvpn"
-      "appcleaner"
-      "charmstone"
-      "cheatsheet"
-      "knockknock"
-      "mullvadvpn"
-      "pdf-expert"
-      "proton-mail"
-      "proton-pass"
-      "zed@preview"
-      "micro-snitch"
-      "transmission"
-      "betterdisplay"
-      "brave-browser"
-      "little-snitch"
-      "screen-studio"
-      "beekeeper-studio"
-      "eloston-chromium"
-      "karabiner-elements"
-      "sony-ps-remote-play"
-      "firefox@developer-edition"
-      "visual-studio-code@insiders"
+  # homebrew = {
+  #   enable = true;
+  #   onActivation = {
+  #     cleanup = true;
+  #     upgrade = true;
+  #     autoUpdate = true;
+  #   };
+  #   global.autoUpdate = true;
+  #   masApps = {
+  #     "Bitwarden" = 1352778147;
+  #   };
+  #   casks = [
+  #     "iina"
+  #     "warp"
+  #     "kitty"
+  #     "qview"
+  #     "stats"
+  #     "gather"
+  #     "notion"
+  #     "signal"
+  #     "alt-tab"
+  #     "anytype"
+  #     "discord"
+  #     "element"
+  #     "raycast"
+  #     "simplex"
+  #     "vivaldi"
+  #     "xquartz"
+  #     "obsidian"
+  #     "orbstack"
+  #     "qflipper"
+  #     "telegram"
+  #     "transmit"
+  #     "1password"
+  #     "cleanshot"
+  #     "hiddenbar"
+  #     "parallels"
+  #     "pixelsnap"
+  #     "protonvpn"
+  #     "appcleaner"
+  #     "charmstone"
+  #     "cheatsheet"
+  #     "knockknock"
+  #     "mullvadvpn"
+  #     "pdf-expert"
+  #     "proton-mail"
+  #     "proton-pass"
+  #     "zed@preview"
+  #     "micro-snitch"
+  #     "transmission"
+  #     "betterdisplay"
+  #     "brave-browser"
+  #     "little-snitch"
+  #     "screen-studio"
+  #     "beekeeper-studio"
+  #     "eloston-chromium"
+  #     "karabiner-elements"
+  #     "sony-ps-remote-play"
+  #     "firefox@developer-edition"
+  #     "visual-studio-code@insiders"
 
-      # TODO: figure out font sharing
-      #
-      # "font-monaspace"
-      # "font-ibm-plex-mono"
-      # "font-3270-nerd-font"
-      # "font-hack-nerd-font"
-      # "font-jetbrains-mono"
-      # "font-0xproto-nerd-font"
-      # "font-blex-mono-nerd-font"
-      # "font-fira-code-nerd-font"
-      # "font-monaspace-nerd-font"
-      # "font-jetbrains-mono-nerd-font"
-    ];
-  };
+  #     # TODO: figure out font sharing
+  #     #
+  #     # "font-monaspace"
+  #     # "font-ibm-plex-mono"
+  #     # "font-3270-nerd-font"
+  #     # "font-hack-nerd-font"
+  #     # "font-jetbrains-mono"
+  #     # "font-0xproto-nerd-font"
+  #     # "font-blex-mono-nerd-font"
+  #     # "font-fira-code-nerd-font"
+  #     # "font-monaspace-nerd-font"
+  #     # "font-jetbrains-mono-nerd-font"
+  #   ];
+  # };
 }
