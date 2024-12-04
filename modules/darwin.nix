@@ -5,7 +5,6 @@
   config,
   ...
 }:
-
 {
   users.users.o = {
     name = "o";

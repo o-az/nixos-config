@@ -1,9 +1,9 @@
 { pkgs, ... }:
 {
+  services.nix-daemon.enable = true;
   nix = {
     package = pkgs.nix;
     optimise.automatic = true;
-    services.nix-daemon.enable = true;
     gc = {
       automatic = true;
     };
