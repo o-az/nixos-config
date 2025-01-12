@@ -3,7 +3,6 @@ name:
   user,
   inputs,
   system,
-  stylix,
   nixpkgs,
   ghostty,
   overlays,

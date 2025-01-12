@@ -3,4 +3,5 @@
 
 .envrc linguist-language=Shell
 
+.zed/*.json linguist-language=JSON-with-Comments
 .vscode/*.json linguist-language=JSON-with-Comments

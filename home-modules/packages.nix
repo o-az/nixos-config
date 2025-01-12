@@ -9,6 +9,7 @@
     sd
     yq
     jq
+    jnv
     niv
     vhs
     duf

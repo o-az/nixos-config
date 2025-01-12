@@ -12,7 +12,10 @@
   {
     "context": "Editor",
     "bindings": {
-      "cmd-shift-l": ["workspace::SendKeystrokes", "console.info( )"]
+      "cmd-shift-l": [
+        "workspace::SendKeystrokes",
+        "console.info( )"
+      ]
     }
   },
   {

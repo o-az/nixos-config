@@ -3,7 +3,6 @@
 {
   lib,
   pkgs,
-  stylix,
   config,
   ...
 }:

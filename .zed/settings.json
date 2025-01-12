@@ -16,7 +16,9 @@
     "nixd": {
       "settings": {
         "diagnostic": {
-          "suppress": ["sema-extra-with"]
+          "suppress": [
+            "sema-extra-with"
+          ]
         }
       }
     }

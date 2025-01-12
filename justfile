@@ -25,7 +25,7 @@ upgrade-macos:
 
 [group('build-nixos')]
 build:
-    sudo nixos-rebuild switch --flake $VM --upgrade-all --fast --print-build-logs --show-trace {{ nom }}
+    sudo nixos-rebuild switch --flake $VM --upgrade-all --print-build-logs --show-trace {{ nom }}
 
 [group('build-nixos')]
 build-impure:

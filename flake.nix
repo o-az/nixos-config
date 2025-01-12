@@ -3,12 +3,10 @@
 
   inputs = {
     # consider switching to github:numtide/nixpkgs-unfree?ref=nixos-unstable
+    # nixpkgs.url = "github:nixos/nixpkgs?rev=9be3e110508ee6ad12d6b4935a9df4a82c29c4f2";
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/0.1";
-
-    nix-darwin.url = "github:lnl7/nix-darwin/master";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
@@ -19,24 +17,19 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    ghostty.url = "git+ssh://git@github.com/ghostty-org/ghostty";
-    ghostty.inputs.nixpkgs-stable.follows = "nixpkgs";
+    ghostty.url = "github:ghostty-org/ghostty";
 
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
-
-    stylix.url = "github:danth/stylix";
 
     helix.url = "github:helix-editor/helix";
   };
 
   outputs =
     inputs@{
-      stylix,
       chaotic,
       nixpkgs,
       ghostty,
-      nix-darwin,
       flake-utils,
       determinate,
       flake-parts,
@@ -54,8 +47,6 @@
       overlays = import ./overlays { inherit inputs nixpkgs; };
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#vm-orb'
-      # nix run nix-darwin -- switch --flake .#vm-osx --upgrade-all --fast --print-build-logs --show-trace
-      # nix run nix-darwin -- switch --flake ~/.config/nix-darwin
       nixosConfigurations =
         let
           system = "aarch64-linux";
@@ -65,7 +56,6 @@
           vm-orb = mkNixos "vm-orb" {
             inherit
               user
-              stylix
               inputs
               system
               nixpkgs
@@ -90,7 +80,6 @@
               nixpkgs
               ghostty
               overlays
-              nix-darwin
               determinate
               home-manager
               ;

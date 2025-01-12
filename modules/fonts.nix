@@ -18,18 +18,15 @@
         monospace = [ "BlexMonoNerdFontMono" ];
       };
     };
-    packages = with pkgs; [
-      ibm-plex
-      nerdfonts
-      noto-fonts
-      jetbrains-mono
-      noto-fonts-emoji
-      (pkgs.nerdfonts.override {
-        fonts = [
-          "IBMPlexMono"
-          "JetBrainsMono"
-        ];
-      })
-    ];
+    packages =
+      with pkgs;
+      [
+        ibm-plex
+        noto-fonts
+        # ibm-plex-mono
+        jetbrains-mono
+        noto-fonts-emoji
+      ]
+      ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
   };
 }

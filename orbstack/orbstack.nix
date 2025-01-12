@@ -62,6 +62,7 @@ with lib;
   # services.openssh.enable = false;
 
   systemd = {
+    network.wait-online.enable = false;
     services = {
       "systemd-oomd".serviceConfig.WatchdogSec = 0;
       "systemd-homed".serviceConfig.WatchdogSec = 0;

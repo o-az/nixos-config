@@ -12,18 +12,21 @@
       };
     };
   };
-  home.packages = with pkgs; [
-    plemoljp-nf
-    ibm-plex
-    nerdfonts
-    noto-fonts
-    jetbrains-mono
-    noto-fonts-emoji
-    (pkgs.nerdfonts.override {
-      fonts = [
-        "IBMPlexMono"
-        "JetBrainsMono"
-      ];
-    })
-  ];
+  home.packages =
+    with pkgs;
+    [
+      ibm-plex
+      noto-fonts
+      plemoljp-nf
+      # ibm-plex-mono
+      jetbrains-mono
+      noto-fonts-emoji
+      # (pkgs.nerdfonts.override {
+      #   fonts = [
+      #     "IBMPlexMono"
+      #     "JetBrainsMono"
+      #   ];
+      # })
+    ]
+    ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 }
