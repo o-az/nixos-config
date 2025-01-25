@@ -1,8 +1,5 @@
 # https://home-manager-options.extranix.com/?query=programs.bash.
-{
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 {
   programs.bash = {
     enable = true;

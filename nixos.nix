@@ -68,11 +68,7 @@ nixpkgs.lib.nixosSystem rec {
             allowBroken = true;
             config.allowUnfree = true;
           };
-          inherit
-            inputs
-            ghostty
-            overlays
-            ;
+          inherit inputs ghostty overlays;
         };
       };
     }

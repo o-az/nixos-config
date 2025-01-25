@@ -6,9 +6,7 @@
       enable = true;
       defaultFonts = {
         emoji = [ ];
-        monospace = [
-          "BlexMonoNerdFontMono"
-        ];
+        monospace = [ "BlexMonoNerdFontMono" ];
       };
     };
   };

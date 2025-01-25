@@ -1,8 +1,5 @@
 # https://home-manager-options.extranix.com/?query=programs.fastfetch.
-{
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 {
   programs.fastfetch = {
     enable = true;

@@ -1,8 +1,4 @@
-{
-  pkgs,
-  config,
-  ...
-}:
+{ pkgs, config, ... }:
 {
   home.username = "o";
   programs = {

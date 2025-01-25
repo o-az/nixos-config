@@ -5,7 +5,7 @@
   rm = "rip";
   loc = "tokei --sort=files --compact";
   j = "just";
-  rm-dots = "sudo find . -type f -name \"._*\" -exec rm -r {} +";
+  rm-dots = ''sudo find . -type f -name "._*" -exec rm -r {} +'';
   code = "code-insiders";
   walk = "walk --icons";
   cat = "bat --theme='1337' --paging='never' --style='changes,header,grid'";

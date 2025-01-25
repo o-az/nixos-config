@@ -44,7 +44,9 @@
     in
     # Custom packages and modifications, exported as overlays
     {
-      overlays = import ./overlays { inherit inputs nixpkgs; };
+      overlays = import ./overlays {
+        inherit inputs nixpkgs;
+      };
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#vm-orb'
       nixosConfigurations =
@@ -67,29 +69,33 @@
           };
         };
 
-      darwinConfigurations =
-        let
-          system = "aarch64-darwin";
-        in
-        {
-          vm-osx = mkDarwin "vm-osx" {
-            inherit
-              user
-              inputs
-              system
-              nixpkgs
-              ghostty
-              overlays
-              determinate
-              home-manager
-              ;
-          };
-        };
+      # darwinConfigurations =
+      #   let
+      #     system = "aarch64-darwin";
+      #   in
+      #   {
+      #     vm-osx = mkDarwin "vm-osx" {
+      #       inherit
+      #         user
+      #         inputs
+      #         system
+      #         nixpkgs
+      #         ghostty
+      #         overlays
+      #         determinate
+      #         home-manager
+      #         ;
+      #     };
+      #   };
     }
     // (flake-utils.lib.eachDefaultSystem (
       system:
       let
-        pkgs = import nixpkgs { inherit system; };
+        pkgs = import nixpkgs {
+          inherit
+            system
+            ;
+        };
       in
       {
         devShells = import ./shell.nix { inherit pkgs; };

@@ -1,9 +1,6 @@
 # https://www.nushell.sh/
 # https://home-manager-options.extranix.com/?query=programs.nushell.
-{
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 let
   rawAliases = import ../aliases.nix;
   processedAliases = value: builtins.replaceStrings [ "$SHELL" ] [ "$env.SHELL" ] value;
@@ -13,7 +10,7 @@ in
   programs.nushell = {
     enable = true;
     package = pkgs.nushell;
-    extraConfig = '''';
+    extraConfig = "";
     inherit shellAliases;
     configFile.source = ./config.nu;
   };

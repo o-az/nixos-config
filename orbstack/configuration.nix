@@ -86,9 +86,7 @@ with lib;
       XDG_CONFIG_HOME = "$HOME/.config";
     };
 
-    shells = with pkgs; [
-      fish
-    ];
+    shells = with pkgs; [ fish ];
     shellAliases = { };
   };
 

@@ -10,9 +10,7 @@
   programs.helix = {
     enable = true;
     package = inputs.helix.packages.${pkgs.system}.default;
-    extraPackages = [
-      pkgs.marksman
-    ];
+    extraPackages = [ pkgs.marksman ];
     settings = {
       theme = "tokyonight";
       editor = {
