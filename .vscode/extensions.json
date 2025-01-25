@@ -5,6 +5,7 @@
     "jnoortheen.nix-ide",
     "timonwong.shellcheck",
     "bmalehorn.vscode-fish",
+    "nefrob.vscode-just-syntax",
     "arrterian.nix-env-selector",
     "thenuprojectcontributors.vscode-nushell-lang",
   ]

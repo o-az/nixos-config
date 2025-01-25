@@ -38,9 +38,8 @@
           editor = "hx";
           symlinks = true;
           excludesfile = "~/.gitignore";
-          pager = "diff-so-fancy | less --tabs=2 -RFX";
         };
-        interactive.diffFilter = "diff-so-fancy --patch";
+        # interactive.diffFilter = "diff-so-fancy --patch";
         color = {
           ui = true;
           diff-highlight = {
