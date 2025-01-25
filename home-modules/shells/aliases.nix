@@ -1,4 +1,6 @@
 {
+  # git checkout origin/main
+  gcom = "git checkout";
   open-ports = "ss -tulpn | awk 'NR>1{split($5,a,\":\"); split($7,b,\",\"); if(b[2]) print a[length(a)], b[2]}'";
   rm = "rip";
   loc = "tokei --sort=files --compact";

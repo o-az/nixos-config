@@ -17,6 +17,9 @@
       yamlfmt
       yamllint
       shellcheck
+
+      nixfmt
+      biome
     ];
   };
 }

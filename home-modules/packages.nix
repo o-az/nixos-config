@@ -77,7 +77,7 @@
     hyperfine
     ssh-agents
     git-extras
-    difftastic
+    # difftastic
     nix-update
     lazydocker
     rm-improved
