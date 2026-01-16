@@ -24,4 +24,4 @@ jobs:
           rolling: true
           visibility: "public"
           name: "o-az/nixos-config"
-          include-output-paths: true
+          include-output-paths: false
