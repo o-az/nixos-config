@@ -5,7 +5,8 @@
     # consider switching to github:numtide/nixpkgs-unfree?ref=nixos-unstable
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
-    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/0.1";
+    fh.url = "https://flakehub.com/f/DeterminateSystems/fh/*";
+    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
 
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
@@ -47,7 +48,7 @@
         inherit inputs nixpkgs;
       };
       # NixOS configuration entrypoint
-      # Available through 'nixos-rebuild --flake .#vm-orb'
+      # Available through 'nixos-rebuild --flake .#nixos'
       nixosConfigurations =
         let
           system = "aarch64-linux";
