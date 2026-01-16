@@ -38,10 +38,8 @@ nixpkgs.lib.nixosSystem rec {
         users.o = {
           imports = [
             { home.stateVersion = "23.11"; }
-            ./home-modules/tmux
             ./home-modules/kitty
             ./home-modules/helix
-            ./home-modules/zellij
             ./home-modules/ghostty
             ./home-modules/bat.nix
             ./home-modules/git.nix

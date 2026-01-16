@@ -25,4 +25,7 @@
     "result": true,
     ".direnv": true,
   },
+  "markdownlint.config": {
+    "first-line-h1": false
+  }
 }

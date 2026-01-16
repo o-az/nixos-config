@@ -8,8 +8,6 @@
     uv
     yq
     jq
-    amp-cli
-    opencode
     jnv
     niv
     vhs
@@ -51,6 +49,7 @@
     atuin
     skate
     gping
+    nixfmt
     choose
     freeze
     devenv
@@ -63,6 +62,7 @@
     glances
     lazygit
     horcrux
+    amp-cli
     tealdeer
     onefetch
     termshot
@@ -72,12 +72,12 @@
     rustscan
     nix-diff
     starship
+    opencode
     distrobox
     superfile
     hyperfine
     ssh-agents
     git-extras
-    # difftastic
     nix-update
     lazydocker
     rm-improved
@@ -86,9 +86,7 @@
     distrobox-tui
     _1password-cli
     coreutils-full
-    # bashInteractive
     uutils-coreutils
-    nixfmt
     nix-output-monitor
   ];
 }
