@@ -1,14 +1,15 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    fh
     fd
     fx
     sd
     uv
     yq
     jq
-    pkgs.amp-cli
-    pkgs.opencode
+    amp-cli
+    opencode
     jnv
     niv
     vhs
