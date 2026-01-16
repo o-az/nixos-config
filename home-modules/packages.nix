@@ -4,8 +4,11 @@
     fd
     fx
     sd
+    uv
     yq
     jq
+    pkgs.amp-cli
+    pkgs.opencode
     jnv
     niv
     vhs
@@ -16,7 +19,6 @@
     gcc
     dig
     nil
-    oha
     gum
     tdf
     viu
@@ -85,7 +87,7 @@
     coreutils-full
     # bashInteractive
     uutils-coreutils
-    nixfmt-rfc-style
+    nixfmt
     nix-output-monitor
   ];
 }

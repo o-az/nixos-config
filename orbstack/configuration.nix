@@ -68,7 +68,7 @@ with lib;
 
   environment = {
     systemPackages = with pkgs; [
-      ghostty.packages.${pkgs.system}.default
+      ghostty.packages.${pkgs.stdenv.hostPlatform.system}.default
       git
       age
       curl
@@ -78,6 +78,8 @@ with lib;
       git-lfs
       gnumake
       killall
+      kitty.terminfo
+      ncurses # provides additional terminfo entries
     ];
 
     variables = {
@@ -111,5 +113,5 @@ with lib;
     ''
   ];
 
-  system.stateVersion = "unstable"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment?
 }

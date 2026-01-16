@@ -5,15 +5,8 @@
     mutableUsers = false;
     defaultUserShell = pkgs.fish;
     users.o = {
-      # isNormalUser = true;
-      uid = 501;
-      group = "users";
-      homeMode = "700";
-      createHome = true;
+      isNormalUser = true;
       home = "/home/o";
-      # simulate isNormalUser, but with an arbitrary UID
-      isSystemUser = true;
-      useDefaultShell = true;
       shell = pkgs.fish;
       extraGroups = [
         "docker"

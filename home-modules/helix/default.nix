@@ -9,7 +9,7 @@
 {
   programs.helix = {
     enable = true;
-    package = inputs.helix.packages.${pkgs.system}.default;
+    package = inputs.helix.packages.${pkgs.stdenv.hostPlatform.system}.default;
     extraPackages = [ pkgs.marksman ];
     settings = {
       theme = "tokyonight";
@@ -268,15 +268,15 @@
           command = "tailwindcss-language-server";
           args = [ "--stdio" ];
         };
-        typescript-language-server = with nodePackages_latest; {
+        typescript-language-server = {
           config = {
             hostInfo = "helix";
             documentFormatting = false;
           };
-          command = "''${typescript-language-server}/bin/typescript-language-server";
+          command = "${nodePackages_latest.typescript-language-server}/bin/typescript-language-server";
           args = [
             "--stdio"
-            "--tsserver-path=''${typescript}/lib/node_modules/typescript/lib"
+            "--tsserver-path=${nodePackages_latest.typescript}/lib/node_modules/typescript/lib"
           ];
         };
       };

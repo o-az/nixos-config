@@ -18,7 +18,7 @@
       plemoljp-nf
       # ibm-plex-mono
       jetbrains-mono
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       # (pkgs.nerdfonts.override {
       #   fonts = [
       #     "IBMPlexMono"

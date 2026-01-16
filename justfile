@@ -4,7 +4,7 @@ set positional-arguments := true
 
 #
 # set machine name in .env
-# example `VM=".#vm-orb"`
+# example `VM=".#nixos"`
 
 alias b := build
 alias pms := permissions

@@ -3,7 +3,6 @@
 
   inputs = {
     # consider switching to github:numtide/nixpkgs-unfree?ref=nixos-unstable
-    # nixpkgs.url = "github:nixos/nixpkgs?rev=9be3e110508ee6ad12d6b4935a9df4a82c29c4f2";
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/0.1";
@@ -40,7 +39,7 @@
       user = "o";
       overlays = [ ];
       mkNixos = import ./nixos.nix;
-      mkDarwin = import ./darwin.nix;
+      # mkDarwin = import ./darwin.nix;
     in
     # Custom packages and modifications, exported as overlays
     {
@@ -54,8 +53,7 @@
           system = "aarch64-linux";
         in
         {
-          # orbstack machine
-          vm-orb = mkNixos "vm-orb" {
+          nixos = mkNixos "nixos" {
             inherit
               user
               inputs

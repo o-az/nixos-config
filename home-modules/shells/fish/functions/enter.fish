@@ -13,7 +13,6 @@ function __enter_container_id -d "Enter container with provided id"
     end
 end
 
-
 function __enter_check_tools -d "Check if all necessary cli tools are installed"
     if not type -q docker
         echo "Docker not installed"
@@ -36,7 +35,6 @@ function __enter_select_container -d "Select container via fzf"
     printf $containers | fzf -e --reverse | awk '{ print $3 }' | read selected_container; or return 1
     printf $selected_container
 end
-
 
 function enter --description "Interactively try to enter a docker container"
     __enter_check_tools; or return 1
