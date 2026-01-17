@@ -8,13 +8,18 @@
 { pkgs, ... }:
 
 let
-  fishFunctionsSource = builtins.filterSource (
-    path: type:
-    let
-      base = builtins.baseNameOf path;
-    in
-    !(base == "br.fish" && type == "symlink")
-  ) ./functions;
+  fishFunctionsDir = ./functions;
+  fishFunctionFiles = builtins.filter (f: f != "br.fish") (
+    builtins.attrNames (builtins.readDir fishFunctionsDir)
+  );
+  fishFunctionsConfig = builtins.listToAttrs (
+    map (f: {
+      name = "fish/functions/${f}";
+      value = {
+        source = fishFunctionsDir + "/${f}";
+      };
+    }) fishFunctionFiles
+  );
 in
 {
   programs = {
@@ -49,17 +54,15 @@ in
         --show-error
         --trace-time"
       '';
+      interactiveShellInit = builtins.readFile ./config.fish;
     };
   };
 
   xdg = {
     configFile = {
-      "fish/config.fish".source = ./config.fish;
-      "fish/fish_variables".source = ./fish_variables;
-      "fish/themes".source = ./themes;
       "fish/completions".source = ./completions;
-      "fish/functions".source = fishFunctionsSource;
-      "fish/conf.d".source = ./conf.d;
-    };
+      "fish/fish_variables".source = ./fish_variables;
+    }
+    // fishFunctionsConfig;
   };
 }

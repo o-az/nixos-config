@@ -6,7 +6,7 @@
       enable = true;
       defaultFonts = {
         emoji = [ ];
-        monospace = [ "BlexMonoNerdFontMono" ];
+        monospace = [ "DepartureMono" ];
       };
     };
   };
@@ -16,7 +16,7 @@
       ibm-plex
       noto-fonts
       plemoljp-nf
-      # ibm-plex-mono
+      departure-mono
       jetbrains-mono
       noto-fonts-color-emoji
       # (pkgs.nerdfonts.override {

@@ -15,7 +15,7 @@
       allowBitmaps = true;
       useEmbeddedBitmaps = true;
       defaultFonts = {
-        monospace = [ "BlexMonoNerdFontMono" ];
+        monospace = [ "DepartureMono" ];
       };
     };
     packages =
@@ -23,7 +23,7 @@
       [
         ibm-plex
         noto-fonts
-        # ibm-plex-mono
+        departure-mono
         jetbrains-mono
         noto-fonts-color-emoji
       ]

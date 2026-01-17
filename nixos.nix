@@ -35,6 +35,7 @@ nixpkgs.lib.nixosSystem rec {
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
+        backupFileExtension = "hm-backup";
         users.o = {
           imports = [
             { home.stateVersion = "23.11"; }
