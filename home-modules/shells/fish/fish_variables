@@ -1,0 +1,32 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export DELTA_PAGER:less\x20\x2d\x2dmouse
+SETUVAR --export EDITOR:cursor
+SETUVAR --export ENABLE_TOOL_SEARCH:true
+SETUVAR --export FOUNDRY_DISABLE_NIGHTLY_WARNING:1
+SETUVAR --export FZF_DEFAULT_COMMAND:fd\x20\x2d\x2dtype\x20f\x20\x2d\x2dhidden\x20\x2d\x2dfollow\x20\x2d\x2dexclude\x20\x2egit\x20\x2d\x2dcolor\x3dalways
+SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dheight\x20100\x25\x20\x2d\x2dinline\x2dinfo\x20\x2d\x2dlayout\x3dreverse\x20\x2d\x2dmargin\x3d2\x2c2\x20\x2d\x2dmulti
+SETUVAR --export FZF_FILE_WIDGET_OPTS:\x2d\x2dpreview\x20\x27head\x20\x7b\x7d\x27
+SETUVAR --export FZF_HISTORY_WIDGET_OPTS:\x2d\x2dsort\x20\x2d\x2dtac\x20\x2d\x2dtiebreak\x3dindex\x20\x2d\x2dno\x2dsort\x20\x2d\x2dpreview\x3d\x27\x27
+SETUVAR FZF_LEGACY_KEYBINDS:0
+SETUVAR --export GTK_USE_PORTAL:1
+SETUVAR --export KITTY_SESSION_SAVE_DIR:/Users/o/\x2elocal/share/kitty\x2dsessions
+SETUVAR --export KITTY_SESSION_SOCK_PATTERN:\x40kitty\x2d\x2a
+SETUVAR --export QT_QPA_PLATFORMTHEME:xdgdesktopportal
+SETUVAR --export SUDO_EDITOR:zed
+SETUVAR ZO_CMD:zo
+SETUVAR Z_CMD:z
+SETUVAR Z_EXCLUDE:\x5e/Users/o\x24
+SETUVAR __done_min_cmd_duration:5000
+SETUVAR __fish_initialized:4300
+SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_apt_files:\x7e/\x2econfig/fish/functions/apt\x2efish\x1e\x7e/\x2econfig/fish/functions/apt\x2ehelp\x2efish\x1e\x7e/\x2econfig/fish/completions/apt\x2efish
+SETUVAR _fisher_patrickf1_2F_fzf_2E_fish_files:\x7e/\x2econfig/fish/functions/_fzf_configure_bindings_help\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_extract_var_info\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_preview_changed_file\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_preview_file\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_report_diff_type\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_report_file_type\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_directory\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_git_log\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_git_status\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_history\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_processes\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_variables\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_wrapper\x2efish\x1e\x7e/\x2econfig/fish/functions/fzf_configure_bindings\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/fzf\x2efish\x1e\x7e/\x2econfig/fish/completions/fzf_configure_bindings\x2efish
+SETUVAR _fisher_plugins:patrickf1/fzf\x2efish\x1eoh\x2dmy\x2dfish/plugin\x2dapt
+SETUVAR fish_greeting:\x1d
+SETUVAR hydro_symbol_git_dirty:\x1d
+SETUVAR sponge_allow_previously_successful:true
+SETUVAR sponge_delay:2
+SETUVAR sponge_filters:sponge_filter_failed\x1esponge_filter_matched
+SETUVAR sponge_purge_only_on_exit:false
+SETUVAR sponge_regex_patterns:\x1d
+SETUVAR sponge_successful_exit_codes:0
