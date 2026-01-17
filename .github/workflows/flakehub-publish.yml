@@ -23,5 +23,5 @@ jobs:
         with:
           rolling: true
           visibility: "public"
-          name: "o-az/nixos-config"
+          name: "index/nixos-config"
           include-output-paths: false
