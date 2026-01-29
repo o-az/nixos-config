@@ -1,53 +1,38 @@
+# Shared aliases for all shells (bash, zsh, fish)
+# Note: Fish-specific shortcuts are defined as shellAbbrs in fish/default.nix
+# for better performance (abbreviations expand inline, faster than aliases)
 {
-  # git checkout origin/main
+  # Git
   gcom = "git checkout";
+  got = "git";
+
+  # System tools
   open-ports = "ss -tulpn | awk 'NR>1{split($5,a,\":\"); split($7,b,\",\"); if(b[2]) print a[length(a)], b[2]}'";
   rm = "rip";
   loc = "tokei --sort=files --compact";
-  j = "just";
   rm-dots = ''sudo find . -type f -name "._*" -exec rm -r {} +'';
-  code = "code-insiders";
   walk = "walk --icons";
-  cat = "bat --theme='1337' --paging='never' --style='changes,header,grid'";
-  rg = "batgrep --rga --color=always --paging='never' --iglob='!*.lock,!*lock.json,!_'";
-  grep = "batgrep --color=always --paging='never' --iglob='!*.lock,!*lock.json,!_'";
-  man = "BAT_THEME='Solarized (light)' batman";
-  less = "batpipe";
-  diff = "batdiff";
-  find = "fd";
   reload = "exec $SHELL -l";
   vim = "nvim";
   vi = "nvim";
   ".." = "cd ..";
   "..." = "cd ../..";
-  yless = "jless --yaml";
-  tree = "eza --all --color='always' --icons='always' --oneline --git-ignore --tree -la";
-  ls = "eza --all --color='always' --icons='always' --oneline --git-ignore";
-  dnscheck = "curl https://am.i.mullvad.net/json | jq";
-  # https://github.com/antfu/taze
-  upall = "bunx taze -r";
-  bi = "bun install";
-  bd = "bun run dev";
-  bb = "bun run build";
-  binc = "bun install --no-cache --force";
-  pna = "pnpm add";
-  pnad = "pnpm add --save-dev";
-  pnb = "pnpm build";
-  pnc = "pnpm clean";
-  pnd = "pnpm dev";
-  pns = "pnpm start";
-  pnf = "pnpm format";
-  pni = "pnpm install";
-  pnl = "pnpm lint";
-  pnt = "pnpm typecheck";
   myip = "curl http://ipecho.net/plain; echo";
-  ga = "git add --all";
-  gs = "git status";
-  gcm = "git commit -S -m";
-  gp = "git push";
-  got = "git";
-  glog = "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
+  dnscheck = "curl https://am.i.mullvad.net/json | jq";
   convert = "magick";
   lzd = "lazydocker";
   lzg = "lazygit";
+  yless = "jless --yaml";
+
+  # Modern Unix tools (bat-extras)
+  cat = "bat --theme='1337' --paging='never' --style='changes,header,grid'";
+  rg = "batgrep --rga --color=always --paging='never' --iglob='!*.lock,!*lock.json,!_'";
+  grep = "batgrep --color=always --paging='never' --iglob='!*.lock,!*lock.json,!_'";
+  man = "BAT_THEME='Solarized (light)' batman";
+
+  # https://github.com/antfu/taze
+  upall = "bunx taze -r";
+
+  # pnpm clean (not in fish abbrs)
+  pnc = "pnpm clean";
 }

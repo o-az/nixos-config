@@ -99,4 +99,7 @@ with lib;
     "x86_64-linux"
     "i686-linux"
   ];
+
+  # Disable nix-channel (using flakes only)
+  nix.channel.enable = false;
 }

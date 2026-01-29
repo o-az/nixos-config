@@ -18,7 +18,6 @@ nixpkgs.lib.nixosSystem rec {
     { nixpkgs.overlays = overlays; }
     ./orbstack/configuration.nix
     ./orbstack/orbstack.nix
-
     ./modules/1password.nix
     ./modules/tailscale.nix
     ./modules/nixpkgs.nix

@@ -16,7 +16,9 @@
     ".env.*": "dotenv",
     ".zed/*.json": "jsonc",
     ".envrc": "shellscript",
-    ".vscode/*.json": "jsonc"
+    "fish_plugins": "fish",
+    "fish_variables": "fish",
+    ".vscode/*.json": "jsonc",
   },
   "search.exclude": {
     "**/flake.lock": true

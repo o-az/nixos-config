@@ -1,5 +1,5 @@
-# https://home-manager-options.extranix.com/?query=programs.gh.
-# https://home-manager-options.extranix.com/?query=programs.gh-dash.
+# https://home-manager-options.extranix.com/?query=programs.gh&release=master
+# https://home-manager-options.extranix.com/?query=programs.gh-dash&release=master
 { pkgs, ... }:
 {
   programs.gh = {
@@ -17,7 +17,7 @@
       gh-f
       gh-poi
       gh-dash
-      gh-copilot
+      github-copilot-cli
     ];
   };
   programs.gh-dash = {

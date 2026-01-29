@@ -82,11 +82,13 @@
     lazydocker
     rm-improved
     ripgrep-all
+    # code-insiders
     diff-so-fancy
     distrobox-tui
     _1password-cli
     coreutils-full
     uutils-coreutils
+    github-copilot-cli
     nix-output-monitor
   ];
 }

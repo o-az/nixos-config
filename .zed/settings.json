@@ -1,5 +1,6 @@
 // https://zed.dev/docs/configuring-zed#settings-files
 {
+  "load_direnv": "direct",
   "ui_font_size": 14,
   "file_icons": true,
   "auto_update": true,
@@ -14,6 +15,9 @@
   "show_completion_documentation": true,
   "lsp": {
     "nixd": {
+      "binary": {
+        "ignore_system_version": false
+      },
       "settings": {
         "diagnostic": {
           "suppress": [

@@ -78,13 +78,14 @@ with lib;
       git-lfs
       gnumake
       killall
+      zed-editor
       kitty.terminfo
       ncurses # provides additional terminfo entries
     ];
 
     variables = {
       EDITOR = "hx";
-      TERM = "xterm-ghostty";
+      TERM = "xterm-kitty";
       XDG_CONFIG_HOME = "$HOME/.config";
     };
 
